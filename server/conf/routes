@@ -4,7 +4,7 @@
 
 # Home page
 GET        /                             edu.trinity.webapps.controllers.Application.index
-
+GET        /contact                      edu.trinity.webapps.controllers.SiteController.contact
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)
 GET        /versionedAssets/*file        controllers.Assets.versioned(path="/public", file: Asset)
