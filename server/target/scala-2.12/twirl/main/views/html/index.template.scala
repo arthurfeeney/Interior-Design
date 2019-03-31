@@ -26,13 +26,18 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 Seq[Any](format.raw/*2.1*/("""
 """),_display_(/*3.2*/main("Play with Scala.js")/*3.28*/ {_display_(Seq[Any](format.raw/*3.30*/("""
 """),format.raw/*4.1*/("""<h2>Play and Scala.js share a same message</h2>
-<ul>
-  <li>Play shouts out: <em>"""),_display_(/*6.29*/message),format.raw/*6.36*/("""</em></li>
-  <li>Scala.js shouts out: <em id="scalajsShoutOut"></em></li>
-</ul>
+<div class="topnav">
+  <a class="active" href="#home" id="home">Home</a>
+  <a href="#news" id="news">News</a>
+  <a href="#contact" id="contact">Contact</a>
+  <a href="#about" id="about">About</a>
+</div>
 
-<h3> Contact Info!! </h3>
-""")))}),format.raw/*11.2*/("""
+<div id ="PageContent"></div>
+
+
+
+""")))}),format.raw/*16.2*/("""
 """))
       }
     }
@@ -49,11 +54,11 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 31 14:36:12 CDT 2019
-                  SOURCE: /users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/views/index.scala.html
-                  HASH: 8cfd164e5e3eda1c79f875daefad7cf3648e66d2
-                  MATRIX: 729->1|840->19|867->21|901->47|940->49|967->50|1074->131|1101->138|1239->246
-                  LINES: 21->1|26->2|27->3|27->3|27->3|28->4|30->6|30->6|35->11
+                  DATE: Sun Mar 31 15:31:10 CDT 2019
+                  SOURCE: /users/cluikart/InteriorDesign-WebApps-S19/server/app/views/index.scala.html
+                  HASH: b15b5e6a65cd6869cbccd1bdadcd41e0eb1e3460
+                  MATRIX: 729->1|840->19|867->21|901->47|940->49|967->50|1283->336
+                  LINES: 21->1|26->2|27->3|27->3|27->3|28->4|40->16
                   -- GENERATED --
               */
           

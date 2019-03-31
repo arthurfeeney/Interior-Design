@@ -31,11 +31,13 @@ Seq[Any](format.raw/*2.1*/("""
     <title>"""),_display_(/*7.13*/title),format.raw/*7.18*/("""</title>
     <link rel="stylesheet" media="screen" href=""""),_display_(/*8.50*/routes/*8.56*/.Assets.versioned("stylesheets/main.css")),format.raw/*8.97*/("""">
     <link rel="shortcut icon" type="image/png" href=""""),_display_(/*9.55*/routes/*9.61*/.Assets.versioned("images/favicon.png")),format.raw/*9.100*/("""">
+    <script type="text/javascript" src=""""),_display_(/*10.42*/routes/*10.48*/.Assets.at("javascripts/main.js")),format.raw/*10.81*/(""""></script>
+    
   </head>
   <body>
-    """),_display_(/*12.6*/content),format.raw/*12.13*/("""
-    """),_display_(/*13.6*/scalajs/*13.13*/.html.scripts("client", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)),format.raw/*13.129*/("""
-  """),format.raw/*14.3*/("""</body>
+    """),_display_(/*14.6*/content),format.raw/*14.13*/("""
+    """),_display_(/*15.6*/scalajs/*15.13*/.html.scripts("client", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)),format.raw/*15.129*/("""
+  """),format.raw/*16.3*/("""</body>
 </html>
 """))
       }
@@ -53,11 +55,11 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 31 14:36:12 CDT 2019
-                  SOURCE: /users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/views/main.scala.html
-                  HASH: affe0abb982d58961eb848c628144ec557c3eef4
-                  MATRIX: 733->1|857->32|884->33|955->78|980->83|1064->141|1078->147|1139->188|1222->245|1236->251|1296->290|1349->317|1377->324|1409->330|1425->337|1563->453|1593->456
-                  LINES: 21->1|26->2|27->3|31->7|31->7|32->8|32->8|32->8|33->9|33->9|33->9|36->12|36->12|37->13|37->13|37->13|38->14
+                  DATE: Sun Mar 31 15:31:10 CDT 2019
+                  SOURCE: /users/cluikart/InteriorDesign-WebApps-S19/server/app/views/main.scala.html
+                  HASH: 7edbc931863cec7a94d7421bff2d2825363b312d
+                  MATRIX: 733->1|857->32|884->33|955->78|980->83|1064->141|1078->147|1139->188|1222->245|1236->251|1296->290|1367->334|1382->340|1436->373|1503->414|1531->421|1563->427|1579->434|1717->550|1747->553
+                  LINES: 21->1|26->2|27->3|31->7|31->7|32->8|32->8|32->8|33->9|33->9|33->9|34->10|34->10|34->10|38->14|38->14|39->15|39->15|39->15|40->16
                   -- GENERATED --
               */
           
