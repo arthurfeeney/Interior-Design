@@ -1,0 +1,18 @@
+@(message: String)
+
+@main("Katie's Designs!") {
+<h2>I design interiors</h2>
+
+<h2 class="section-title"> Home </h2>
+
+<p class="navbar-default"> About Other </p>
+
+<ul>
+  <li>Play shouts out: <em>@message</em></li>
+  <li>Scala.js shouts out: <em id="scalajsShoutOut"></em></li>
+</ul>
+
+<h3> Contact Info!! </h3>
+
+
+}

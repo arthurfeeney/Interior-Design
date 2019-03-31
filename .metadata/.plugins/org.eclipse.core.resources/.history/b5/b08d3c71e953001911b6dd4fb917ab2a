@@ -1,0 +1,25 @@
+@(message: String)
+
+@main("Katie's Designs!") {
+	<body id="page-top">
+		<section id="about">
+			<div class="container light-bg">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2> ABOUT </h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 text-center">
+						<div class="mz-about-container">
+							<p> Making the best designs in the world </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</section>
+		
+	</body>
+
+}

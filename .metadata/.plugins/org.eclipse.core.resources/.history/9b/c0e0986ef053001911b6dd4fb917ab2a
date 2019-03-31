@@ -1,0 +1,27 @@
+@* Contact Form File *@
+@(queryForm: Form[_])(implicit messages: Messages)
+
+@import helper._
+
+@main("Contact Me") {
+<h2> Contact Information</h2>
+<p>
+  Diane Lillback
+</p>
+<p>
+  dlillbac
+</p>
+<p>
+  (210) 867-0693
+</p>
+<p>
+  780 Terrell Road, San Antonio, TX 78209
+</p>
+
+<h2> Email me</h2>
+
+
+@helper.inputText(queryForm("Email Address"), 'id -> "address", 'size -> 30)
+@helper.inputText(queryForm("Email Body"), 'id -> "query", 'size -> 100)
+
+}

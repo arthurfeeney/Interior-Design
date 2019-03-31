@@ -1,0 +1,8 @@
+@(message: String)
+
+@main("Katie's Designs!") {
+	<body id="page-top">
+	
+	</body>
+
+}
