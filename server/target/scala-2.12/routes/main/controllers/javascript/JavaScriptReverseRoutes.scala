@@ -1,16 +1,16 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Sun Mar 31 15:18:54 CDT 2019
+// @SOURCE:/users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Fri Apr 05 15:05:46 CDT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
 
 import _root_.controllers.Assets.Asset
 
-// @LINE:9
+// @LINE:10
 package controllers.javascript {
 
-  // @LINE:9
+  // @LINE:10
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -18,7 +18,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:9
+    // @LINE:10
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -28,7 +28,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:10
+    // @LINE:11
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

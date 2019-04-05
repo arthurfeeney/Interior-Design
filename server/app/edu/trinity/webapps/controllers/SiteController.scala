@@ -22,5 +22,9 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
     Ok(views.html.contact(queryForm))
   }
 
+  def gallery = Action {
+    Ok(views.html.gallery())
+  }
+    
 
 }

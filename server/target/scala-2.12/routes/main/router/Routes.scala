@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Sun Mar 31 15:18:54 CDT 2019
+// @SOURCE:/users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Fri Apr 05 15:05:46 CDT 2019
 
 package router
 
@@ -17,7 +17,7 @@ class Routes(
   Application_2: edu.trinity.webapps.controllers.Application,
   // @LINE:7
   SiteController_0: edu.trinity.webapps.controllers.SiteController,
-  // @LINE:9
+  // @LINE:10
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -28,7 +28,7 @@ class Routes(
     Application_2: edu.trinity.webapps.controllers.Application,
     // @LINE:7
     SiteController_0: edu.trinity.webapps.controllers.SiteController,
-    // @LINE:9
+    // @LINE:10
     Assets_1: controllers.Assets
   ) = this(errorHandler, Application_2, SiteController_0, Assets_1, "/")
 
@@ -45,6 +45,7 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """edu.trinity.webapps.controllers.Application.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """contact""", """edu.trinity.webapps.controllers.SiteController.contact"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """gallery""", """edu.trinity.webapps.controllers.SiteController.gallery"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(file:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """versionedAssets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
@@ -90,11 +91,29 @@ class Routes(
     )
   )
 
-  // @LINE:9
-  private[this] lazy val controllers_Assets_at2_route = Route("GET",
+  // @LINE:8
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_gallery2_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("gallery")))
+  )
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_gallery2_invoker = createInvoker(
+    SiteController_0.gallery,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "edu.trinity.webapps.controllers.SiteController",
+      "gallery",
+      Nil,
+      "GET",
+      this.prefix + """gallery""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:10
+  private[this] lazy val controllers_Assets_at3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at2_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at3_invoker = createInvoker(
     Assets_1.at(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -108,11 +127,11 @@ class Routes(
     )
   )
 
-  // @LINE:10
-  private[this] lazy val controllers_Assets_versioned3_route = Route("GET",
+  // @LINE:11
+  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("versionedAssets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -141,16 +160,22 @@ class Routes(
         edu_trinity_webapps_controllers_SiteController_contact1_invoker.call(SiteController_0.contact)
       }
   
-    // @LINE:9
-    case controllers_Assets_at2_route(params@_) =>
-      call(params.fromPath[String]("file", None)) { (file) =>
-        controllers_Assets_at2_invoker.call(Assets_1.at(file))
+    // @LINE:8
+    case edu_trinity_webapps_controllers_SiteController_gallery2_route(params@_) =>
+      call { 
+        edu_trinity_webapps_controllers_SiteController_gallery2_invoker.call(SiteController_0.gallery)
       }
   
     // @LINE:10
-    case controllers_Assets_versioned3_route(params@_) =>
+    case controllers_Assets_at3_route(params@_) =>
+      call(params.fromPath[String]("file", None)) { (file) =>
+        controllers_Assets_at3_invoker.call(Assets_1.at(file))
+      }
+  
+    // @LINE:11
+    case controllers_Assets_versioned4_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned3_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned4_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

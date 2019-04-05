@@ -4,7 +4,7 @@
 		module="csci3345-s19-shared$sources_javadoc"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20190331134902"
+		publication="20190405143549"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

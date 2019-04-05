@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Sun Mar 31 15:18:54 CDT 2019
+// @SOURCE:/users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Fri Apr 05 15:05:46 CDT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -24,6 +24,16 @@ package edu.trinity.webapps.controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "contact"})
+        }
+      """
+    )
+  
+    // @LINE:8
+    def gallery: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "edu.trinity.webapps.controllers.SiteController.gallery",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "gallery"})
         }
       """
     )

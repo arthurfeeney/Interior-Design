@@ -1,0 +1,3 @@
+[0m[[0m[31merror[0m] [0m[0m[Error] /users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/app/views/gallery.scala.html:56[0m
+[0m[[0m[31merror[0m] [0m[0m</body>: Expected '}' but found 'EOF'[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mtwirlCompileTemplates[0m) Twirl compilation failed[0m
