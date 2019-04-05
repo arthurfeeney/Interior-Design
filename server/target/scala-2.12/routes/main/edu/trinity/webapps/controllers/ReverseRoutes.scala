@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Sun Mar 31 15:18:54 CDT 2019
+// @SOURCE:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Fri Apr 05 15:12:20 CDT 2019
 
 import play.api.mvc.Call
 
@@ -16,6 +16,12 @@ package edu.trinity.webapps.controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:9
+    def postQuery(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "query")
+    }
   
     // @LINE:7
     def contact(): Call = {

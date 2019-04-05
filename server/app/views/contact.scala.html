@@ -6,7 +6,7 @@
 @main("Contact Me") {
 <h2> Contact Information</h2>
 <p>
-  Diane Lillback
+  Katie Lillback
 </p>
 <p>
   dlillbac
@@ -20,8 +20,11 @@
 
 <h2> Email me</h2>
 
-
-@helper.inputText(queryForm("Email Address"), 'id -> "address", 'size -> 30)
-@helper.textarea(queryForm("Email Body"), 'id -> "query", 'rows -> 10, 'cols -> 100)
-
+<form action="query" method="post">
+  <input type="email" name="address" size="30">Email Address</input>
+  <br>
+  <textarea name="query" rows="10" columns="200"></textarea>
+  <br>
+  <input type="submit"></input>
+</form>
 }

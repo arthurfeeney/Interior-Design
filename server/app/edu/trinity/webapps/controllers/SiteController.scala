@@ -17,10 +17,12 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
       "query" -> text
     )(UserQuery.apply)(UserQuery.unapply)
   )
-  
+
   def contact = Action { implicit request =>
     Ok(views.html.contact(queryForm))
   }
 
-
+  def postQuery = Action {implicit request =>
+    Redirect(routes.SiteController.contact).withNewSession
+  }
 }

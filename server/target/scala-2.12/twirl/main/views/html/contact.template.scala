@@ -31,7 +31,7 @@ Seq[Any](format.raw/*3.1*/("""
 """),_display_(/*6.2*/main("Contact Me")/*6.20*/ {_display_(Seq[Any](format.raw/*6.22*/("""
 """),format.raw/*7.1*/("""<h2> Contact Information</h2>
 <p>
-  Diane Lillback
+  Katie Lillback
 </p>
 <p>
   dlillbac
@@ -45,11 +45,14 @@ Seq[Any](format.raw/*3.1*/("""
 
 <h2> Email me</h2>
 
-
-"""),_display_(/*24.2*/helper/*24.8*/.inputText(queryForm("Email Address"), 'id -> "address", 'size -> 30)),format.raw/*24.77*/("""
-"""),_display_(/*25.2*/helper/*25.8*/.textarea(queryForm("Email Body"), 'id -> "query", 'rows -> 10, 'cols -> 100)),format.raw/*25.85*/("""
-
-""")))}),format.raw/*27.2*/("""
+<form action="query" method="post">
+  <input type="email" name="address" size="30">Email Address</input>
+  <br>
+  <textarea name="query" rows="10" columns="200"></textarea>
+  <br>
+  <input type="submit"></input>
+</form>
+""")))}),format.raw/*30.2*/("""
 """))
       }
     }
@@ -70,11 +73,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Mar 31 15:18:55 CDT 2019
-                  SOURCE: /users/cluikart/InteriorDesign-WebApps-S19/server/app/views/contact.scala.html
-                  HASH: 7f65d6ffa5c3adfdcd201c4cbb5c6537b2b40a32
-                  MATRIX: 787->25|909->77|953->75|980->93|1007->95|1033->113|1072->115|1099->116|1301->292|1315->298|1405->367|1433->369|1447->375|1545->452|1578->455
-                  LINES: 23->2|26->4|29->3|30->5|31->6|31->6|31->6|32->7|49->24|49->24|49->24|50->25|50->25|50->25|52->27
+                  DATE: Fri Apr 05 15:13:16 CDT 2019
+                  SOURCE: /Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/app/views/contact.scala.html
+                  HASH: 0b213062f23a261d42ddcd4acdaaeee4f9013d74
+                  MATRIX: 787->25|909->77|953->75|980->93|1007->95|1033->113|1072->115|1099->116|1524->511
+                  LINES: 23->2|26->4|29->3|30->5|31->6|31->6|31->6|32->7|55->30
                   -- GENERATED --
               */
           

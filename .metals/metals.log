@@ -1,0 +1,42 @@
+[33mwarn [0m Unable to automatically connect to build server.
+[34minfo [0m running 'sbt metalsEnable bloopInstall'
+[34minfo [0m [info] Loading settings for project global-plugins from metals.sbt ...
+[34minfo [0m [info] Loading global plugins from /Users/Nihil/.sbt/1.0/plugins
+[34minfo [0m [info] Updating ProjectRef(uri("file:/Users/Nihil/.sbt/1.0/plugins/"), "global-plugins")...
+[34minfo [0m [info] Done updating.
+[34minfo [0m [info] Loading settings for project interiordesign-webapps-s19-build from plugins.sbt ...
+[34minfo [0m [info] Loading project definition from /Users/Nihil/workspace/InteriorDesign-WebApps-S19/project
+[34minfo [0m [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+[34minfo [0m [success] Total time: 19 s, completed Apr 5, 2019, 11:48:38 AM
+[34minfo [0m [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+[34minfo [0m [info] Loading settings for project interiordesign-webapps-s19 from build.sbt ...
+[34minfo [0m [info] Set current project to interiordesign-webapps-s19 (in build file:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/)
+[34minfo [0m [info] Set current project to CSCI3345-S19-Server (in build file:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/)
+[34minfo [0m [info] Set current project to CSCI3345-S19-Server (in build file:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/)
+[34minfo [0m [info] semanticdb-scalac is enabled
+[34minfo [0m [info] Set current project to CSCI3345-S19-Server (in build file:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/)
+[34minfo [0m [info] Updating interiordesign-webapps-s19...
+[34minfo [0m [info] Updating sharedJVM...
+[34minfo [0m [info] Done updating.
+[34minfo [0m [info] Updating sharedJS...
+[34minfo [0m [info] Done updating.
+[34minfo [0m [info] Done updating.
+[34minfo [0m [info] Updating client...
+[34minfo [0m [info] Done updating.
+[34minfo [0m [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+[34minfo [0m [success] Generated .bloop/interiordesign-webapps-s19-test.json
+[34minfo [0m [success] Generated .bloop/sharedJVM.json
+[34minfo [0m [success] Generated .bloop/interiordesign-webapps-s19.json
+[34minfo [0m [success] Generated .bloop/sharedJVM-test.json
+[34minfo [0m [success] Generated .bloop/sharedJS-test.json
+[34minfo [0m [success] Generated .bloop/sharedJS.json
+[34minfo [0m [success] Generated .bloop/client.json
+[34minfo [0m [success] Generated .bloop/client-test.json
+[34minfo [0m [info] Updating ...
+[34minfo [0m [info] Done updating.
+[34minfo [0m [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
+[34minfo [0m [success] Generated .bloop/server.json
+[34minfo [0m [success] Generated .bloop/server-test.json
+[34minfo [0m [success] Total time: 16 s, completed Apr 5, 2019, 11:49:26 AM
+[34minfo [0m sbt exit: 0
+[34minfo [0m time: Ran 'sbt bloopInstall' in 2m7s
