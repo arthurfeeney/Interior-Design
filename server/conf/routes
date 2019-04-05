@@ -5,7 +5,12 @@
 # Home page
 GET        /                             edu.trinity.webapps.controllers.Application.index
 GET        /contact                      edu.trinity.webapps.controllers.SiteController.contact
+<<<<<<< HEAD
 GET		   /gallery						 edu.trinity.webapps.controllers.SiteController.gallery
+=======
++ nocsrf
+POST       /query                      edu.trinity.webapps.controllers.SiteController.postQuery
+>>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)
 GET        /versionedAssets/*file        controllers.Assets.versioned(path="/public", file: Asset)

@@ -4,7 +4,11 @@
 		module="csci3345-s19-client_sjs0.6_2.12"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
+<<<<<<< HEAD
 		publication="20190405143524"
+=======
+		publication="20190405115525"
+>>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
 	>
 		<description>
 		CSCI3345-S19-Client
