@@ -22,15 +22,25 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
     Ok(views.html.contact(queryForm))
   }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
   def gallery = Action {
     Ok(views.html.gallery())
   }
     
 
-=======
+//=======
   def postQuery = Action {implicit request =>
     Redirect(routes.SiteController.contact).withNewSession
   }
->>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
+//>>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
+  
+  // go to news page
+  def news = Action { implicit request =>
+    Ok(views.html.news())
+  }
+  
+  // go to the "about" page
+  def about = Action { implicit request =>
+    Ok(views.html.about())
+  }
 }

@@ -1,11 +1,6 @@
 // @GENERATOR:play-routes-compiler
-<<<<<<< HEAD
-// @SOURCE:/users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Fri Apr 05 15:05:46 CDT 2019
-=======
-// @SOURCE:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Fri Apr 05 15:12:20 CDT 2019
->>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
+// @SOURCE:/users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Sun Apr 07 12:28:10 CDT 2019
 
 import play.api.mvc.Call
 
@@ -15,26 +10,38 @@ import _root_.controllers.Assets.Asset
 // @LINE:6
 package edu.trinity.webapps.controllers {
 
-  // @LINE:7
+  // @LINE:8
   class ReverseSiteController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:9
+    // @LINE:16
     def postQuery(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "query")
     }
   
-    // @LINE:7
+    // @LINE:12
+    def news(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "news")
+    }
+  
+    // @LINE:13
+    def about(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "about")
+    }
+  
+    // @LINE:8
     def contact(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "contact")
     }
   
-    // @LINE:8
+    // @LINE:10
     def gallery(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "gallery")
@@ -51,8 +58,16 @@ package edu.trinity.webapps.controllers {
   
     // @LINE:6
     def index(): Call = {
+    
+      () match {
       
-      Call("GET", _prefix)
+        // @LINE:6
+        case ()  =>
+          
+          Call("GET", _prefix)
+      
+      }
+    
     }
   
   }

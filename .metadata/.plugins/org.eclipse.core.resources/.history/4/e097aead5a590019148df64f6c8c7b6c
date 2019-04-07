@@ -1,0 +1,15 @@
+@* about Template File *@
+@(param: Any)
+
+<html>
+  <head>
+    <title>Interior Design News</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
+    
+  </head>
+  <body>
+    <h1>About Katie and the company. Distinct from gallery?</h1>
+  </body>
+</html>

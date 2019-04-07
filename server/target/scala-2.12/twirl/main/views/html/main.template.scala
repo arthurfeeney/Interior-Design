@@ -55,13 +55,8 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-<<<<<<< HEAD
-                  DATE: Fri Apr 05 14:35:30 CDT 2019
-                  SOURCE: /users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/app/views/main.scala.html
-=======
-                  DATE: Fri Apr 05 11:46:06 CDT 2019
-                  SOURCE: /Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/app/views/main.scala.html
->>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
+                  DATE: Sun Apr 07 11:38:39 CDT 2019
+                  SOURCE: /users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/views/main.scala.html
                   HASH: 7edbc931863cec7a94d7421bff2d2825363b312d
                   MATRIX: 733->1|857->32|884->33|955->78|980->83|1064->141|1078->147|1139->188|1222->245|1236->251|1296->290|1367->334|1382->340|1436->373|1503->414|1531->421|1563->427|1579->434|1717->550|1747->553
                   LINES: 21->1|26->2|27->3|31->7|31->7|32->8|32->8|32->8|33->9|33->9|33->9|34->10|34->10|34->10|38->14|38->14|39->15|39->15|39->15|40->16

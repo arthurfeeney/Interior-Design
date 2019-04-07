@@ -24,20 +24,23 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 
 
 Seq[Any](format.raw/*2.1*/("""
-"""),_display_(/*3.2*/main("Play with Scala.js")/*3.28*/ {_display_(Seq[Any](format.raw/*3.30*/("""
-"""),format.raw/*4.1*/("""<h2>Play and Scala.js share a same message</h2>
+"""),_display_(/*3.2*/main("Interior Design Homepage")/*3.34*/ {_display_(Seq[Any](format.raw/*3.36*/("""
+"""),format.raw/*4.1*/("""<h2>Interior Design by Katie!</h2>
 <div class="topnav">
-  <a class="active" href="#home" id="home">Home</a>
-  <a href="#news" id="news">News</a>
-  <a href="#contact" id="contact">Contact</a>
-  <a href="#about" id="about">About</a>
+  <a class="active" href="home" id="home">Home</a>
+  <a href="news" id="news">News</a>
+  <a href="contact" id="contact">Contact</a>
+  <a href="about" id="about">About</a>
+  <a href="gallery" id="gallery">Gallery</a>
 </div>
 
-<div id ="PageContent"></div>
+<div id ="PageContent">
+	<p>A cool "mini-gallery" and a short description goes here?</p>
+</div>
 
 
 
-""")))}),format.raw/*16.2*/("""
+""")))}),format.raw/*19.2*/("""
 """))
       }
     }
@@ -54,16 +57,11 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-<<<<<<< HEAD
-                  DATE: Fri Apr 05 14:35:30 CDT 2019
-                  SOURCE: /users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/app/views/index.scala.html
-=======
-                  DATE: Fri Apr 05 11:46:06 CDT 2019
-                  SOURCE: /Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/app/views/index.scala.html
->>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
-                  HASH: b15b5e6a65cd6869cbccd1bdadcd41e0eb1e3460
-                  MATRIX: 729->1|840->19|867->21|901->47|940->49|967->50|1283->336
-                  LINES: 21->1|26->2|27->3|27->3|27->3|28->4|40->16
+                  DATE: Sun Apr 07 12:39:12 CDT 2019
+                  SOURCE: /users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/views/index.scala.html
+                  HASH: 79d4cf943a65d714f267787c927d083515ba5fbd
+                  MATRIX: 729->1|840->19|867->21|907->53|946->55|973->56|1383->436
+                  LINES: 21->1|26->2|27->3|27->3|27->3|28->4|43->19
                   -- GENERATED --
               */
           

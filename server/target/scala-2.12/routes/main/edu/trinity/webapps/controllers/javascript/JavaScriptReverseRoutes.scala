@@ -1,11 +1,6 @@
 // @GENERATOR:play-routes-compiler
-<<<<<<< HEAD
-// @SOURCE:/users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Fri Apr 05 15:05:46 CDT 2019
-=======
-// @SOURCE:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Fri Apr 05 15:12:20 CDT 2019
->>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
+// @SOURCE:/users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Sun Apr 07 12:28:10 CDT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -15,7 +10,7 @@ import _root_.controllers.Assets.Asset
 // @LINE:6
 package edu.trinity.webapps.controllers.javascript {
 
-  // @LINE:7
+  // @LINE:8
   class ReverseSiteController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +18,7 @@ package edu.trinity.webapps.controllers.javascript {
     }
 
   
-    // @LINE:9
+    // @LINE:16
     def postQuery: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.SiteController.postQuery",
       """
@@ -33,7 +28,27 @@ package edu.trinity.webapps.controllers.javascript {
       """
     )
   
-    // @LINE:7
+    // @LINE:12
+    def news: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "edu.trinity.webapps.controllers.SiteController.news",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "news"})
+        }
+      """
+    )
+  
+    // @LINE:13
+    def about: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "edu.trinity.webapps.controllers.SiteController.about",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "about"})
+        }
+      """
+    )
+  
+    // @LINE:8
     def contact: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.SiteController.contact",
       """
@@ -43,7 +58,7 @@ package edu.trinity.webapps.controllers.javascript {
       """
     )
   
-    // @LINE:8
+    // @LINE:10
     def gallery: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.SiteController.gallery",
       """
@@ -68,7 +83,11 @@ package edu.trinity.webapps.controllers.javascript {
       "edu.trinity.webapps.controllers.Application.index",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + """"})
+          }
+        
         }
       """
     )

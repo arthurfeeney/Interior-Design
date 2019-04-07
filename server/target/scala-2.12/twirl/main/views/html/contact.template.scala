@@ -29,7 +29,16 @@ object contact extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Ht
 Seq[Any](format.raw/*3.1*/("""
 """),format.raw/*5.1*/("""
 """),_display_(/*6.2*/main("Contact Me")/*6.20*/ {_display_(Seq[Any](format.raw/*6.22*/("""
-"""),format.raw/*7.1*/("""<h2> Contact Information</h2>
+
+
+"""),format.raw/*9.1*/("""<h2> Contact Information</h2>
+<div class="topnav">
+  <a class="active" href="home" id="home">Home</a>
+  <a href="news" id="news">News</a>
+  <a href="contact" id="contact">Contact</a>
+  <a href="about" id="about">About</a>
+  <a href="gallery" id="gallery">Gallery</a>
+</div>
 <p>
   Katie Lillback
 </p>
@@ -52,7 +61,7 @@ Seq[Any](format.raw/*3.1*/("""
   <br>
   <input type="submit"></input>
 </form>
-""")))}),format.raw/*30.2*/("""
+""")))}),format.raw/*39.2*/("""
 """))
       }
     }
@@ -73,19 +82,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-<<<<<<< HEAD
-                  DATE: Fri Apr 05 14:35:30 CDT 2019
-                  SOURCE: /users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/app/views/contact.scala.html
-                  HASH: 7f65d6ffa5c3adfdcd201c4cbb5c6537b2b40a32
-                  MATRIX: 787->25|909->77|953->75|980->93|1007->95|1033->113|1072->115|1099->116|1301->292|1315->298|1405->367|1433->369|1447->375|1545->452|1578->455
-                  LINES: 23->2|26->4|29->3|30->5|31->6|31->6|31->6|32->7|49->24|49->24|49->24|50->25|50->25|50->25|52->27
-=======
-                  DATE: Fri Apr 05 15:13:16 CDT 2019
-                  SOURCE: /Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/app/views/contact.scala.html
-                  HASH: 0b213062f23a261d42ddcd4acdaaeee4f9013d74
-                  MATRIX: 787->25|909->77|953->75|980->93|1007->95|1033->113|1072->115|1099->116|1524->511
-                  LINES: 23->2|26->4|29->3|30->5|31->6|31->6|31->6|32->7|55->30
->>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
+                  DATE: Sun Apr 07 12:34:07 CDT 2019
+                  SOURCE: /users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/views/contact.scala.html
+                  HASH: e78f0ac85e06d39188169fce69ad4ebda8bbaf2a
+                  MATRIX: 787->25|909->77|953->75|980->93|1007->95|1033->113|1072->115|1101->118|1770->757
+                  LINES: 23->2|26->4|29->3|30->5|31->6|31->6|31->6|34->9|64->39
                   -- GENERATED --
               */
           

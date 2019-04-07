@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-/users/alillbac/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.5.jar:/users/alillbac/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.23.jar:/users/alillbac/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.12/jars/scalajs-dom_sjs0.6_2.12-0.9.5.jar:/users/alillbac/.ivy2/cache/org.scala-js/scalajs-test-interface_2.12/jars/scalajs-test-interface_2.12-0.6.23.jar
-=======
-/Users/Nihil/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.5.jar:/Users/Nihil/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.23.jar:/Users/Nihil/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.12/jars/scalajs-dom_sjs0.6_2.12-0.9.5.jar:/Users/Nihil/.ivy2/cache/org.scala-js/scalajs-test-interface_2.12/jars/scalajs-test-interface_2.12-0.6.23.jar
->>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
+/users/afeeney/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.5.jar:/users/afeeney/.ivy2/cache/org.scala-js/scalajs-library_2.12/jars/scalajs-library_2.12-0.6.23.jar:/users/afeeney/.ivy2/cache/org.scala-js/scalajs-dom_sjs0.6_2.12/jars/scalajs-dom_sjs0.6_2.12-0.9.5.jar:/users/afeeney/.ivy2/cache/org.scala-js/scalajs-test-interface_2.12/jars/scalajs-test-interface_2.12-0.6.23.jar

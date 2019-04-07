@@ -89,37 +89,44 @@ Seq[Any](_display_(/*3.2*/main("Gallery")/*3.17*/ {_display_(Seq[Any](format.raw
 </head>
 <body>
 <h2> Gallery </h2>
+<div class="topnav">
+  <a class="active" href="home" id="home">Home</a>
+  <a href="news" id="news">News</a>
+  <a href="contact" id="contact">Contact</a>
+  <a href="about" id="about">About</a>
+  <a href="gallery" id="gallery">Gallery</a>
+</div>
 <div class="row">
-  <div class=""""),_display_(/*70.16*/routes/*70.22*/.Assets.versioned("images/325Casita.jpg")),format.raw/*70.63*/("""" alt="Casita" style="width:100%" onclick="myFunction(this);">
+  <div class=""""),_display_(/*77.16*/routes/*77.22*/.Assets.versioned("images/325Casita.jpg")),format.raw/*77.63*/("""" alt="Casita" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src=""""),_display_(/*73.16*/routes/*73.22*/.Assets.versioned("images/325Library.jpg")),format.raw/*73.64*/("""" alt="Library" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*80.16*/routes/*80.22*/.Assets.versioned("images/325Library.jpg")),format.raw/*80.64*/("""" alt="Library" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src=""""),_display_(/*76.16*/routes/*76.22*/.Assets.versioned("images/325living.jpg")),format.raw/*76.63*/("""" alt="Living Room" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*83.16*/routes/*83.22*/.Assets.versioned("images/325living.jpg")),format.raw/*83.63*/("""" alt="Living Room" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src=""""),_display_(/*79.16*/routes/*79.22*/.Assets.versioned("images/325livingWindow.jpg")),format.raw/*79.69*/("""" alt="Living Room" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*86.16*/routes/*86.22*/.Assets.versioned("images/325livingWindow.jpg")),format.raw/*86.69*/("""" alt="Living Room" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src=""""),_display_(/*82.16*/routes/*82.22*/.Assets.versioned("images/325Master.jpg")),format.raw/*82.63*/("""" alt="Master Bedroom" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*89.16*/routes/*89.22*/.Assets.versioned("images/325Master.jpg")),format.raw/*89.63*/("""" alt="Master Bedroom" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src=""""),_display_(/*85.16*/routes/*85.22*/.Assets.versioned("images/325sitting.jpg")),format.raw/*85.64*/("""" alt="Living Room" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*92.16*/routes/*92.22*/.Assets.versioned("images/325sitting.jpg")),format.raw/*92.64*/("""" alt="Living Room" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src=""""),_display_(/*88.16*/routes/*88.22*/.Assets.versioned("images/3living.jpg")),format.raw/*88.61*/("""" alt="Formal Living Room" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*95.16*/routes/*95.22*/.Assets.versioned("images/3living.jpg")),format.raw/*95.61*/("""" alt="Formal Living Room" style="width:100%" onclick="myFunction(this);">
   </div>
     <div class="column">
-    <img src=""""),_display_(/*91.16*/routes/*91.22*/.Assets.versioned("images/441living.jpg")),format.raw/*91.63*/("""" alt="Living Room" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*98.16*/routes/*98.22*/.Assets.versioned("images/441living.jpg")),format.raw/*98.63*/("""" alt="Living Room" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src=""""),_display_(/*94.16*/routes/*94.22*/.Assets.versioned("images/441master.jpg")),format.raw/*94.63*/("""" alt="Master Bedroom" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*101.16*/routes/*101.22*/.Assets.versioned("images/441master.jpg")),format.raw/*101.63*/("""" alt="Master Bedroom" style="width:100%" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src=""""),_display_(/*97.16*/routes/*97.22*/.Assets.versioned("images/441study.jpg")),format.raw/*97.62*/("""" alt="Study" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*104.16*/routes/*104.22*/.Assets.versioned("images/441study.jpg")),format.raw/*104.62*/("""" alt="Study" style="width:100%" onclick="myFunction(this);">
   </div>
-    <img src=""""),_display_(/*99.16*/routes/*99.22*/.Assets.versioned("images/bathroom325.jpg")),format.raw/*99.65*/("""" alt="Bathroom" style="width:100%" onclick="myFunction(this);">
+    <img src=""""),_display_(/*106.16*/routes/*106.22*/.Assets.versioned("images/bathroom325.jpg")),format.raw/*106.65*/("""" alt="Bathroom" style="width:100%" onclick="myFunction(this);">
   </div>
 </div>
 
@@ -130,14 +137,14 @@ Seq[Any](_display_(/*3.2*/main("Gallery")/*3.17*/ {_display_(Seq[Any](format.raw
 </div>
 
 <script>
-function myFunction(imgs) """),format.raw/*110.27*/("""{"""),format.raw/*110.28*/("""
-  """),format.raw/*111.3*/("""var expandImg = document.getElementById("expandedImg");
+function myFunction(imgs) """),format.raw/*117.27*/("""{"""),format.raw/*117.28*/("""
+  """),format.raw/*118.3*/("""var expandImg = document.getElementById("expandedImg");
   var imgText = document.getElementById("imgtext");
   expandImg.src = imgs.src;
   imgText.innerHTML = imgs.alt;
   expandImg.parentElement.style.display = "block";
-"""),format.raw/*116.1*/("""}"""),format.raw/*116.2*/("""
-"""),format.raw/*117.1*/("""</script>
+"""),format.raw/*123.1*/("""}"""),format.raw/*123.2*/("""
+"""),format.raw/*124.1*/("""</script>
 
 </body>
 """)))}))
@@ -156,11 +163,11 @@ function myFunction(imgs) """),format.raw/*110.27*/("""{"""),format.raw/*110.28*
 
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 05 15:36:15 CDT 2019
-                  SOURCE: /users/alillbac/csci3345/InteriorDesign-WebApps-S19/server/app/views/gallery.scala.html
-                  HASH: 2cf0c14f9ec00bdaf38774f457d8d674c95f1e51
-                  MATRIX: 832->26|855->41|894->43|922->45|1034->131|1061->132|1090->135|1141->159|1169->160|1198->162|1230->167|1258->168|1288->171|1348->204|1376->205|1405->207|1506->281|1535->282|1565->285|1636->329|1664->330|1693->332|1772->383|1801->384|1831->387|1893->422|1921->423|1950->425|1996->443|2025->444|2055->447|2094->459|2122->460|2151->462|2227->510|2256->511|2286->514|2359->560|2387->561|2416->563|2491->610|2520->611|2550->614|2614->651|2642->652|2671->654|2735->690|2764->691|2794->694|2906->779|2934->780|2963->782|3049->840|3078->841|3108->844|3237->946|3265->947|3293->948|3396->1024|3411->1030|3473->1071|3610->1181|3625->1187|3688->1229|3826->1340|3841->1346|3903->1387|4045->1502|4060->1508|4128->1555|4270->1670|4285->1676|4347->1717|4492->1835|4507->1841|4570->1883|4712->1998|4727->2004|4787->2043|4938->2167|4953->2173|5015->2214|5157->2329|5172->2335|5234->2376|5379->2494|5394->2500|5455->2540|5568->2626|5583->2632|5647->2675|5986->2985|6016->2986|6047->2989|6294->3208|6323->3209|6352->3210
-                  LINES: 26->3|26->3|26->3|28->5|31->8|31->8|32->9|33->10|33->10|35->12|35->12|35->12|36->13|38->15|38->15|40->17|41->18|41->18|42->19|45->22|45->22|47->24|48->25|48->25|49->26|51->28|51->28|53->30|53->30|53->30|54->31|55->32|55->32|57->34|58->35|58->35|59->36|62->39|62->39|64->41|65->42|65->42|66->43|68->45|68->45|70->47|71->48|71->48|72->49|77->54|77->54|79->56|80->57|80->57|81->58|87->64|87->64|88->65|93->70|93->70|93->70|96->73|96->73|96->73|99->76|99->76|99->76|102->79|102->79|102->79|105->82|105->82|105->82|108->85|108->85|108->85|111->88|111->88|111->88|114->91|114->91|114->91|117->94|117->94|117->94|120->97|120->97|120->97|122->99|122->99|122->99|133->110|133->110|134->111|139->116|139->116|140->117
+                  DATE: Sun Apr 07 12:34:07 CDT 2019
+                  SOURCE: /users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/views/gallery.scala.html
+                  HASH: 69344ee62c664129f1c3367a4e942a08ae639314
+                  MATRIX: 832->26|855->41|894->43|922->45|1034->131|1061->132|1090->135|1141->159|1169->160|1198->162|1230->167|1258->168|1288->171|1348->204|1376->205|1405->207|1506->281|1535->282|1565->285|1636->329|1664->330|1693->332|1772->383|1801->384|1831->387|1893->422|1921->423|1950->425|1996->443|2025->444|2055->447|2094->459|2122->460|2151->462|2227->510|2256->511|2286->514|2359->560|2387->561|2416->563|2491->610|2520->611|2550->614|2614->651|2642->652|2671->654|2735->690|2764->691|2794->694|2906->779|2934->780|2963->782|3049->840|3078->841|3108->844|3237->946|3265->947|3293->948|3640->1268|3655->1274|3717->1315|3854->1425|3869->1431|3932->1473|4070->1584|4085->1590|4147->1631|4289->1746|4304->1752|4372->1799|4514->1914|4529->1920|4591->1961|4736->2079|4751->2085|4814->2127|4956->2242|4971->2248|5031->2287|5182->2411|5197->2417|5259->2458|5402->2573|5418->2579|5481->2620|5627->2738|5643->2744|5705->2784|5819->2870|5835->2876|5900->2919|6239->3229|6269->3230|6300->3233|6547->3452|6576->3453|6605->3454
+                  LINES: 26->3|26->3|26->3|28->5|31->8|31->8|32->9|33->10|33->10|35->12|35->12|35->12|36->13|38->15|38->15|40->17|41->18|41->18|42->19|45->22|45->22|47->24|48->25|48->25|49->26|51->28|51->28|53->30|53->30|53->30|54->31|55->32|55->32|57->34|58->35|58->35|59->36|62->39|62->39|64->41|65->42|65->42|66->43|68->45|68->45|70->47|71->48|71->48|72->49|77->54|77->54|79->56|80->57|80->57|81->58|87->64|87->64|88->65|100->77|100->77|100->77|103->80|103->80|103->80|106->83|106->83|106->83|109->86|109->86|109->86|112->89|112->89|112->89|115->92|115->92|115->92|118->95|118->95|118->95|121->98|121->98|121->98|124->101|124->101|124->101|127->104|127->104|127->104|129->106|129->106|129->106|140->117|140->117|141->118|146->123|146->123|147->124
                   -- GENERATED --
               */
           
