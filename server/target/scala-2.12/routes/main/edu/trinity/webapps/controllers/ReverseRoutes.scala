@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Sun Apr 07 12:28:10 CDT 2019
+// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Sun Apr 07 13:59:01 CDT 2019
 
 import play.api.mvc.Call
 

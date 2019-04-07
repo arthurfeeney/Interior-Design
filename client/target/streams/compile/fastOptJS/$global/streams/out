@@ -1,16 +1,16 @@
-[0m[[0m[0minfo[0m] [0m[0mFast optimizing /users/afeeney/WebApp/InteriorDesign-WebApps-S19/client/target/scala-2.12/interiordesign-client-fastopt.js[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 89533 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 173366 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mBasic Linking: 268701 us[0m
+[0m[[0m[0minfo[0m] [0m[0mFast optimizing /users/cluikart/InteriorDesign-WebApps-S19/client/target/scala-2.12/interiordesign-client-fastopt.js[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 79182 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 102943 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mBasic Linking: 187024 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Batch mode: true[0m
-[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Incremental part: 60284 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Incremental part: 51870 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Optimizing 822 methods.[0m
-[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Optimizer part: 131398 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: 198610 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 22812 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 4040 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: 27878 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Optimizer part: 132718 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: 189518 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 20353 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 3539 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: 24782 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 34 -- invalidated: 41[0m
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: resued: 0 -- invalidated: 103[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter (write output): 130957 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter (write output): 92356 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mGlobal IR cache stats: reused: 0 -- invalidated: 5 -- trees read: 254[0m
