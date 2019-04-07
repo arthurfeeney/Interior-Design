@@ -34,12 +34,20 @@ Seq[Any](format.raw/*3.1*/("""
   </head>
   <body>
     <h2>About Katie and the company. Distinct from gallery, but has some images</h2>
-    <div class="topnav">
+    <div class="navbar-default">
 	  <a class="active" href="home" id="home">Home</a>
 	  <a href="news" id="news">News</a>
 	  <a href="contact" id="contact">Contact</a>
 	  <a href="about" id="about">About</a>
 	  <a href="gallery" id="gallery">Gallery</a>
+	</div>
+	
+	<div class="mz-module-about">
+	<p>Passion for home</p>
+	<p>A History of living</p>
+	<p>My name is Katie. I'm a bit Southern, North-Eastern and South-Western. I don’t think a day goes by that I am not creatively invested in home design.
+		My home design incorporates passion, love, energy, color, and excitement. Something about creating space; to spend time, come and go from, exist in, is my hearts desire. I have worked many years in different parts of the country. I am inspired by homes that are lived in as well beautiful. Our surroundings are meant to be a reflection of the things we care about. The people we care about sharing memories with. It’s not about being in or out of style. It’s about living life in a home you love.
+		I want to serve as the light you need to get there. </p>
 	</div>
   </body>
 """)))}))
@@ -58,9 +66,9 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 07 12:42:18 CDT 2019
+                  DATE: Sun Apr 07 13:26:45 CDT 2019
                   SOURCE: /users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/views/about.scala.html
-                  HASH: 3b8a3986ce8fb8eafb7de02a748d7140a49c9a9f
+                  HASH: 5f72e39667d3c2f7a2376d24e7161a0713bcdc47
                   MATRIX: 747->27|853->40|880->42|907->61|946->63|975->66|1097->162|1111->168|1172->209|1255->266|1269->272|1329->311|1399->355|1413->361|1466->394
                   LINES: 21->2|26->3|27->4|27->4|27->4|28->5|30->7|30->7|30->7|31->8|31->8|31->8|32->9|32->9|32->9
                   -- GENERATED --

@@ -32,7 +32,7 @@ Seq[Any](format.raw/*3.1*/("""
 
 
 """),format.raw/*9.1*/("""<h2> Contact Information</h2>
-<div class="topnav">
+<div class="navbar-default">
   <a class="active" href="home" id="home">Home</a>
   <a href="news" id="news">News</a>
   <a href="contact" id="contact">Contact</a>
@@ -82,10 +82,10 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 07 12:34:07 CDT 2019
+                  DATE: Sun Apr 07 13:25:30 CDT 2019
                   SOURCE: /users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/views/contact.scala.html
-                  HASH: e78f0ac85e06d39188169fce69ad4ebda8bbaf2a
-                  MATRIX: 787->25|909->77|953->75|980->93|1007->95|1033->113|1072->115|1101->118|1770->757
+                  HASH: 0c7ca30a1f7200318ca637a69a3a108aa09d8119
+                  MATRIX: 787->25|909->77|953->75|980->93|1007->95|1033->113|1072->115|1101->118|1778->765
                   LINES: 23->2|26->4|29->3|30->5|31->6|31->6|31->6|34->9|64->39
                   -- GENERATED --
               */

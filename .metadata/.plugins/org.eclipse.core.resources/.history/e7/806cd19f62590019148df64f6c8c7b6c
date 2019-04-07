@@ -2,7 +2,7 @@
 
 @main("Interior Design Homepage") {
 <h2>Interior Design by Katie!</h2>
-<div class="navbar-default">
+<div class="topnav">
   <a class="active" href="home" id="home">Home</a>
   <a href="news" id="news">News</a>
   <a href="contact" id="contact">Contact</a>

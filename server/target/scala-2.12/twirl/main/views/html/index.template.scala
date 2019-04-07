@@ -26,7 +26,7 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 Seq[Any](format.raw/*2.1*/("""
 """),_display_(/*3.2*/main("Interior Design Homepage")/*3.34*/ {_display_(Seq[Any](format.raw/*3.36*/("""
 """),format.raw/*4.1*/("""<h2>Interior Design by Katie!</h2>
-<div class="topnav">
+<div class="navbar-default">
   <a class="active" href="home" id="home">Home</a>
   <a href="news" id="news">News</a>
   <a href="contact" id="contact">Contact</a>
@@ -57,10 +57,10 @@ Seq[Any](format.raw/*2.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 07 12:39:12 CDT 2019
+                  DATE: Sun Apr 07 13:26:14 CDT 2019
                   SOURCE: /users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/views/index.scala.html
-                  HASH: 79d4cf943a65d714f267787c927d083515ba5fbd
-                  MATRIX: 729->1|840->19|867->21|907->53|946->55|973->56|1383->436
+                  HASH: 0f1dabfbdd119aea7a8d3e9d7aac2dcefbf8bf29
+                  MATRIX: 729->1|840->19|867->21|907->53|946->55|973->56|1391->444
                   LINES: 21->1|26->2|27->3|27->3|27->3|28->4|43->19
                   -- GENERATED --
               */
