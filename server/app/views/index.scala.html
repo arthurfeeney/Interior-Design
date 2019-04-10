@@ -1,15 +1,19 @@
 @(message: String)
 
-@main("Play with Scala.js") {
-<h2>Play and Scala.js share a same message</h2>
-<div class="topnav">
-  <a class="active" href="#home" id="home">Home</a>
-  <a href="#news" id="news">News</a>
-  <a href="#contact" id="contact">Contact</a>
-  <a href="#about" id="about">About</a>
+@main("Interior Design Homepage") {
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+<h2>Interior Design by Katie!</h2>
+<div class="navbar-default">
+  <a class="active" href="home" id="home">Home</a>
+  <a href="news" id="news">News</a>
+  <a href="contact" id="contact">Contact</a>
+  <a href="about" id="about">About</a>
+  <a href="gallery" id="gallery">Gallery</a>
 </div>
 
-<div id ="PageContent"></div>
+<div id ="PageContent">
+	<p > A cool "mini-gallery" and a short description goes here?</p>
+</div>
 
 
 

@@ -1,5 +1,5 @@
 <projectDescription>
-  <name>CSCI3345-S19-Server</name>
+  <name>InteriorDesign-Server</name>
   <buildSpec>
     <buildCommand>
       <name>org.scala-ide.sdt.core.scalabuilder</name>

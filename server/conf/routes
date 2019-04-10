@@ -4,7 +4,14 @@
 
 # Home page
 GET        /                             edu.trinity.webapps.controllers.Application.index
+GET			/home						 edu.trinity.webapps.controllers.Application.index
 GET        /contact                      edu.trinity.webapps.controllers.SiteController.contact
+
+GET		   /gallery						 edu.trinity.webapps.controllers.SiteController.gallery
+
+GET 		/news						edu.trinity.webapps.controllers.SiteController.news
+GET			/about						edu.trinity.webapps.controllers.SiteController.about
+
 + nocsrf
 POST       /query                      edu.trinity.webapps.controllers.SiteController.postQuery
 # Prefix must match `play.assets.urlPrefix`

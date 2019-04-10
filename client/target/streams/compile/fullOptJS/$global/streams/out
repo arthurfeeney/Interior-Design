@@ -1,19 +1,19 @@
-[0m[[0m[0minfo[0m] [0m[0mFull optimizing /users/npatel5/workspace/InteriorDesign-WebApps-S19/client/target/scala-2.12/csci3345-s19-client-opt.js[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 56593 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 104690 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mBasic Linking: 166960 us[0m
+[0m[[0m[0minfo[0m] [0m[0mFull optimizing /users/afeeney/WebApp/InteriorDesign-WebApps-S19/client/target/scala-2.12/interiordesign-client-opt.js[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Compute reachability: 63694 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mLinker: Assemble LinkedClasses: 109840 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mBasic Linking: 178382 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Batch mode: true[0m
-[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Incremental part: 46265 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Incremental part: 46944 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Optimizing 821 methods.[0m
-[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Optimizer part: 124056 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: 176770 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 28079 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 4655 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mRefiner: 33885 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: Optimizer part: 136721 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mInc. optimizer: 190218 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Compute reachability: 27330 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: Assemble LinkedClasses: 3645 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mRefiner: 32162 us[0m
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: Class tree cache stats: reused: 30 -- invalidated: 37[0m
 [0m[[0m[0mdebug[0m] [0m[0mEmitter: Method tree cache stats: resued: 0 -- invalidated: 98[0m
-[0m[[0m[0mdebug[0m] [0m[0mEmitter (create Closure trees): 117013 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mEmitter (create Closure trees): 99243 us[0m
 [0m[[0m[0minfo[0m] [0m[0mClosure: 0 error(s), 0 warning(s)[0m
-[0m[[0m[0mdebug[0m] [0m[0mClosure: Compiler pass: 763515 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mClosure: Write result: 73791 us[0m
-[0m[[0m[0mdebug[0m] [0m[0mGlobal IR cache stats: reused: 0 -- invalidated: 5 -- trees read: 253[0m
+[0m[[0m[0mdebug[0m] [0m[0mClosure: Compiler pass: 789531 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mClosure: Write result: 69429 us[0m
+[0m[[0m[0mdebug[0m] [0m[0mGlobal IR cache stats: reused: 5 -- invalidated: 0 -- trees read: 253[0m

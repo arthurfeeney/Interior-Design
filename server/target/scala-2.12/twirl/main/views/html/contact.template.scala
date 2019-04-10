@@ -29,7 +29,16 @@ object contact extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Ht
 Seq[Any](format.raw/*3.1*/("""
 """),format.raw/*5.1*/("""
 """),_display_(/*6.2*/main("Contact Me")/*6.20*/ {_display_(Seq[Any](format.raw/*6.22*/("""
-"""),format.raw/*7.1*/("""<h2> Contact Information</h2>
+
+
+"""),format.raw/*9.1*/("""<h2> Contact Information</h2>
+<div class="navbar-default">
+  <a class="active" href="home" id="home">Home</a>
+  <a href="news" id="news">News</a>
+  <a href="contact" id="contact">Contact</a>
+  <a href="about" id="about">About</a>
+  <a href="gallery" id="gallery">Gallery</a>
+</div>
 <p>
   Katie Lillback
 </p>
@@ -52,7 +61,7 @@ Seq[Any](format.raw/*3.1*/("""
   <br>
   <input type="submit"></input>
 </form>
-""")))}),format.raw/*30.2*/("""
+""")))}),format.raw/*39.2*/("""
 """))
       }
     }
@@ -73,11 +82,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Apr 05 15:13:16 CDT 2019
-                  SOURCE: /Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/app/views/contact.scala.html
-                  HASH: 0b213062f23a261d42ddcd4acdaaeee4f9013d74
-                  MATRIX: 787->25|909->77|953->75|980->93|1007->95|1033->113|1072->115|1099->116|1524->511
-                  LINES: 23->2|26->4|29->3|30->5|31->6|31->6|31->6|32->7|55->30
+                  DATE: Sun Apr 07 13:59:02 CDT 2019
+                  SOURCE: /users/cluikart/InteriorDesign-WebApps-S19/server/app/views/contact.scala.html
+                  HASH: 0c7ca30a1f7200318ca637a69a3a108aa09d8119
+                  MATRIX: 787->25|909->77|953->75|980->93|1007->95|1033->113|1072->115|1101->118|1778->765
+                  LINES: 23->2|26->4|29->3|30->5|31->6|31->6|31->6|34->9|64->39
                   -- GENERATED --
               */
           
