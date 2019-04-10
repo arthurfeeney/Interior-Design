@@ -1,10 +1,10 @@
-[0m[[0m[33mwarn[0m] [0m[0m/users/cluikart/InteriorDesign-WebApps-S19/server/app/edu/trinity/webapps/controllers/SiteController.scala:39:23: Adaptation of argument list by inserting () is deprecated: leaky (Object-receiving) target makes this especially dangerous.[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/app/edu/trinity/webapps/controllers/SiteController.scala:39:23: Adaptation of argument list by inserting () is deprecated: leaky (Object-receiving) target makes this especially dangerous.[0m
 [0m[[0m[33mwarn[0m] [0m[0m        signature: news.apply(param: Any): play.twirl.api.HtmlFormat.Appendable[0m
 [0m[[0m[33mwarn[0m] [0m[0m  given arguments: <none>[0m
 [0m[[0m[33mwarn[0m] [0m[0m after adaptation: news((): Unit)[0m
 [0m[[0m[33mwarn[0m] [0m[0m    Ok(views.html.news())[0m
 [0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/users/cluikart/InteriorDesign-WebApps-S19/server/app/edu/trinity/webapps/controllers/SiteController.scala:44:24: Adaptation of argument list by inserting () is deprecated: leaky (Object-receiving) target makes this especially dangerous.[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/app/edu/trinity/webapps/controllers/SiteController.scala:44:24: Adaptation of argument list by inserting () is deprecated: leaky (Object-receiving) target makes this especially dangerous.[0m
 [0m[[0m[33mwarn[0m] [0m[0m        signature: about.apply(param: Any): play.twirl.api.HtmlFormat.Appendable[0m
 [0m[[0m[33mwarn[0m] [0m[0m  given arguments: <none>[0m
 [0m[[0m[33mwarn[0m] [0m[0m after adaptation: about((): Unit)[0m
