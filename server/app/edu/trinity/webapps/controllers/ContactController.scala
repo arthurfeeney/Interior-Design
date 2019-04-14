@@ -24,7 +24,7 @@ class ContactController @Inject() (cc: MessagesControllerComponents) extends Mes
     val postBody = request.body.asFormUrlEncoded
     val mailer = Mailer(session)
     postBody.map {args =>
-      val sender = args("email").head
+      val sender = args("address").head
       val q = args("query").head
       val content = new Content().text(q)
       val msg = Message(
