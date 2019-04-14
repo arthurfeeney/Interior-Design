@@ -4,7 +4,7 @@
 		module="interiordesign-shared$sources_javadoc"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20190407114417"
+		publication="20190414131715"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

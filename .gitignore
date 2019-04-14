@@ -14,3 +14,17 @@ server.pid
 *.eml
 /dist/
 .cache
+/client/.classpath
+/client/.settings
+/client/target
+/server/.classpath
+/server/target
+/server/.settings
+/shared/.js/.classpath
+/shared/.js/.project
+/shared/.js/.settings
+/shared/.js/target
+/shared/.jvm/.classpath
+/shared/.jvm/.project
+/shared/.jvm/.settings
+/shared/.jvm/target

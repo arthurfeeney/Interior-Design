@@ -60,8 +60,8 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 10 15:54:11 CDT 2019
-                  SOURCE: /Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/app/views/news.scala.html
+                  DATE: Sun Apr 14 13:17:04 CDT 2019
+                  SOURCE: /users/npatel5/workspace/InteriorDesign-WebApps-S19/server/app/views/news.scala.html
                   HASH: 20f1c7fa35bd257a75bf6e67f84b7cd332f8babd
                   MATRIX: 745->26|851->39|878->41|917->72|956->74|984->76|1104->170|1118->176|1179->217|1261->273|1275->279|1334->318|1404->361|1419->367|1473->400
                   LINES: 21->2|26->3|27->4|27->4|27->4|29->6|31->8|31->8|31->8|32->9|32->9|32->9|33->10|33->10|33->10
