@@ -12,7 +12,8 @@ lazy val server = (project in file("server")).settings(commonSettings).settings(
     guice,
     specs2 % Test,
     "com.typesafe.play" %% "play-mailer" % "6.0.1",
-    "com.typesafe.play" %% "play-mailer-guice" % "6.0.1"
+    "com.typesafe.play" %% "play-mailer-guice" % "6.0.1",
+    "com.github.jurajburian" %% "mailer" % "1.2.3" withSources
   ),
   // Compile the project before generating Eclipse files, so that generated .scala or .class files for views and routes are present
   EclipseKeys.preTasks := Seq(compile in Compile)
