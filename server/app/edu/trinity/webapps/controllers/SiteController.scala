@@ -6,11 +6,11 @@ import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
 
-case class UserQuery(address: String, query: String)
 
 @Singleton
 class SiteController @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
 
+<<<<<<< HEAD
   def login = Action { implicit request =>
     Ok(views.html.index("hi"))
   }
@@ -45,19 +45,26 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
       "query" -> text
     )(UserQuery.apply)(UserQuery.unapply)
   )
+=======
+>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
 
-  def contact = Action { implicit request =>
-    Ok(views.html.contact(queryForm))
-  }
 
   def gallery = Action {
     Ok(views.html.gallery())
   }
     
+<<<<<<< HEAD
   def postQuery = Action {implicit request =>
     Redirect(routes.SiteController.contact).withNewSession
   }
 
+=======
+
+//=======
+
+//>>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
+  
+>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
   // go to news page
   def news = Action { implicit request =>
     Ok(views.html.news())

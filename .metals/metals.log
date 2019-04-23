@@ -1,42 +1,70 @@
-[33mwarn [0m Unable to automatically connect to build server.
-[34minfo [0m running 'sbt metalsEnable bloopInstall'
-[34minfo [0m [info] Loading settings for project global-plugins from metals.sbt ...
-[34minfo [0m [info] Loading global plugins from /Users/Nihil/.sbt/1.0/plugins
-[34minfo [0m [info] Updating ProjectRef(uri("file:/Users/Nihil/.sbt/1.0/plugins/"), "global-plugins")...
-[34minfo [0m [info] Done updating.
-[34minfo [0m [info] Loading settings for project interiordesign-webapps-s19-build from plugins.sbt ...
-[34minfo [0m [info] Loading project definition from /Users/Nihil/workspace/InteriorDesign-WebApps-S19/project
-[34minfo [0m [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
-[34minfo [0m [success] Total time: 19 s, completed Apr 5, 2019, 11:48:38 AM
-[34minfo [0m [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
-[34minfo [0m [info] Loading settings for project interiordesign-webapps-s19 from build.sbt ...
-[34minfo [0m [info] Set current project to interiordesign-webapps-s19 (in build file:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/)
-[34minfo [0m [info] Set current project to CSCI3345-S19-Server (in build file:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/)
-[34minfo [0m [info] Set current project to CSCI3345-S19-Server (in build file:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/)
-[34minfo [0m [info] semanticdb-scalac is enabled
-[34minfo [0m [info] Set current project to CSCI3345-S19-Server (in build file:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/)
-[34minfo [0m [info] Updating interiordesign-webapps-s19...
-[34minfo [0m [info] Updating sharedJVM...
-[34minfo [0m [info] Done updating.
-[34minfo [0m [info] Updating sharedJS...
-[34minfo [0m [info] Done updating.
-[34minfo [0m [info] Done updating.
-[34minfo [0m [info] Updating client...
-[34minfo [0m [info] Done updating.
-[34minfo [0m [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
-[34minfo [0m [success] Generated .bloop/interiordesign-webapps-s19-test.json
-[34minfo [0m [success] Generated .bloop/sharedJVM.json
-[34minfo [0m [success] Generated .bloop/interiordesign-webapps-s19.json
-[34minfo [0m [success] Generated .bloop/sharedJVM-test.json
-[34minfo [0m [success] Generated .bloop/sharedJS-test.json
-[34minfo [0m [success] Generated .bloop/sharedJS.json
-[34minfo [0m [success] Generated .bloop/client.json
-[34minfo [0m [success] Generated .bloop/client-test.json
-[34minfo [0m [info] Updating ...
-[34minfo [0m [info] Done updating.
-[34minfo [0m [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
-[34minfo [0m [success] Generated .bloop/server.json
-[34minfo [0m [success] Generated .bloop/server-test.json
-[34minfo [0m [success] Total time: 16 s, completed Apr 5, 2019, 11:49:26 AM
-[34minfo [0m sbt exit: 0
-[34minfo [0m time: Ran 'sbt bloopInstall' in 2m7s
+Apr 10, 2019 3:54:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "workspace/didChangeWatchedFiles",
+  "params": {
+    "changes": [
+      {
+        "uri": "file:///Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/target/scala-2.12/twirl/main/views/html/about.template.scala",
+        "type": 3
+      },
+      {
+        "uri": "file:///Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/target/scala-2.12/twirl/main/views/html/contact.template.scala",
+        "type": 3
+      },
+      {
+        "uri": "file:///Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/target/scala-2.12/twirl/main/views/html/gallery.template.scala",
+        "type": 3
+      },
+      {
+        "uri": "file:///Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/target/scala-2.12/twirl/main/views/html/index.template.scala",
+        "type": 3
+      },
+      {
+        "uri": "file:///Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/target/scala-2.12/twirl/main/views/html/main.template.scala",
+        "type": 3
+      },
+      {
+        "uri": "file:///Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/target/scala-2.12/twirl/main/views/html/news.template.scala",
+        "type": 3
+      }
+    ]
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:192)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:99)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/target/scala-2.12/twirl/main/views/html/about.template.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:215)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$onChange$1(MetalsLanguageServer.scala:459)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$onChange$1$adapted(MetalsLanguageServer.scala:458)
+	at scala.collection.immutable.Stream.foreach(Stream.scala:533)
+	at scala.meta.internal.metals.MetalsLanguageServer.onChange(MetalsLanguageServer.scala:458)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChangeWatchedFiles(MetalsLanguageServer.scala:454)
+	... 16 more
+

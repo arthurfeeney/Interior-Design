@@ -78,6 +78,7 @@ project/boot/
 project/plugins/project/
 .history
 .cache
+<<<<<<< HEAD
 .lib/
 #
 # ### Scala ###
@@ -172,3 +173,19 @@ Directories.html#configuring-version-control
 
 
 #
+=======
+/client/.classpath
+/client/.settings
+/client/target
+/server/.classpath
+/server/target
+/server/.settings
+/shared/.js/.classpath
+/shared/.js/.project
+/shared/.js/.settings
+/shared/.js/target
+/shared/.jvm/.classpath
+/shared/.jvm/.project
+/shared/.jvm/.settings
+/shared/.jvm/target
+>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
