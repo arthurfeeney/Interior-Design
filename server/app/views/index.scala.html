@@ -1,7 +1,9 @@
+
 @(message: String)
 
 @main("Interior Design Homepage") {
 <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+
 <h2>Interior Design by Katie!</h2>
 <div class="navbar-default">
   <a class="active" href="home" id="home">Home</a>
@@ -11,9 +13,25 @@
   <a href="gallery" id="gallery">Gallery</a>
 </div>
 
-<div id ="PageContent">
+<div id="PageContent">
 	<p > A cool "mini-gallery" and a short description goes here?</p>
 </div>
+
+
+<form action="loginUser" method="GET">
+	<span>username: </span><input type="text" name="name"></input>
+	</br>
+	<span>password: </span>	<input type="text" name="pw"></input>
+	</br>
+	<input type="submit" 	value="login" name="login"></input>
+</form>
+
+<p> Hello, create an account here </p>
+<form action="addUser" method="GET">
+		<input type="text" name="name"></input>
+		<input type="text" name="pw"></input>
+		<input type="submit" value="create" name="createAccount"></input>
+</form>
 
 
 

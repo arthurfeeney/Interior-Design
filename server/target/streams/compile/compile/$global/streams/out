@@ -1,13 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0m/users/cluikart/InteriorDesign-WebApps-S19/server/app/edu/trinity/webapps/controllers/SiteController.scala:39:23: Adaptation of argument list by inserting () is deprecated: leaky (Object-receiving) target makes this especially dangerous.[0m
-[0m[[0m[33mwarn[0m] [0m[0m        signature: news.apply(param: Any): play.twirl.api.HtmlFormat.Appendable[0m
-[0m[[0m[33mwarn[0m] [0m[0m  given arguments: <none>[0m
-[0m[[0m[33mwarn[0m] [0m[0m after adaptation: news((): Unit)[0m
-[0m[[0m[33mwarn[0m] [0m[0m    Ok(views.html.news())[0m
-[0m[[0m[33mwarn[0m] [0m[0m                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/users/cluikart/InteriorDesign-WebApps-S19/server/app/edu/trinity/webapps/controllers/SiteController.scala:44:24: Adaptation of argument list by inserting () is deprecated: leaky (Object-receiving) target makes this especially dangerous.[0m
-[0m[[0m[33mwarn[0m] [0m[0m        signature: about.apply(param: Any): play.twirl.api.HtmlFormat.Appendable[0m
-[0m[[0m[33mwarn[0m] [0m[0m  given arguments: <none>[0m
-[0m[[0m[33mwarn[0m] [0m[0m after adaptation: about((): Unit)[0m
-[0m[[0m[33mwarn[0m] [0m[0m    Ok(views.html.about())[0m
-[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[31merror[0m] [0m[0m/users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/app/edu/trinity/webapps/controllers/Application.scala:1:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mxpackage edu.trinity.webapps.controllers[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

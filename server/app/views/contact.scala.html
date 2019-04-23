@@ -1,12 +1,17 @@
 @* Contact Form File *@
-@(queryForm: Form[_])(implicit messages: Messages)
+@(queryForm: Form[_], name:Option[String])(implicit messages: Messages)
 
 @import helper._
 
 @main("Contact Me") {
 
+if(name != None) {
+	<h2>Hello, @name.getOrElse("not logged in") Contact me!</h2>
+}
+else {
+	<h2> Contact Information</h2>
+}
 
-<h2> Contact Information</h2>
 <div class="navbar-default">
   <a class="active" href="home" id="home">Home</a>
   <a href="news" id="news">News</a>
