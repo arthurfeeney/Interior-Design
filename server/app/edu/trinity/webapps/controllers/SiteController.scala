@@ -10,15 +10,15 @@ import play.api.data.Forms._
 @Singleton
 class SiteController @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
   def login = Action { implicit request =>
     Ok(views.html.index("hi"))
   }
   
   def loginUser(name:String, pw:String) = Action { implicit request =>
     if(models.UserModel.checkPassword(name, pw)) {
-      Redirect(routes.SiteController.contact).
-        withSession("username" -> name)
+      //Redirect(routes.SiteController.contact).
+        //withSession("username" -> name)
     }
     else {
       Redirect(routes.Application.index).withNewSession    
@@ -29,12 +29,12 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
     // check if the name is already taken or is invalid -- Don't create account!
     if(models.UserModel.checkName(name) || name == "" || pw == "") {
       println("Invalid name/password (taken or empty string)")
-      Redirect(routes.SiteController.contact).withNewSession
+      //Redirect(routes.SiteController.contact).withNewSession
     }
     else {
       models.UserModel.addUser(name, pw)
-      Redirect(routes.SiteController.contact).
-        withSession("username" -> name)
+      //Redirect(routes.SiteController.contact).
+        //withSession("username" -> name)
     }
   }
   
@@ -45,26 +45,26 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
       "query" -> text
     )(UserQuery.apply)(UserQuery.unapply)
   )
-=======
->>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
+//=======
+//>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
 
 
   def gallery = Action {
     Ok(views.html.gallery())
   }
     
-<<<<<<< HEAD
+//<<<<<<< HEAD
   def postQuery = Action {implicit request =>
-    Redirect(routes.SiteController.contact).withNewSession
+    //Redirect(routes.SiteController.contact).withNewSession
   }
 
-=======
+//=======
 
 //=======
 
 //>>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
   
->>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
+//>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
   // go to news page
   def news = Action { implicit request =>
     Ok(views.html.news())

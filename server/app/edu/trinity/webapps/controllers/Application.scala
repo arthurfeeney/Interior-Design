@@ -1,4 +1,4 @@
-xpackage edu.trinity.webapps.controllers
+package edu.trinity.webapps.controllers
 
 import javax.inject._
 

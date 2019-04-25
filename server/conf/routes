@@ -3,19 +3,19 @@
 # ~~~~
 
 # Home page
-<<<<<<< HEAD
-GET        	/                           edu.trinity.webapps.controllers.Application.index
-GET			/home						edu.trinity.webapps.controllers.Application.index
-=======
+#<<<<<<< HEAD
+#GET        	/                           edu.trinity.webapps.controllers.Application.index
+#GET			/home						edu.trinity.webapps.controllers.Application.index
+#=======
 GET        /                             edu.trinity.webapps.controllers.Application.index
 GET			/home						 edu.trinity.webapps.controllers.Application.index
-GET        /contact                      edu.trinity.webapps.controllers.ContactController.contact
->>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
+#GET        /contact                      edu.trinity.webapps.controllers.ContactController.contact
+#>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
 
 GET			/loginUser					edu.trinity.webapps.controllers.SiteController.loginUser(name, pw)
 GET 		/addUser 					edu.trinity.webapps.controllers.SiteController.addUser(name, pw)
 
-GET        	/contact                    edu.trinity.webapps.controllers.SiteController.contact
+#GET        	/contact                    edu.trinity.webapps.controllers.SiteController.contact
 
 GET		   	/gallery					edu.trinity.webapps.controllers.SiteController.gallery
 
@@ -26,11 +26,11 @@ GET			/about						edu.trinity.webapps.controllers.SiteController.about
 
 
 + nocsrf
-<<<<<<< HEAD
+#<<<<<<< HEAD
 POST       	/query                      edu.trinity.webapps.controllers.SiteController.postQuery
-=======
-POST       /query                      edu.trinity.webapps.controllers.ContactController.postQuery
->>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
+#=======
+#POST       /query                      edu.trinity.webapps.controllers.ContactController.postQuery
+#>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
 # Prefix must match `play.assets.urlPrefix`
 GET        	/assets/*file               controllers.Assets.at(file)
 GET        	/versionedAssets/*file      controllers.Assets.versioned(path="/public", file: Asset)

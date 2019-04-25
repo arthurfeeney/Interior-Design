@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Sun Apr 14 13:44:48 CDT 2019
+// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Thu Apr 25 16:01:41 CDT 2019
 
 package edu.trinity.webapps.controllers;
 

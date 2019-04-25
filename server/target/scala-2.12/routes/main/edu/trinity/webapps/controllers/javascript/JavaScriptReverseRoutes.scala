@@ -1,16 +1,16 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/afeeney/WebApp/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Sun Apr 14 13:44:48 CDT 2019
+// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Thu Apr 25 16:01:41 CDT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
 
 import _root_.controllers.Assets.Asset
 
-// @LINE:6
+// @LINE:10
 package edu.trinity.webapps.controllers.javascript {
 
-  // @LINE:9
+  // @LINE:15
   class ReverseSiteController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -18,7 +18,7 @@ package edu.trinity.webapps.controllers.javascript {
     }
 
   
-    // @LINE:23
+    // @LINE:30
     def postQuery: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.SiteController.postQuery",
       """
@@ -28,7 +28,7 @@ package edu.trinity.webapps.controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:22
     def news: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.SiteController.news",
       """
@@ -38,7 +38,7 @@ package edu.trinity.webapps.controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:23
     def about: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.SiteController.about",
       """
@@ -48,7 +48,7 @@ package edu.trinity.webapps.controllers.javascript {
       """
     )
   
-    // @LINE:10
+    // @LINE:16
     def addUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.SiteController.addUser",
       """
@@ -58,7 +58,7 @@ package edu.trinity.webapps.controllers.javascript {
       """
     )
   
-    // @LINE:9
+    // @LINE:15
     def loginUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.SiteController.loginUser",
       """
@@ -68,17 +68,7 @@ package edu.trinity.webapps.controllers.javascript {
       """
     )
   
-    // @LINE:12
-    def contact: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "edu.trinity.webapps.controllers.SiteController.contact",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "contact"})
-        }
-      """
-    )
-  
-    // @LINE:14
+    // @LINE:20
     def gallery: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.SiteController.gallery",
       """
@@ -90,7 +80,7 @@ package edu.trinity.webapps.controllers.javascript {
   
   }
 
-  // @LINE:6
+  // @LINE:10
   class ReverseApplication(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -98,7 +88,7 @@ package edu.trinity.webapps.controllers.javascript {
     }
 
   
-    // @LINE:6
+    // @LINE:10
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "edu.trinity.webapps.controllers.Application.index",
       """
