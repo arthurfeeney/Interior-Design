@@ -24,7 +24,7 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
 
 //<<<<<<< HEAD
   def gallery = Action {
-    Ok(views.html.gallery())
+    Ok(views.html.anotherGallery())
   }
     
 

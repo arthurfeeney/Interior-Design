@@ -7,6 +7,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -18,7 +19,8 @@ body {
 
 .header {
   text-align: center;
-  padding: 32px;
+  padding: 70px;
+  top: 500px;
 }
 
 .row {
@@ -117,9 +119,116 @@ body {
   font-size: 35px;
   cursor: pointer;
 }
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+  width: 100%;
+}
+
+/* Links inside the navbar */
+.navbar h2 {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown h2 */
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar h2:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+
+/* Links inside the dropdown */
+.dropdown-content h2 {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content h2:hover {
+  background-color: #ddd;
+  
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  
+}
+
+.dropdown {
+	color: red;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  
+  z-index: 5;
+}
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
 </style>
 </head>
 <body>
+
+<div class="navbar sticky">
+	<h2>Swap</h2>
+	<h2>Delete</h2>
+	<h2>Add</h2>
+	<h2>Modify</h2>
+	<div class="dropdown">
+		<button class="dropbtn">Filter
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class = "dropdown-content sticky">
+			<h2 class="filter">by ID</h2>
+			<h2 class="filter">by Tag</h2>
+			<h2 class="filter">by Date</h2>
+		</div>
+	</div>
+</div>
 
 <!-- Header -->
 <div class="header" id="myHeader">
