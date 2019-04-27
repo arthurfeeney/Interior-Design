@@ -2,7 +2,7 @@ package models
 
 import scala.collection.mutable
 
-case class User(name: String, pw: String)
+case class User(id: Int, name: String, username: String, pw: String, email: String,phone: Int)
 
 object UserModel {
   var users = mutable.Map[String, String]()                    // Username -> password
