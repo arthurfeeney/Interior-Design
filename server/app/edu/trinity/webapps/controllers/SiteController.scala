@@ -14,17 +14,17 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
   def login = Action { implicit request =>
     Ok(views.html.index("hi"))
   }
-  
+
   def loginUser(name:String, pw:String) = Action { implicit request =>
     if(models.UserModel.checkPassword(name, pw)) {
-      //Redirect(routes.SiteController.contact).
-        //withSession("username" -> name)
+      Redirect(routes.SiteController.contact).
+        withSession("username" -> name)
     }
     else {
-      Redirect(routes.Application.index).withNewSession    
+      Redirect(routes.Application.index).withNewSession
     }
   }
-  
+
   def addUser(name:String, pw:String) = Action { implicit request =>
     // check if the name is already taken or is invalid -- Don't create account!
     if(models.UserModel.checkName(name) || name == "" || pw == "") {
@@ -33,12 +33,12 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
     }
     else {
       models.UserModel.addUser(name, pw)
-      //Redirect(routes.SiteController.contact).
-        //withSession("username" -> name)
+      Redirect(routes.SiteController.contact).
+        withSession("username" -> name)
     }
   }
-  
-  
+
+
   val queryForm = Form(
     mapping(
       "address" -> email,
@@ -52,10 +52,10 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
   def gallery = Action {
     Ok(views.html.gallery())
   }
-    
+
 //<<<<<<< HEAD
   def postQuery = Action {implicit request =>
-    //Redirect(routes.SiteController.contact).withNewSession
+    Redirect(routes.SiteController.contact).withNewSession
   }
 
 //=======
@@ -63,13 +63,13 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
 //=======
 
 //>>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
-  
+
 //>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
   // go to news page
   def news = Action { implicit request =>
     Ok(views.html.news())
   }
-  
+
   // go to the "about" page
   def about = Action { implicit request =>
     Ok(views.html.about())
