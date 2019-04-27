@@ -17,7 +17,7 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
 
   def loginUser(name:String, pw:String) = Action { implicit request =>
     if(models.UserModel.checkPassword(name, pw)) {
-      Redirect(routes.SiteController.contact).
+      Redirect(routes.ContactController.contact).
         withSession("username" -> name)
     }
     else {
@@ -29,11 +29,11 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
     // check if the name is already taken or is invalid -- Don't create account!
     if(models.UserModel.checkName(name) || name == "" || pw == "") {
       println("Invalid name/password (taken or empty string)")
-      Redirect(routes.SiteController.contact).withNewSession
+      Redirect(routes.ContactController.contact).withNewSession
     }
     else {
       models.UserModel.addUser(name, pw)
-      Redirect(routes.SiteController.contact).
+      Redirect(routes.ContactController.contact).
         withSession("username" -> name)
     }
   }
@@ -55,7 +55,7 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
 
 //<<<<<<< HEAD
   def postQuery = Action {implicit request =>
-    Redirect(routes.SiteController.contact).withNewSession
+    Redirect(routes.ContactController.contact).withNewSession
   }
 
 //=======
