@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Thu Apr 25 16:01:41 CDT 2019
+// @SOURCE:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Sat Apr 27 12:03:23 CDT 2019
 
 
 package router {

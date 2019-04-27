@@ -37,14 +37,6 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
         withSession("username" -> name)
     }
   }
-
-
-  val queryForm = Form(
-    mapping(
-      "address" -> email,
-      "query" -> text
-    )(UserQuery.apply)(UserQuery.unapply)
-  )
 //=======
 //>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
 

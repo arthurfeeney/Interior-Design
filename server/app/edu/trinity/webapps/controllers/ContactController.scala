@@ -8,19 +8,21 @@ import javax.mail.internet.InternetAddress
 case class UserQuery(address: String, query: String)
 
 @Singleton
-class ContactController @Inject() (cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
+class ContactController @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
   val session = (SessionFactory() + (SmtpAddress("smtp.gmail.com", 587))).session()
+
   val queryForm = Form(
     mapping(
       "address" -> email,
       "query" -> text
     )(UserQuery.apply)(UserQuery.unapply)
   )
-//  def contact = Action { implicit request =>
-//    Ok(views.html.contact(queryForm))
-//    
-//  }
-  
+ def contact = Action { implicit request =>
+    Ok(views.html.about())
+
+  }
+}
+
 //  def postQuery = Action {implicit request =>
 //    val postBody = request.body.asFormUrlEncoded
 //    val mailer = Mailer(session)
@@ -43,6 +45,3 @@ class ContactController @Inject() (cc: MessagesControllerComponents) extends Mes
 //      }
 //    }.getOrElse(Redirect(routes.ContactController.contact()))
 //  }
-  
-  
-}

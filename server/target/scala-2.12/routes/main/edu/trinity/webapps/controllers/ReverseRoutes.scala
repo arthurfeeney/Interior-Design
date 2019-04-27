@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Thu Apr 25 16:01:41 CDT 2019
+// @SOURCE:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Sat Apr 27 12:03:23 CDT 2019
 
 import play.api.mvc.Call
 
@@ -51,6 +51,21 @@ package edu.trinity.webapps.controllers {
     def gallery(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "gallery")
+    }
+  
+  }
+
+  // @LINE:18
+  class ReverseContactController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:18
+    def contact(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "contact")
     }
   
   }

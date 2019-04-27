@@ -4,7 +4,7 @@
 		module="interiordesign-server_2.12"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20190425154443"
+		publication="20190427120324"
 	>
 		<description>
 		InteriorDesign-Server
@@ -55,6 +55,9 @@
 		<dependency org="com.vmunier" name="scalajs-scripts_2.12" rev="1.1.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-guice_2.12" rev="2.7.0" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-specs2_2.12" rev="2.7.0" conf="test->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-slick_2.12" rev="4.0.0" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.slick" name="slick-codegen_2.12" rev="3.3.0" conf="compile->default(compile)"/>
+		<dependency org="mysql" name="mysql-connector-java" rev="6.0.6" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-mailer_2.12" rev="6.0.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-mailer-guice_2.12" rev="6.0.1" conf="compile->default(compile)"/>
 		<dependency org="com.github.jurajburian" name="mailer_2.12" rev="1.2.3" conf="compile->default(compile)">

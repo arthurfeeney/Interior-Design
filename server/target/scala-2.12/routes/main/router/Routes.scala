@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/users/cluikart/InteriorDesign-WebApps-S19/server/conf/routes
-// @DATE:Thu Apr 25 16:01:41 CDT 2019
+// @SOURCE:/Users/Nihil/workspace/InteriorDesign-WebApps-S19/server/conf/routes
+// @DATE:Sat Apr 27 12:03:23 CDT 2019
 
 package router
 
@@ -17,6 +17,8 @@ class Routes(
   Application_2: edu.trinity.webapps.controllers.Application,
   // @LINE:15
   SiteController_0: edu.trinity.webapps.controllers.SiteController,
+  // @LINE:18
+  ContactController_3: edu.trinity.webapps.controllers.ContactController,
   // @LINE:35
   Assets_1: controllers.Assets,
   val prefix: String
@@ -28,14 +30,16 @@ class Routes(
     Application_2: edu.trinity.webapps.controllers.Application,
     // @LINE:15
     SiteController_0: edu.trinity.webapps.controllers.SiteController,
+    // @LINE:18
+    ContactController_3: edu.trinity.webapps.controllers.ContactController,
     // @LINE:35
     Assets_1: controllers.Assets
-  ) = this(errorHandler, Application_2, SiteController_0, Assets_1, "/")
+  ) = this(errorHandler, Application_2, SiteController_0, ContactController_3, Assets_1, "/")
 
   def withPrefix(addPrefix: String): Routes = {
     val prefix = play.api.routing.Router.concatPrefix(addPrefix, this.prefix)
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, Application_2, SiteController_0, Assets_1, prefix)
+    new Routes(errorHandler, Application_2, SiteController_0, ContactController_3, Assets_1, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -47,6 +51,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """home""", """edu.trinity.webapps.controllers.Application.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """loginUser""", """edu.trinity.webapps.controllers.SiteController.loginUser(name:String, pw:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addUser""", """edu.trinity.webapps.controllers.SiteController.addUser(name:String, pw:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """contact""", """edu.trinity.webapps.controllers.ContactController.contact"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """gallery""", """edu.trinity.webapps.controllers.SiteController.gallery"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """news""", """edu.trinity.webapps.controllers.SiteController.news"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """about""", """edu.trinity.webapps.controllers.SiteController.about"""),
@@ -136,11 +141,29 @@ GET			/home						edu.trinity.webapps.controllers.Application.index
     )
   )
 
+  // @LINE:18
+  private[this] lazy val edu_trinity_webapps_controllers_ContactController_contact4_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("contact")))
+  )
+  private[this] lazy val edu_trinity_webapps_controllers_ContactController_contact4_invoker = createInvoker(
+    ContactController_3.contact,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "edu.trinity.webapps.controllers.ContactController",
+      "contact",
+      Nil,
+      "GET",
+      this.prefix + """contact""",
+      """""",
+      Seq()
+    )
+  )
+
   // @LINE:20
-  private[this] lazy val edu_trinity_webapps_controllers_SiteController_gallery4_route = Route("GET",
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_gallery5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("gallery")))
   )
-  private[this] lazy val edu_trinity_webapps_controllers_SiteController_gallery4_invoker = createInvoker(
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_gallery5_invoker = createInvoker(
     SiteController_0.gallery,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -155,10 +178,10 @@ GET			/home						edu.trinity.webapps.controllers.Application.index
   )
 
   // @LINE:22
-  private[this] lazy val edu_trinity_webapps_controllers_SiteController_news5_route = Route("GET",
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_news6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("news")))
   )
-  private[this] lazy val edu_trinity_webapps_controllers_SiteController_news5_invoker = createInvoker(
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_news6_invoker = createInvoker(
     SiteController_0.news,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -173,10 +196,10 @@ GET			/home						edu.trinity.webapps.controllers.Application.index
   )
 
   // @LINE:23
-  private[this] lazy val edu_trinity_webapps_controllers_SiteController_about6_route = Route("GET",
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_about7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("about")))
   )
-  private[this] lazy val edu_trinity_webapps_controllers_SiteController_about6_invoker = createInvoker(
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_about7_invoker = createInvoker(
     SiteController_0.about,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -191,10 +214,10 @@ GET			/home						edu.trinity.webapps.controllers.Application.index
   )
 
   // @LINE:30
-  private[this] lazy val edu_trinity_webapps_controllers_SiteController_postQuery7_route = Route("POST",
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_postQuery8_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("query")))
   )
-  private[this] lazy val edu_trinity_webapps_controllers_SiteController_postQuery7_invoker = createInvoker(
+  private[this] lazy val edu_trinity_webapps_controllers_SiteController_postQuery8_invoker = createInvoker(
     SiteController_0.postQuery,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -209,10 +232,10 @@ GET			/home						edu.trinity.webapps.controllers.Application.index
   )
 
   // @LINE:35
-  private[this] lazy val controllers_Assets_at8_route = Route("GET",
+  private[this] lazy val controllers_Assets_at9_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at8_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at9_invoker = createInvoker(
     Assets_1.at(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -230,10 +253,10 @@ POST       /query                      edu.trinity.webapps.controllers.ContactCo
   )
 
   // @LINE:36
-  private[this] lazy val controllers_Assets_versioned9_route = Route("GET",
+  private[this] lazy val controllers_Assets_versioned10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("versionedAssets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned9_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned10_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -274,40 +297,46 @@ POST       /query                      edu.trinity.webapps.controllers.ContactCo
         edu_trinity_webapps_controllers_SiteController_addUser3_invoker.call(SiteController_0.addUser(name, pw))
       }
   
-    // @LINE:20
-    case edu_trinity_webapps_controllers_SiteController_gallery4_route(params@_) =>
+    // @LINE:18
+    case edu_trinity_webapps_controllers_ContactController_contact4_route(params@_) =>
       call { 
-        edu_trinity_webapps_controllers_SiteController_gallery4_invoker.call(SiteController_0.gallery)
+        edu_trinity_webapps_controllers_ContactController_contact4_invoker.call(ContactController_3.contact)
+      }
+  
+    // @LINE:20
+    case edu_trinity_webapps_controllers_SiteController_gallery5_route(params@_) =>
+      call { 
+        edu_trinity_webapps_controllers_SiteController_gallery5_invoker.call(SiteController_0.gallery)
       }
   
     // @LINE:22
-    case edu_trinity_webapps_controllers_SiteController_news5_route(params@_) =>
+    case edu_trinity_webapps_controllers_SiteController_news6_route(params@_) =>
       call { 
-        edu_trinity_webapps_controllers_SiteController_news5_invoker.call(SiteController_0.news)
+        edu_trinity_webapps_controllers_SiteController_news6_invoker.call(SiteController_0.news)
       }
   
     // @LINE:23
-    case edu_trinity_webapps_controllers_SiteController_about6_route(params@_) =>
+    case edu_trinity_webapps_controllers_SiteController_about7_route(params@_) =>
       call { 
-        edu_trinity_webapps_controllers_SiteController_about6_invoker.call(SiteController_0.about)
+        edu_trinity_webapps_controllers_SiteController_about7_invoker.call(SiteController_0.about)
       }
   
     // @LINE:30
-    case edu_trinity_webapps_controllers_SiteController_postQuery7_route(params@_) =>
+    case edu_trinity_webapps_controllers_SiteController_postQuery8_route(params@_) =>
       call { 
-        edu_trinity_webapps_controllers_SiteController_postQuery7_invoker.call(SiteController_0.postQuery)
+        edu_trinity_webapps_controllers_SiteController_postQuery8_invoker.call(SiteController_0.postQuery)
       }
   
     // @LINE:35
-    case controllers_Assets_at8_route(params@_) =>
+    case controllers_Assets_at9_route(params@_) =>
       call(params.fromPath[String]("file", None)) { (file) =>
-        controllers_Assets_at8_invoker.call(Assets_1.at(file))
+        controllers_Assets_at9_invoker.call(Assets_1.at(file))
       }
   
     // @LINE:36
-    case controllers_Assets_versioned9_route(params@_) =>
+    case controllers_Assets_versioned10_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned9_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned10_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }
