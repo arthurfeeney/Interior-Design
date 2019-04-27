@@ -11,6 +11,9 @@ lazy val server = (project in file("server")).settings(commonSettings).settings(
     "com.vmunier" %% "scalajs-scripts" % "1.1.2",
     guice,
     specs2 % Test,
+		"com.typesafe.play" %% "play-slick" % "4.0.0",
+		"com.typesafe.slick" %% "slick-codegen" % "3.3.0",
+		"mysql" % "mysql-connector-java" % "6.0.6",
     "com.typesafe.play" %% "play-mailer" % "6.0.1",
     "com.typesafe.play" %% "play-mailer-guice" % "6.0.1",
     "com.github.jurajburian" %% "mailer" % "1.2.3" withSources
