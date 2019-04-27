@@ -78,6 +78,7 @@ project/boot/
 project/plugins/project/
 .history
 .cache
+**/target/
 #<<<<<<< HEAD
 .lib/
 #
