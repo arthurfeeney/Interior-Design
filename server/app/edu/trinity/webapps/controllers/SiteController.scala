@@ -29,7 +29,7 @@ class SiteController @Inject()(cc: MessagesControllerComponents) extends Message
     // check if the name is already taken or is invalid -- Don't create account!
     if(models.UserModel.checkName(name) || name == "" || pw == "") {
       println("Invalid name/password (taken or empty string)")
-      //Redirect(routes.SiteController.contact).withNewSession
+      Redirect(routes.SiteController.contact).withNewSession
     }
     else {
       models.UserModel.addUser(name, pw)
