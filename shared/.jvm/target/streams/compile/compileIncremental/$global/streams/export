@@ -1,1 +1,0 @@
-scalac -classpath /Users/Nihil/workspace/InteriorDesign-WebApps-S19/shared/.jvm/target/scala-2.12/classes -bootclasspath /Users/Nihil/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.12.5.jar /Users/Nihil/workspace/InteriorDesign-WebApps-S19/shared/src/main/scala/edu/trinity/webapps/shared/SharedMessages.scala
