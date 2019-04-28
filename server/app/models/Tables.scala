@@ -14,7 +14,7 @@ trait Tables {
   import slick.jdbc.{GetResult => GR}
 
   /** DDL for all tables. Call .create to execute. */
-  lazy val schema: profile.SchemaDescription = Receipt.schema ++ User.schema ++ Vendor.schema
+  lazy val schema: profile.SchemaDescription = Receipt.schema ++ User.schema ++ UserTemporary.schema ++ Vendor.schema
   @deprecated("Use .schema instead of .ddl", "3.0")
   def ddl = schema
 
@@ -92,6 +92,32 @@ trait Tables {
   }
   /** Collection-like TableQuery object for table User */
   lazy val User = new TableQuery(tag => new User(tag))
+
+  /** Entity class storing rows of table UserTemporary
+   *  @param id Database column id SqlType(INT), AutoInc, PrimaryKey
+   *  @param username Database column username SqlType(VARCHAR), Length(200,true), Default(None)
+   *  @param password Database column password SqlType(VARCHAR), Length(200,true), Default(None) */
+  case class UserTemporaryRow(id: Int, username: Option[String] = None, password: Option[String] = None)
+  /** GetResult implicit for fetching UserTemporaryRow objects using plain SQL queries */
+  implicit def GetResultUserTemporaryRow(implicit e0: GR[Int], e1: GR[Option[String]]): GR[UserTemporaryRow] = GR{
+    prs => import prs._
+    UserTemporaryRow.tupled((<<[Int], <<?[String], <<?[String]))
+  }
+  /** Table description of table user_temporary. Objects of this class serve as prototypes for rows in queries. */
+  class UserTemporary(_tableTag: Tag) extends profile.api.Table[UserTemporaryRow](_tableTag, Some("interior"), "user_temporary") {
+    def * = (id, username, password) <> (UserTemporaryRow.tupled, UserTemporaryRow.unapply)
+    /** Maps whole row to an option. Useful for outer joins. */
+    def ? = ((Rep.Some(id), username, password)).shaped.<>({r=>import r._; _1.map(_=> UserTemporaryRow.tupled((_1.get, _2, _3)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
+
+    /** Database column id SqlType(INT), AutoInc, PrimaryKey */
+    val id: Rep[Int] = column[Int]("id", O.AutoInc, O.PrimaryKey)
+    /** Database column username SqlType(VARCHAR), Length(200,true), Default(None) */
+    val username: Rep[Option[String]] = column[Option[String]]("username", O.Length(200,varying=true), O.Default(None))
+    /** Database column password SqlType(VARCHAR), Length(200,true), Default(None) */
+    val password: Rep[Option[String]] = column[Option[String]]("password", O.Length(200,varying=true), O.Default(None))
+  }
+  /** Collection-like TableQuery object for table UserTemporary */
+  lazy val UserTemporary = new TableQuery(tag => new UserTemporary(tag))
 
   /** Entity class storing rows of table Vendor
    *  @param id Database column id SqlType(INT), AutoInc, PrimaryKey
