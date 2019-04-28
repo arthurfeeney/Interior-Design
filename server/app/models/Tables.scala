@@ -14,9 +14,41 @@ trait Tables {
   import slick.jdbc.{GetResult => GR}
 
   /** DDL for all tables. Call .create to execute. */
-  lazy val schema: profile.SchemaDescription = Receipt.schema ++ User.schema ++ UserTemporary.schema ++ Vendor.schema
+  lazy val schema: profile.SchemaDescription = Image.schema ++ Receipt.schema ++ User.schema ++ UserTemporary.schema ++ Vendor.schema
   @deprecated("Use .schema instead of .ddl", "3.0")
   def ddl = schema
+
+  /** Entity class storing rows of table Image
+   *  @param id Database column id SqlType(INT), AutoInc, PrimaryKey
+   *  @param imglink Database column imglink SqlType(VARCHAR), Length(200,true)
+   *  @param description Database column description SqlType(VARCHAR), Length(200,true), Default(None)
+   *  @param colnum Database column colNum SqlType(INT)
+   *  @param rownum Database column rowNum SqlType(INT) */
+  case class ImageRow(id: Int, imglink: String, description: Option[String] = None, colnum: Int, rownum: Int)
+  /** GetResult implicit for fetching ImageRow objects using plain SQL queries */
+  implicit def GetResultImageRow(implicit e0: GR[Int], e1: GR[String], e2: GR[Option[String]]): GR[ImageRow] = GR{
+    prs => import prs._
+    ImageRow.tupled((<<[Int], <<[String], <<?[String], <<[Int], <<[Int]))
+  }
+  /** Table description of table image. Objects of this class serve as prototypes for rows in queries. */
+  class Image(_tableTag: Tag) extends profile.api.Table[ImageRow](_tableTag, Some("interior"), "image") {
+    def * = (id, imglink, description, colnum, rownum) <> (ImageRow.tupled, ImageRow.unapply)
+    /** Maps whole row to an option. Useful for outer joins. */
+    def ? = ((Rep.Some(id), Rep.Some(imglink), description, Rep.Some(colnum), Rep.Some(rownum))).shaped.<>({r=>import r._; _1.map(_=> ImageRow.tupled((_1.get, _2.get, _3, _4.get, _5.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
+
+    /** Database column id SqlType(INT), AutoInc, PrimaryKey */
+    val id: Rep[Int] = column[Int]("id", O.AutoInc, O.PrimaryKey)
+    /** Database column imglink SqlType(VARCHAR), Length(200,true) */
+    val imglink: Rep[String] = column[String]("imglink", O.Length(200,varying=true))
+    /** Database column description SqlType(VARCHAR), Length(200,true), Default(None) */
+    val description: Rep[Option[String]] = column[Option[String]]("description", O.Length(200,varying=true), O.Default(None))
+    /** Database column colNum SqlType(INT) */
+    val colnum: Rep[Int] = column[Int]("colNum")
+    /** Database column rowNum SqlType(INT) */
+    val rownum: Rep[Int] = column[Int]("rowNum")
+  }
+  /** Collection-like TableQuery object for table Image */
+  lazy val Image = new TableQuery(tag => new Image(tag))
 
   /** Entity class storing rows of table Receipt
    *  @param id Database column id SqlType(INT), AutoInc, PrimaryKey
