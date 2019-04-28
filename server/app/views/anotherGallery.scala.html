@@ -305,6 +305,34 @@ body {
 
 
 <script>
+function addImages() {
+	  //var table = document.getElementById("myTable");
+	  //var row = table.insertRow(0);
+	  //var cell1 = row.insertCell(0);
+	  //var cell2 = row.insertCell(1);
+	  //cell1.innerHTML = "NEW CELL1";
+	  //cell2.innerHTML = "NEW CELL2";
+	  let table = document.getElementsByClassName("row")
+	  let imageArr = ["https://freshome.com/wp-content/uploads/2018/01/decorator-living.jpg", "https://www.collegeforcreativestudies.edu/files/assets/images/large/1504212008_header_IN.jpg", 
+		  "http://www.dawsondesignassociates.com/images/home/DDA-Hospitality-Interior-Design-2a.jpg","https://nyocommercialobserver.files.wordpress.com/2018/08/0009_determinedbydesign_01_11_18_large.jpg?w=640&h=427",
+		  "https://timedotcom.files.wordpress.com/2018/08/the-curated-home-grant-gibson-2.jpeg", "https://www.pagodared.com/blog/wp-content/uploads/2018/05/4-Mark_D_Sikes_Beverly_Hills_1.jpg", 
+		  "https://content.thriveglobal.com/wp-content/uploads/2019/03/GettyImages-999732712.jpg", "https://www.chitkara.edu.in/wp-content/uploads/2019/02/INTERIOR-DESIGN1.jpg",
+		  "https://static1.squarespace.com/static/54eb4c37e4b07c3f6564f207/54eb4f16e4b07c01c5c411b1/54ef5ecbe4b025105a4f6948/1424973516099/Livingroom+2.jpg", 
+		  "https://www.hometown.in/design-build/static/slider-1b.4ec10847.jpg", "https://industryreports24.com/wp-content/uploads/2019/04/Interior-Design.jpg", 
+		  "https://lifetimeluxury.com/wp-content/uploads/2017/12/Interior-Design-Room.jpg", "https://cdn.styleblueprint.com/wp-content/uploads/2019/02/MurphyMaude-Watson-SelaviePhoto-31.jpg", 
+		  "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2012/2/1/0/CI-Thibaut_Barrowgate-living-room-wallpaper-settee_s3x4.jpg.rend.hgtvcom.616.822.suffix/1400965159581.jpeg",
+		  "https://www.sbid.org/wp-content/uploads/2018/02/img7-e1517585569791.jpg", "http://www.sb-id.com/uploads/highlights/8_swissvilla.jpg",
+		  "http://www.contemporist.com/wp-content/uploads/2019/03/modern-cafe-restaurant-interior-design-020319-726-01-800x420.jpg", "http://www.imgnyc.com/wp-content/uploads/2018/06/poster-mspt-time-lapse-v3.jpg"
+	 ]
+	let imageGrid = document.getElementsByClassName("row");
+	let currImage = document.createElement("IMG");
+	currImage.setAttribute("src", imageArr[0]);
+	 
+	 
+}
+
+
+
 function expand(imgs) {
   var expandImg = document.getElementById("expandedImg");
 
@@ -322,6 +350,8 @@ function on() {
 function off() {
   document.getElementById("overLay").style.display = "none";
 }
+
+
 
 </script>
 
