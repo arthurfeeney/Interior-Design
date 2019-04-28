@@ -40,3 +40,11 @@ CREATE TABLE receipt (
   description VARCHAR(200),
   item VARCHAR(200)
 );
+
+CREATE TABLE image (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	imglink VARCHAR(200) NOT NULL,
+	description VARCHAR(200),
+	column INT NOT NULL,
+	row INT NOT NULL
+);
