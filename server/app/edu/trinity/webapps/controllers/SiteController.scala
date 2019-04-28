@@ -5,36 +5,51 @@ import javax.inject._
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
+import scala.concurrent._
+import scala.concurrent.duration.Duration
+import models._
 
+import play.api.db.slick.DatabaseConfigProvider
+import play.api.db.slick.HasDatabaseConfigProvider
+
+import slick.jdbc.JdbcProfile
+import scala.concurrent.ExecutionContext
+
+import slick.jdbc.MySQLProfile.api._
+import scala.concurrent.Await
 
 @Singleton
-class SiteController @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
+class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigProvider,
+    cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc)
+    with HasDatabaseConfigProvider[JdbcProfile]{
 
 //<<<<<<< HEAD
   def login = Action { implicit request =>
     Ok(views.html.index("hi"))
   }
 
-  def loginUser(name:String, pw:String) = Action { implicit request =>
-    if(models.UserModel.checkPassword(name, pw)) {
-      Redirect(routes.ContactController.contact).
-        withSession("username" -> name)
+  def loginUser(name:String, pw:String) = Action async { implicit request =>
+    val id = Await.result(models.UserModel.checkPassword(name, pw, db), Duration.Inf)
+    if(!id.isEmpty) {
+      Future{Redirect(routes.ContactController.contact).
+        withSession("username" -> name)}
     }
     else {
-      Redirect(routes.Application.index).withNewSession
+      Future.successful(Redirect(routes.Application.index).withNewSession)
     }
   }
 
-  def addUser(name:String, pw:String) = Action { implicit request =>
+  def addUser(name:String, pw:String) = Action async { implicit request =>
     // check if the name is already taken or is invalid -- Don't create account!
-    if(models.UserModel.checkName(name) || name == "" || pw == "") {
+    val id = Await.result(models.UserModel.checkPassword(name, pw, db), Duration.Inf)
+    if(!id.isEmpty || name == "" || pw == "") {
       println("Invalid name/password (taken or empty string)")
-      Redirect(routes.ContactController.contact).withNewSession
+      Future.successful(Redirect(routes.ContactController.contact).withNewSession)
     }
     else {
-      models.UserModel.addUser(name, pw)
-      Redirect(routes.ContactController.contact).
-        withSession("username" -> name)
+      models.UserModel.addUser(name, pw, db)
+      Future.successful(Redirect(routes.ContactController.contact).
+        withSession("username" -> name))
     }
   }
 //=======
