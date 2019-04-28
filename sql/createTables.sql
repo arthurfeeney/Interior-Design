@@ -7,6 +7,12 @@ CREATE TABLE user (
   phoneNo INT
 );
 
+CREATE TABLE user_temporary (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(200),
+  password VARCHAR(200)
+);
+
 
 
 CREATE TABLE vendor (
@@ -24,7 +30,7 @@ CREATE TABLE receipt (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   userID INT NOT NULL,
   FOREIGN KEY (userID)
-  REFERENCES user(id)
+  REFERENCES user_temporary(id)
   ON DELETE CASCADE,
   vendorID INT NOT NULL,
   FOREIGN KEY (vendorID)
