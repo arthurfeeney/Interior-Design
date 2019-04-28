@@ -16,11 +16,14 @@ object UserModel {
 
   // when a new user has been created.
   def addUser(username: String,
-   pw: String,db: Database)  = {
-  //  if(!checkName(name)) {
-      users(name) = pw
-      tasks(name) = mutable.Seq[Seq[String]]() // users tasks are initially empty.
-  //  }
+   pw: String,db: Database)(implicit ec: ExecutionContext): Unit  = {
+     val checkResult = Await.result(checkName(username, db), Duration.Inf)
+     if(checkResult.isEmpty) {
+      println("This user already exists.")
+    }
+     else {
+       Await.result(db.run(UserTemporary+=UserTemporaryRow(id=9,Some(username), Some(pw))), Duration.Inf)
+     }
   }
 
   // checks if name is already used
@@ -36,8 +39,15 @@ object UserModel {
   }
 
   // checks if password is correct
-  def checkPassword(name: String, pw: String): Boolean = {
-    return users.contains(name) && users(name) == pw
+  def checkPassword(username: String, pw: String, db: Database): Future[Option[Int]] = {
+    db.run {
+      val ids = for {
+        u <- User
+        if u.username === username && u.password === pw
+      }
+      yield {u.id}
+    ids.result.headOption
+    }
   }
 
   // returns the tasks of a user.
