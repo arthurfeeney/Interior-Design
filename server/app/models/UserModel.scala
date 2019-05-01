@@ -22,7 +22,7 @@ object UserModel {
       println("This user already exists.")
     }
      else {
-       Await.result(db.run(UserTemporary+=UserTemporaryRow(id=9,Some(username), Some(pw))), Duration.Inf)
+       Await.result(db.run(UserTemporary+=UserTemporaryRow(0,Some(username), Some(pw))), Duration.Inf)
      }
   }
 

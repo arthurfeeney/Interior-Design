@@ -8,8 +8,13 @@ import scala.concurrent.ExecutionContext
 //case class Receipt(userID: Int, receiptID: Int, vendorID: Int, item: String, description: String)
 
 object ReceiptDataModel {
-  def addReceipt(db: Database, uID: Int, rID: Int, vID: Int, price: Float, item: String, desc: String)(implicit ec: ExecutionContext): Unit = {
-    Await.result(db.run(Receipt+=ReceiptRow(uID, rID, vID, Some(price), Some(item), Some(desc))), Duration.Inf)
+  def addReceipt(db: Database, uID: Int, vID: Int, price: Float, item: String, desc: String)(implicit ec: ExecutionContext): Unit = {
+    Await.result(db.run(Receipt+=ReceiptRow(0, uID, vID, Some(price), Some(item), Some(desc))), Duration.Inf)
+  }
+  
+  def removeReceipt(rid: Int, db: Database)(implicit ec: ExecutionContext): Unit = {
+    val r = Receipt.filter(_.id === rid)
+    Await.result(db.run(r.delete), Duration.Inf)
   }
   
   def getReceiptsForUser(userID: Int, db: Database)(implicit ec: ExecutionContext):Future[Seq[ReceiptRow]] = {
