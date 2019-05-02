@@ -23,7 +23,6 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
     cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc)
     with HasDatabaseConfigProvider[JdbcProfile]{
 
-//<<<<<<< HEAD
   def login = Action { implicit request =>
     Ok(views.html.index("hi"))
   }
@@ -52,26 +51,19 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
         withSession("username" -> name))
     }
   }
-//=======
-//>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
+
 
 
   def gallery = Action {
     Ok(views.html.gallery())
   }
 
-//<<<<<<< HEAD
+
   def postQuery = Action {implicit request =>
     Redirect(routes.ContactController.contact).withNewSession
   }
 
-//=======
 
-//=======
-
-//>>>>>>> 3bc42ee90cb7e43490fad41ef175919f2492d7ac
-
-//>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
   // go to news page
   def news = Action { implicit request =>
     Ok(views.html.news())

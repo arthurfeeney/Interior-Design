@@ -9,7 +9,7 @@ import scala.concurrent.ExecutionContext
 
 object ReceiptDataModel {
   def addReceipt(db: Database, uID: Int, vID: Int, price: Float, item: String, desc: String)(implicit ec: ExecutionContext): Unit = {
-    Await.result(db.run(Receipt+=ReceiptRow(0, uID, vID, Some(price), Some(item), Some(desc))), Duration.Inf)
+    Await.result(db.run(Receipt+=ReceiptRow(0, uID, vID, price, Some(item), desc)), Duration.Inf)
   }
   
   def removeReceipt(rid: Int, db: Database)(implicit ec: ExecutionContext): Unit = {

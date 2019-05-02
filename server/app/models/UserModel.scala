@@ -10,9 +10,9 @@ import scala.concurrent.ExecutionContext
 //case class User(id: Int, name: String, username: String, pw: String, email: String,phone: Int)
 
 object UserModel {
-  var users = mutable.Map[String, String]()                    // Username -> password
-  var tasks = mutable.Map[String, mutable.Seq[Seq[String]]]()  // Username -> tasks
-  var admin = mutable.Buffer[String]()                         // Usernames of the admin
+  //ar users = mutable.Map[String, String]()                    // Username -> password
+ // var tasks = mutable.Map[String, mutable.Seq[Seq[String]]]()  // Username -> tasks
+ // var admin = mutable.Buffer[String]()                         // Usernames of the admin
 
   // when a new user has been created.
   def addUser(username: String,
@@ -22,7 +22,7 @@ object UserModel {
       println("This user already exists.")
     }
      else {
-       Await.result(db.run(UserTemporary+=UserTemporaryRow(0,Some(username), Some(pw))), Duration.Inf)
+       Await.result(db.run(UserTemporary+=UserTemporaryRow(0,username, pw)), Duration.Inf)
      }
   }
 
@@ -49,7 +49,7 @@ object UserModel {
     ids.result.headOption
     }
   }
-
+/*
   // returns the tasks of a user.
   def getTasks(name:String): Seq[Seq[String]] = {
   //  if(checkName(name)) {
@@ -81,5 +81,7 @@ object UserModel {
     users.clear()     // Username -> password
     tasks.clear()  // Username -> tasks
   }
+  * 
+  */
 
 }

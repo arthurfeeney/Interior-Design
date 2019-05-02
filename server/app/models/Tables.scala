@@ -54,20 +54,20 @@ trait Tables {
    *  @param id Database column id SqlType(INT), AutoInc, PrimaryKey
    *  @param userid Database column userID SqlType(INT)
    *  @param vendorid Database column vendorID SqlType(INT)
-   *  @param price Database column price SqlType(FLOAT), Default(None)
+   *  @param price Database column price SqlType(FLOAT)
    *  @param description Database column description SqlType(VARCHAR), Length(200,true), Default(None)
-   *  @param item Database column item SqlType(VARCHAR), Length(200,true), Default(None) */
-  case class ReceiptRow(id: Int, userid: Int, vendorid: Int, price: Option[Float] = None, description: Option[String] = None, item: Option[String] = None)
+   *  @param item Database column item SqlType(VARCHAR), Length(200,true) */
+  case class ReceiptRow(id: Int, userid: Int, vendorid: Int, price: Float, description: Option[String] = None, item: String)
   /** GetResult implicit for fetching ReceiptRow objects using plain SQL queries */
-  implicit def GetResultReceiptRow(implicit e0: GR[Int], e1: GR[Option[Float]], e2: GR[Option[String]]): GR[ReceiptRow] = GR{
+  implicit def GetResultReceiptRow(implicit e0: GR[Int], e1: GR[Float], e2: GR[Option[String]], e3: GR[String]): GR[ReceiptRow] = GR{
     prs => import prs._
-    ReceiptRow.tupled((<<[Int], <<[Int], <<[Int], <<?[Float], <<?[String], <<?[String]))
+    ReceiptRow.tupled((<<[Int], <<[Int], <<[Int], <<[Float], <<?[String], <<[String]))
   }
   /** Table description of table receipt. Objects of this class serve as prototypes for rows in queries. */
   class Receipt(_tableTag: Tag) extends profile.api.Table[ReceiptRow](_tableTag, Some("interior"), "receipt") {
     def * = (id, userid, vendorid, price, description, item) <> (ReceiptRow.tupled, ReceiptRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
-    def ? = ((Rep.Some(id), Rep.Some(userid), Rep.Some(vendorid), price, description, item)).shaped.<>({r=>import r._; _1.map(_=> ReceiptRow.tupled((_1.get, _2.get, _3.get, _4, _5, _6)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
+    def ? = ((Rep.Some(id), Rep.Some(userid), Rep.Some(vendorid), Rep.Some(price), description, Rep.Some(item))).shaped.<>({r=>import r._; _1.map(_=> ReceiptRow.tupled((_1.get, _2.get, _3.get, _4.get, _5, _6.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
 
     /** Database column id SqlType(INT), AutoInc, PrimaryKey */
     val id: Rep[Int] = column[Int]("id", O.AutoInc, O.PrimaryKey)
@@ -75,15 +75,15 @@ trait Tables {
     val userid: Rep[Int] = column[Int]("userID")
     /** Database column vendorID SqlType(INT) */
     val vendorid: Rep[Int] = column[Int]("vendorID")
-    /** Database column price SqlType(FLOAT), Default(None) */
-    val price: Rep[Option[Float]] = column[Option[Float]]("price", O.Default(None))
+    /** Database column price SqlType(FLOAT) */
+    val price: Rep[Float] = column[Float]("price")
     /** Database column description SqlType(VARCHAR), Length(200,true), Default(None) */
     val description: Rep[Option[String]] = column[Option[String]]("description", O.Length(200,varying=true), O.Default(None))
-    /** Database column item SqlType(VARCHAR), Length(200,true), Default(None) */
-    val item: Rep[Option[String]] = column[Option[String]]("item", O.Length(200,varying=true), O.Default(None))
+    /** Database column item SqlType(VARCHAR), Length(200,true) */
+    val item: Rep[String] = column[String]("item", O.Length(200,varying=true))
 
-    /** Foreign key referencing User (database name receipt_ibfk_1) */
-    lazy val userFk = foreignKey("receipt_ibfk_1", userid, User)(r => r.id, onUpdate=ForeignKeyAction.NoAction, onDelete=ForeignKeyAction.Cascade)
+    /** Foreign key referencing UserTemporary (database name receipt_ibfk_1) */
+    lazy val userTemporaryFk = foreignKey("receipt_ibfk_1", userid, UserTemporary)(r => r.id, onUpdate=ForeignKeyAction.NoAction, onDelete=ForeignKeyAction.Cascade)
     /** Foreign key referencing Vendor (database name receipt_ibfk_2) */
     lazy val vendorFk = foreignKey("receipt_ibfk_2", vendorid, Vendor)(r => r.id, onUpdate=ForeignKeyAction.NoAction, onDelete=ForeignKeyAction.Cascade)
   }
@@ -127,26 +127,26 @@ trait Tables {
 
   /** Entity class storing rows of table UserTemporary
    *  @param id Database column id SqlType(INT), AutoInc, PrimaryKey
-   *  @param username Database column username SqlType(VARCHAR), Length(200,true), Default(None)
-   *  @param password Database column password SqlType(VARCHAR), Length(200,true), Default(None) */
-  case class UserTemporaryRow(id: Int, username: Option[String] = None, password: Option[String] = None)
+   *  @param username Database column username SqlType(VARCHAR), Length(200,true)
+   *  @param password Database column password SqlType(VARCHAR), Length(200,true) */
+  case class UserTemporaryRow(id: Int, username: String, password: String)
   /** GetResult implicit for fetching UserTemporaryRow objects using plain SQL queries */
-  implicit def GetResultUserTemporaryRow(implicit e0: GR[Int], e1: GR[Option[String]]): GR[UserTemporaryRow] = GR{
+  implicit def GetResultUserTemporaryRow(implicit e0: GR[Int], e1: GR[String]): GR[UserTemporaryRow] = GR{
     prs => import prs._
-    UserTemporaryRow.tupled((<<[Int], <<?[String], <<?[String]))
+    UserTemporaryRow.tupled((<<[Int], <<[String], <<[String]))
   }
   /** Table description of table user_temporary. Objects of this class serve as prototypes for rows in queries. */
   class UserTemporary(_tableTag: Tag) extends profile.api.Table[UserTemporaryRow](_tableTag, Some("interior"), "user_temporary") {
     def * = (id, username, password) <> (UserTemporaryRow.tupled, UserTemporaryRow.unapply)
     /** Maps whole row to an option. Useful for outer joins. */
-    def ? = ((Rep.Some(id), username, password)).shaped.<>({r=>import r._; _1.map(_=> UserTemporaryRow.tupled((_1.get, _2, _3)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
+    def ? = ((Rep.Some(id), Rep.Some(username), Rep.Some(password))).shaped.<>({r=>import r._; _1.map(_=> UserTemporaryRow.tupled((_1.get, _2.get, _3.get)))}, (_:Any) =>  throw new Exception("Inserting into ? projection not supported."))
 
     /** Database column id SqlType(INT), AutoInc, PrimaryKey */
     val id: Rep[Int] = column[Int]("id", O.AutoInc, O.PrimaryKey)
-    /** Database column username SqlType(VARCHAR), Length(200,true), Default(None) */
-    val username: Rep[Option[String]] = column[Option[String]]("username", O.Length(200,varying=true), O.Default(None))
-    /** Database column password SqlType(VARCHAR), Length(200,true), Default(None) */
-    val password: Rep[Option[String]] = column[Option[String]]("password", O.Length(200,varying=true), O.Default(None))
+    /** Database column username SqlType(VARCHAR), Length(200,true) */
+    val username: Rep[String] = column[String]("username", O.Length(200,varying=true))
+    /** Database column password SqlType(VARCHAR), Length(200,true) */
+    val password: Rep[String] = column[String]("password", O.Length(200,varying=true))
   }
   /** Collection-like TableQuery object for table UserTemporary */
   lazy val UserTemporary = new TableQuery(tag => new UserTemporary(tag))

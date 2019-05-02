@@ -9,8 +9,8 @@ CREATE TABLE user (
 
 CREATE TABLE user_temporary (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(200),
-  password VARCHAR(200)
+  username VARCHAR(200) NOT NULL,
+  password VARCHAR(200) NOT NULL
 );
 
 
@@ -36,9 +36,9 @@ CREATE TABLE receipt (
   FOREIGN KEY (vendorID)
   REFERENCES vendor(id)
   ON DELETE CASCADE,
-  price FLOAT,
+  price FLOAT NOT NULL,
   description VARCHAR(200),
-  item VARCHAR(200)
+  item VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE image (
