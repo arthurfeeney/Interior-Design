@@ -10,19 +10,21 @@ import scala.concurrent.ExecutionContext
 
 object UserModel {
   // when a new user has been created.
-  def addUser(username: String,
-   pw: String,db: Database)(implicit ec: ExecutionContext): Unit  = {
-     val checkResult = Await.result(checkName(username, db), Duration.Inf)
-     if(checkResult.isEmpty) {
+  def addUser(username: String, pw: String,db: Database)(implicit ec: ExecutionContext): Unit  = {
+    val checkResult = Await.result(checkName(username, db), Duration.Inf)
+    if(!checkResult.isEmpty) {
       println("This user already exists.")
     }
-     else {
-       Await.result(db.run(UserTemporary+=UserTemporaryRow(0,username, pw)), Duration.Inf)
-     }
+    else {
+      Await.result(db.run(UserTemporary+=UserTemporaryRow(0,username, pw)), Duration.Inf)
+    }
   }
 
   // checks if name is already used
   def checkName(username:String, db: Database): Future[Option[Int]] = {
+    /*
+     * Returns the users id if it exists.
+     */
     db.run {
       val ids = for {
         u <- User

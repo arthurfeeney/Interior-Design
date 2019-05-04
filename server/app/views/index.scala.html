@@ -15,6 +15,7 @@
 	  <a href="contact" id="contact">Contact</a>
 	  <a href="about" id="about">About</a>
 	  <a href="gallery" id="gallery">Gallery</a>
+	  <a href="receipt" id="receipt">Receipt</a>
 	</div>
 	
 	<div class="mz-about-container">
@@ -46,8 +47,20 @@
 				</br>
 				
 				<div class="login-btn">
-					<input type="submit" class="btn" value="login" name="login"></input>
-					<input type="submit" class="btn" value="create" name="createAccount"></input>	
+					<input type="submit" class="btn" value="login" name="loginUser"></input>
+				</div>
+			</form>
+			</br>
+			<form action="addUser" method="GET">
+				<span>username: </span><input type="text" name="name"></input>
+				</br>
+				
+				<span>password: </span>	<input type="password" name="pw"></input>
+				</br>
+				</br>
+				
+				<div class="login-btn">
+					<input type="submit" class="btn" value="create" name="addUser"></input>	
 				</div>
 			</form>
 		</div>
