@@ -198,11 +198,12 @@ section {
 --------------------*/
 
 .mz-about-container {
-    padding: 0 50px;
+	padding: 0 0px;
 }
 
 .mz-module-about {
-	padding: 20px;
+
+	padding: 0 300px;
 }
 
 .mz-about-default {
@@ -213,23 +214,29 @@ section {
     background-color: #2B2B2B;
 }
 
+.mz-about-light {
+	background-color: #F9F9F9;
+}
+
 .mz-module-about h3 {
-font-weight: 700;
+	font-weight: 700;
     font-size: 13px;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #9B9B9B;
     letter-spacing: 2px;
     margin-bottom: 30px;
-    }
+}
 
 .mz-module-about p {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 27px;
-	color: #9C9C9C;
+	color: #9B9B9B;
 }
 
 .ot-circle {
+	padding-top:10px;
+	padding-bottom:10px;
 	text-align: center;
 	color: #E8E8E8;
 	margin: 40px 0;
@@ -586,8 +593,8 @@ font-size: 11px;
 
 .btn:hover, .btn:focus, .btn:active, .btn.active, .open .dropdown-toggle.btn {
     color: #fff;
-    background-color: #fec503;
-    border-color: #f6bf01;
+    background-color: #AAAABB;
+    border-color: #000000;
 }
 
 .btn {
@@ -681,4 +688,26 @@ a {
 	text-align: center;
 	
 }
+
+/*
+8. Login Section. 
+*/
+
+.login-section {
+	width: 15%;
+	color: #6B6B6B;
+	font-weight: 500;
+	line-height: 32px;
+	padding: 47px;
+	font-family: "Raleway";
+	margin: 0;
+	background-color: #F9F9F9;
+	text-align: center;
+}
+
+
+.login-btn {
+	padding-left: 5em;
+}
+
 

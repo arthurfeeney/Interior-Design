@@ -25,7 +25,7 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
 
   def login = Action { implicit request =>
     Ok(views.html.index("hi"))
-  }
+  }  
 
   def loginUser(name:String, pw:String) = Action async { implicit request =>
     val id = Await.result(models.UserModel.checkPassword(name, pw, db), Duration.Inf)

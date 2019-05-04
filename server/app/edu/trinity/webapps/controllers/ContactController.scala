@@ -17,6 +17,7 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
       "query" -> text
     )(UserQuery.apply)(UserQuery.unapply)
   )
+  
  def contact = Action { implicit request =>
     Ok(views.html.about())
 

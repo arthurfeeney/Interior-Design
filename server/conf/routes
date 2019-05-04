@@ -7,7 +7,7 @@
 #GET        	/                           edu.trinity.webapps.controllers.Application.index
 #GET			/home						edu.trinity.webapps.controllers.Application.index
 #=======
-GET        /                             edu.trinity.webapps.controllers.Application.index
+GET         /                             edu.trinity.webapps.controllers.Application.index
 GET			/home						 edu.trinity.webapps.controllers.Application.index
 #GET        /contact                      edu.trinity.webapps.controllers.ContactController.contact
 #>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08

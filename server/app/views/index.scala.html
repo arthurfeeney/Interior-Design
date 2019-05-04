@@ -2,37 +2,56 @@
 @(message: String)
 
 @main("Interior Design Homepage") {
-<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+	
+	<center>
+		<h2 class="section-title">Interior Design by Katie</h2>
+	</center>
+	
+	
+	<div class="navbar-default">
+	  <a class="active" href="home" id="home">Home</a>
+	  <a href="news" id="news">News</a>
+	  <a href="contact" id="contact">Contact</a>
+	  <a href="about" id="about">About</a>
+	  <a href="gallery" id="gallery">Gallery</a>
+	</div>
+	
+	<div class="mz-about-container">
+		<div class="mz-about-light">
+			<div class="mz-module-about">
+				<div class="ot-circle">		
+				<h3>Passion for home</h3>
+				<h3>A History of living</h3>
+				
+				<p>My name is Katie. I'm a bit Southern, North-Eastern and South-Western. I don’t think a day goes by that I am not creatively invested in home design.
+					My home design incorporates passion, love, energy, color, and excitement. Something about creating space; to spend time, come and go from, exist in, is my hearts desire. I have worked many years in different parts of the country. I am inspired by homes that are lived in as well beautiful. Our surroundings are meant to be a reflection of the things we care about. The people we care about sharing memories with. It’s not about being in or out of style. It’s about living life in a home you love.
+					I want to serve as the light you need to get there. 
+				</p>
+				
+				</div>
+			</div>
+		</div>
+	</div>
 
-<h2>Interior Design by Katie!</h2>
-<div class="navbar-default">
-  <a class="active" href="home" id="home">Home</a>
-  <a href="news" id="news">News</a>
-  <a href="contact" id="contact">Contact</a>
-  <a href="about" id="about">About</a>
-  <a href="gallery" id="gallery">Gallery</a>
-</div>
-
-<div id="PageContent">
-	<p > A cool "mini-gallery" and a short description goes here?</p>
-</div>
-
-
-<form action="loginUser" method="GET">
-	<span>username: </span><input type="text" name="name"></input>
-	</br>
-	<span>password: </span>	<input type="text" name="pw"></input>
-	</br>
-	<input type="submit" 	value="login" name="login"></input>
-</form>
-
-<p> Hello, create an account here </p>
-<form action="addUser" method="GET">
-		<input type="text" name="name"></input>
-		<input type="text" name="pw"></input>
-		<input type="submit" value="create" name="createAccount"></input>
-</form>
-
+	
+	<div class="section">
+		<div class="login-section">
+			<form action="loginUser" method="GET">
+				<span>username: </span><input type="text" name="name"></input>
+				</br>
+				
+				<span>password: </span>	<input type="password" name="pw"></input>
+				</br>
+				</br>
+				
+				<div class="login-btn">
+					<input type="submit" class="btn" value="login" name="login"></input>
+					<input type="submit" class="btn" value="create" name="createAccount"></input>	
+				</div>
+			</form>
+		</div>
+	</div>
 
 
 }
