@@ -19,9 +19,14 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
   )
   
  def contact = Action { implicit request =>
-    Ok(views.html.about())
+    request.session("username").nonEmpty match {
+      case true => Ok(views.html.contact(queryForm, None))
+      case false => Ok(views.html.contact(queryForm, Some(request.session("username"))))
+    }
 
   }
+  
+  
 }
 
 //  def postQuery = Action {implicit request =>

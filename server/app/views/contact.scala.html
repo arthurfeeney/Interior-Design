@@ -1,14 +1,13 @@
 @* Contact Form File *@
-@(queryForm: Form[_], name:Option[String])(implicit messages: Messages)
+@(queryForm: Form[edu.trinity.webapps.controllers.UserQuery], name:Option[String])(implicit messages: Messages)
 
 @import helper._
 
 @main("Contact Me") {
 
-	if(name != None) {
+	@if(name != None) {
 		<h2>Hello, @name.getOrElse("not logged in") Contact me!</h2>
-	}
-	else {
+	} else {
 		<h2> Contact Information</h2>
 	}
 

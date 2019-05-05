@@ -71,6 +71,7 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
   def postQuery = Action {implicit request =>
     Redirect(routes.ContactController.contact).withNewSession
   }
+  
 
 
   // go to news page
