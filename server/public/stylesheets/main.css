@@ -710,4 +710,19 @@ a {
 	padding-left: 5em;
 }
 
+/*
+9. Receipt form.
+*/
+
+.right-border-div {
+	border-right: 3px solid black;
+	padding-right: 30px;
+}
+
+.client-box {
+	height: 300px;
+	overflow: auto;
+}
+
+
 

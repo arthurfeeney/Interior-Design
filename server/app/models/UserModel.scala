@@ -21,7 +21,7 @@ object UserModel {
   }
   
   def removeUser(uid: Int, db: Database)(ec: ExecutionContext): Unit = {
-    val u = User.filter(_.id === uid)
+    val u = UserTemporary.filter(_.id === uid)
     Await.result(db.run(u.delete), Duration.Inf)
   }
 
@@ -32,7 +32,7 @@ object UserModel {
      */
     db.run {
       val ids = for {
-        u <- User
+        u <- UserTemporary
         if u.username === username
       }
       yield {u.id}
@@ -44,11 +44,21 @@ object UserModel {
   def checkPassword(username: String, pw: String, db: Database): Future[Option[Int]] = {
     db.run {
       val ids = for {
-        u <- User
+        u <- UserTemporary
         if u.username === username && u.password === pw
       }
       yield {u.id}
     ids.result.headOption
+    }
+  }
+  
+  def clientList(db: Database): Future[Seq[String]] = {
+    db.run {
+      val usernames = for {
+        u <- UserTemporary
+      }
+      yield {u.username}
+      usernames.result
     }
   }
 }

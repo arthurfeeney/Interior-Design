@@ -9,6 +9,7 @@ GET			/home						  edu.trinity.webapps.controllers.Application.index
 
 
 GET			/loginUser					edu.trinity.webapps.controllers.SiteController.loginUser(name, pw)
+GET 		/logout						edu.trinity.webapps.controllers.SiteController.logout
 GET 		/addUser 					edu.trinity.webapps.controllers.SiteController.addUser(name, pw)
 
 GET        	/contact                    edu.trinity.webapps.controllers.ContactController.contact
@@ -18,8 +19,12 @@ GET		   	/gallery					edu.trinity.webapps.controllers.SiteController.gallery
 GET 		/news						edu.trinity.webapps.controllers.SiteController.news
 GET			/about						edu.trinity.webapps.controllers.SiteController.about
 
-GET			/receipt					edu.trinity.webapps.controllers.SiteController.receipt
 
+# Receipt page. 
+GET			/receipt					edu.trinity.webapps.controllers.SiteController.receipt
+# admin can view a client's receipt.
+GET			/viewReceipt				edu.trinity.webapps.controllers.SiteController.viewReceipt(clientToView)
+GET			/addItem					edu.trinity.webapps.controllers.ReceiptController.addItem(clientName, itemName, price, desc, vendor)
 
 + nocsrf
 #<<<<<<< HEAD
