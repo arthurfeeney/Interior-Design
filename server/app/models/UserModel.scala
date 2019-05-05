@@ -7,23 +7,17 @@ import scala.concurrent.Await
 import scala.concurrent.Future
 import Tables._
 import scala.concurrent.ExecutionContext
-//case class User(id: Int, name: String, username: String, pw: String, email: String,phone: Int)
 
 object UserModel {
-  //ar users = mutable.Map[String, String]()                    // Username -> password
- // var tasks = mutable.Map[String, mutable.Seq[Seq[String]]]()  // Username -> tasks
- // var admin = mutable.Buffer[String]()                         // Usernames of the admin
-
   // when a new user has been created.
-  def addUser(username: String,
-   pw: String,db: Database)(implicit ec: ExecutionContext): Unit  = {
-     val checkResult = Await.result(checkName(username, db), Duration.Inf)
-     if(checkResult.isEmpty) {
+  def addUser(username: String, pw: String,db: Database)(implicit ec: ExecutionContext): Unit  = {
+    val checkResult = Await.result(checkName(username, db), Duration.Inf)
+    if(!checkResult.isEmpty) {
       println("This user already exists.")
     }
-     else {
-       Await.result(db.run(UserTemporary+=UserTemporaryRow(0,username, pw)), Duration.Inf)
-     }
+    else {
+      Await.result(db.run(UserTemporary+=UserTemporaryRow(0,username, pw)), Duration.Inf)
+    }
   }
   
   def removeUser(uid: Int, db: Database)(ec: ExecutionContext): Unit = {
@@ -33,6 +27,9 @@ object UserModel {
 
   // checks if name is already used
   def checkName(username:String, db: Database): Future[Option[Int]] = {
+    /*
+     * Returns the users id if it exists.
+     */
     db.run {
       val ids = for {
         u <- User
@@ -54,39 +51,4 @@ object UserModel {
     ids.result.headOption
     }
   }
-/*
-  // returns the tasks of a user.
-  def getTasks(name:String): Seq[Seq[String]] = {
-  //  if(checkName(name)) {
-      tasks(name)
-
-
-
-//    }
-//    else {
-//      Seq(Seq())
-//    }
-  }
-
-  def addTask(name: String, comps: String*): Boolean = {
-    println(comps)
-
-  //  if(checkName(name)) {
-  //    tasks(name) :+= comps // append task to the user's tasks
-      return true
-  //  }
-  //  return false
-  }
-
-  def removeTask(name:String, taskid: Int) = {
-    tasks(name) = tasks(name).zipWithIndex.filter(_._2 != taskid-1).map(_._1)
-  }
-
-  def clearModel() {
-    users.clear()     // Username -> password
-    tasks.clear()  // Username -> tasks
-  }
-  * 
-  */
-
 }

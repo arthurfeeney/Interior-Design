@@ -5,7 +5,6 @@ import scala.concurrent.Await
 import scala.concurrent.Future
 import Tables._
 import scala.concurrent.ExecutionContext
-//case class Receipt(userID: Int, receiptID: Int, vendorID: Int, item: String, description: String)
 
 object ReceiptDataModel {
   def addReceipt(db: Database, uID: Int, vID: Int, price: Float, item: String, desc: String)(implicit ec: ExecutionContext): Unit = {
@@ -27,6 +26,18 @@ object ReceiptDataModel {
       receipts.result
     }
   }
+  
+  def getReceiptsForUser(userID: String, db: Database)(implicit ec: ExecutionContext):Future[Seq[ReceiptRow]] = {
+    db.run {
+      val receipts = for {
+        (r, u) <- Receipt join User on (_.userid === _.id)
+        if u.username === userID
+      }
+      yield {r}
+      receipts.result
+    }
+  }
+  
   
   def getReceiptForVendor(vendorID: Int, db:Database)(implicit ec: ExecutionContext): Future[Seq[ReceiptRow]] = {
     db.run {

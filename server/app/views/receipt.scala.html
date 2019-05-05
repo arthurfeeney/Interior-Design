@@ -1,0 +1,117 @@
+@* receipt Template File *@
+@(name: Option[String], tasks: Seq[Seq[String]])
+
+@main("View Purchases for " + name.getOrElse("no ones?")) {
+	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+	
+	<center>
+		<h2 class="section-title">Interior Design by Katie</h2>
+	</center>
+	
+	
+	<div class="navbar-default">
+	  <a href="home" id="home">Home</a>
+	  <a href="news" id="news">News</a>
+	  <a href="contact" id="contact">Contact</a>
+	  <a href="about" id="about">About</a>
+	  <a href="gallery" id="gallery">Gallery</a>
+	  <a class="active" href="receipt" id="receipt">Receipt</a>
+	</div>
+	
+	</br>
+	</br>
+	
+	@if(name.getOrElse("") == "katie") {
+		<div  style="float:left; padding-left:30px" class="right-border-div">
+			<h2> Admin Abilities: </h2>
+	
+			<form action="addTask" method="GET">
+				<table>
+					<tr>
+						<th> <span> item name: </span> </th>
+						<th> <input type="text" name="task"></input></th>
+					</tr>
+					<tr>
+						<th> <span> price: </span></th>
+						<th> <input type="text" name="price"></input></th>
+					</tr>
+					<tr>
+						<th> <span> description: </span></th>
+						<th> <input type="text" name="description"></input></th>
+					</tr>
+						<th> <span> Date Purchased: </span></th>
+						<th> <input type="text" name="datePurchased"></input></th>
+					<tr>
+						<th> <span> Date Added: </span></th>
+						<th> <input type="text" name="dateAdded"></input></th>
+					</tr>
+				</table>
+			
+				<input type="submit" value="add item" name="addButton"></input>
+			</form>
+		
+			</br>
+			</br>
+			
+			<form action="removeTask" method="GET">
+				<input type="text" name="taskid"></input>
+				<input type="submit" value="remove item by id" name="removeButton"></input>
+			</form>
+			
+			</br>
+			</br>
+			
+			<form action="forgetName" method="GET">
+				<input type="submit" value="logout" name="logoutButton"></input>
+			</form>
+			
+			</br>
+			</br>
+		
+			<h3> Client List: </h3>
+		
+			<form>
+				<input type="submit" value="Candice Evergreen" name="viewReceipt"></input> </br>
+				<input type="submit" value="Samantha Turner" name="viewReceipt"></input></br>
+				<input type="submit" value="Geoffrey Lannister" name="viewReceipt"></input></br>
+				<input type="submit" value="Geoffrey Lannister" name="viewReceipt"></input></br>
+			</form>
+		</div>
+	}
+	
+		
+
+	<div align="center">
+		
+		<h2> Purchases for @name.getOrElse("Not Logged In") </h2>
+		
+		
+		<p> Total Purchases: @tasks.length </p>
+		<p> 
+			Total Price: 
+			@if(tasks.length > 0) {
+				@(tasks.map(item => if (item(1) == "") 0 else item(1).toDouble).sum)
+			}
+		</p>
+		
+		<table border="solid">
+		<tr> 
+			<th> Id </th>
+			<th> Name </th>
+			<th> Price </th>
+			<th> Item description </th>
+			<th> Date Purchased </th>
+			<th> Date Added </th>
+		</tr>
+		@for(idx <- 0 until tasks.length) {	
+			<tr> 
+				<th> @(idx+1). </th>
+				@for(piece <- tasks(idx)) {
+					<th> @piece </th>
+				} 
+			</tr>
+		}
+		</table>
+	</div>
+	
+}

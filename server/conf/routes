@@ -3,14 +3,10 @@
 # ~~~~
 
 # Home page
-#<<<<<<< HEAD
-#GET        	/                           edu.trinity.webapps.controllers.Application.index
-#GET			/home						edu.trinity.webapps.controllers.Application.index
-#=======
-GET        /                             edu.trinity.webapps.controllers.Application.index
-GET			/home						 edu.trinity.webapps.controllers.Application.index
+GET         /                             edu.trinity.webapps.controllers.Application.index
+GET			/home						  edu.trinity.webapps.controllers.Application.index
 #GET        /contact                      edu.trinity.webapps.controllers.ContactController.contact
-#>>>>>>> bc1119f876dfa4eca005225b84216ea09e8daa08
+
 
 GET			/loginUser					edu.trinity.webapps.controllers.SiteController.loginUser(name, pw)
 GET 		/addUser 					edu.trinity.webapps.controllers.SiteController.addUser(name, pw)
@@ -22,7 +18,7 @@ GET		   	/gallery					edu.trinity.webapps.controllers.SiteController.gallery
 GET 		/news						edu.trinity.webapps.controllers.SiteController.news
 GET			/about						edu.trinity.webapps.controllers.SiteController.about
 
-
+GET			/receipt					edu.trinity.webapps.controllers.SiteController.receipt
 
 
 + nocsrf
