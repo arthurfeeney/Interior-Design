@@ -18,7 +18,7 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
     )(UserQuery.apply)(UserQuery.unapply)
   )
   
- def contact = Action { implicit request =>
+ def contactHome = Action { implicit request =>
     request.session("username").nonEmpty match {
       case true => Ok(views.html.contact(queryForm, None))
       case false => Ok(views.html.contact(queryForm, Some(request.session("username"))))
@@ -27,27 +27,28 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
   }
   
   
-}
 
-//  def postQuery = Action {implicit request =>
-//    val postBody = request.body.asFormUrlEncoded
-//    val mailer = Mailer(session)
-//    postBody.map {args =>
-//      val sender = args("address").head
-//      val q = args("query").head
-//      val content = new Content().text(q)
-//      val msg = Message(
-//          from = new InternetAddress(sender),
-//          subject = "Customer Inquiry",
-//          content = content,
-//          to = Seq(new InternetAddress("npatel5@trinity.edu"))
-//          )
-//      try {
-//        mailer.send(msg)
-//        //Redirect(routes.ContactController.contact()).withNewSession
-//      }
-//      catch {
-//        //case ex: javax.mail.MessagingException => Redirect(routes.ContactController.contact())
-//      }
-//    }.getOrElse(Redirect(routes.ContactController.contact()))
-//  }
+
+  def postQuery = Action {implicit request =>
+   val postBody = request.body.asFormUrlEncoded
+   val mailer = Mailer(session)
+   postBody.map {args =>
+     val sender = args("address").head
+     val q = args("query").head
+     val content = new Content().text(q)
+     val msg = Message(
+         from = new InternetAddress(sender),
+         subject = "Customer Inquiry",
+         content = content,
+         to = Seq(new InternetAddress("npatel5@trinity.edu"))
+         )
+     try {
+       mailer.send(msg)
+       Redirect(routes.ContactController.contactHome).withNewSession
+     }
+     catch {
+       case ex: javax.mail.MessagingException => Redirect(routes.ContactController.contactHome)
+     }
+   }.getOrElse(Redirect(routes.ContactController.contactHome))
+  }
+}
