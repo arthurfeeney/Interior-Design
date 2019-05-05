@@ -11,4 +11,9 @@ object VendorDataModel {
   def addVendor(db: Database, vname: String, phone: Int, email: String, st: String, city: String, state: String, zip: String)(implicit ec: ExecutionContext): Unit = {
     Await.result(db.run(Vendor+=VendorRow(0,Some(vname), Some(phone), Some(email), Some(st), Some(city), Some(state), Some(zip))),Duration.Inf)
   }
+  
+  def removeVendor(vid: Int, db: Database): Unit = {
+    val v = Vendor.filter(_.id === vid)
+    Await.result(db.run(v.delete), Duration.Inf)
+  }
 }

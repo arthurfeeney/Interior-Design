@@ -25,6 +25,11 @@ object UserModel {
        Await.result(db.run(UserTemporary+=UserTemporaryRow(0,username, pw)), Duration.Inf)
      }
   }
+  
+  def removeUser(uid: Int, db: Database)(ec: ExecutionContext): Unit = {
+    val u = User.filter(_.id === uid)
+    Await.result(db.run(u.delete), Duration.Inf)
+  }
 
   // checks if name is already used
   def checkName(username:String, db: Database): Future[Option[Int]] = {
