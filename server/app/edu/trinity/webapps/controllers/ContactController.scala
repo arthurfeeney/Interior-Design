@@ -3,13 +3,15 @@ import javax.inject._
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
-import com.github.jurajburian.mailer._
-import javax.mail.internet.InternetAddress
+import java.util.Properties
+import java.util.Date
+import javax.mail.internet._
+import javax.mail._
 case class UserQuery(address: String, query: String)
 
 @Singleton
 class ContactController @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
-  val session = (SessionFactory() + (SmtpAddress("smtp.gmail.com", 587))).session()
+
 
   val queryForm = Form(
     mapping(
@@ -30,24 +32,42 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
 
 
   def postQuery = Action {implicit request =>
+   println("Sending email from user "+request.session("username"))
+   //val session = (SessionFactory() + (SmtpAddress("smtp.gmail.com", 587))).session(Some("user@gmail.com"-> "password"))
+   //val prop1 = Property("mail.smtp.starttls.enable", "true")
    val postBody = request.body.asFormUrlEncoded
-   val mailer = Mailer(session)
+   //val mailer = Mailer(session)
    postBody.map {args =>
+     var props = new Properties()
+    
      val sender = args("address").head
      val q = args("query").head
-     val content = new Content().text(q)
-     val msg = Message(
-         from = new InternetAddress(sender),
-         subject = "Customer Inquiry",
-         content = content,
-         to = Seq(new InternetAddress("npatel5@trinity.edu"))
-         )
+     props.put("mail.smtp.host", "smtp.gmail.com")
+     props.put("mail.smtp.port", "587")
+     props.put("mail.from", sender)
+     props.put("mail.smtp.starttls.enable", "true")
+     val session = javax.mail.Session.getInstance(props, null)
      try {
-       mailer.send(msg)
+       val msg = new MimeMessage(session)
+       msg.setFrom()
+       msg.setRecipients(Message.RecipientType.TO, "npatel5@trinity.edu")
+       msg.setSubject("Customer Inquiry")
+       msg.setSentDate(new Date())
+       msg.setText(q)
+       Transport.send(msg)
+       println("Message sent!")
+       
        Redirect(routes.ContactController.contactHome).withNewSession
+          
+
      }
      catch {
-       case ex: javax.mail.MessagingException => Redirect(routes.ContactController.contactHome)
+       case ex: javax.mail.MessagingException => {
+         println(ex.toString())
+         ex.printStackTrace()
+         println("Sending failed")
+         Redirect(routes.ContactController.contactHome)
+       }
      }
    }.getOrElse(Redirect(routes.ContactController.contactHome))
   }
