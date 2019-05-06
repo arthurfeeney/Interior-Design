@@ -1,5 +1,5 @@
 @* receipt Template File *@
-@(name: Option[String], tasks: Seq[Seq[String]])
+@(name: Option[String], clientName: Option[String], tasks: Seq[Seq[String]], clientList: Seq[String])
 
 @main("View Purchases for " + name.getOrElse("no ones?")) {
 	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
@@ -23,58 +23,46 @@
 	
 	@if(name.getOrElse("") == "katie") {
 		<div  style="float:left; padding-left:30px" class="right-border-div">
-			<h2> Admin Abilities: </h2>
-	
-			<form action="addTask" method="GET">
+			
+			<h2> Admin View: </h2>
+		
+
+			<form action="addItem" method="GET">
 				<table>
 					<tr>
-						<th> <span> item name: </span> </th>
-						<th> <input type="text" name="task"></input></th>
+						<th> <span> Client Name: </span> </th>
+						<th> <input type="text" name="clientName" value='@clientName.getOrElse("")'></input> </th>
 					</tr>
 					<tr>
-						<th> <span> price: </span></th>
+						<th> <span> Item: </span> </th>
+						<th> <input type="text" name="itemName"></input></th>
+					</tr>
+					<tr>
+						<th> <span> Price: </span></th>
 						<th> <input type="text" name="price"></input></th>
 					</tr>
 					<tr>
-						<th> <span> description: </span></th>
-						<th> <input type="text" name="description"></input></th>
+						<th> <span> Description: </span></th>
+						<th> <input type="text" name="desc"></input></th>
 					</tr>
-						<th> <span> Date Purchased: </span></th>
-						<th> <input type="text" name="datePurchased"></input></th>
 					<tr>
-						<th> <span> Date Added: </span></th>
-						<th> <input type="text" name="dateAdded"></input></th>
+						<th> <span> Vendor: </span></th>
+						<th> <input type="text" name="vendor"></input></th>
 					</tr>
 				</table>
-			
-				<input type="submit" value="add item" name="addButton"></input>
+				<input type="submit" value="Add Item" name="addButton"></input>
 			</form>
 		
 			</br>
 			</br>
-			
-			<form action="removeTask" method="GET">
-				<input type="text" name="taskid"></input>
-				<input type="submit" value="remove item by id" name="removeButton"></input>
-			</form>
-			
-			</br>
-			</br>
-			
-			<form action="forgetName" method="GET">
-				<input type="submit" value="logout" name="logoutButton"></input>
-			</form>
-			
-			</br>
-			</br>
-		
+	
+				
 			<h3> Client List: </h3>
 		
-			<form>
-				<input type="submit" value="Candice Evergreen" name="viewReceipt"></input> </br>
-				<input type="submit" value="Samantha Turner" name="viewReceipt"></input></br>
-				<input type="submit" value="Geoffrey Lannister" name="viewReceipt"></input></br>
-				<input type="submit" value="Geoffrey Lannister" name="viewReceipt"></input></br>
+			<form action="viewReceipt" method="GET" class="client-box">
+				@for(client <- clientList) {
+					<input type="submit" value="@client" name="clientToView"></input> </br>
+				}
 			</form>
 		</div>
 	}
@@ -83,7 +71,7 @@
 
 	<div align="center">
 		
-		<h2> Purchases for @name.getOrElse("Not Logged In") </h2>
+		<h2> Purchases for @clientName.getOrElse("Not Logged In") </h2>
 		
 		
 		<p> Total Purchases: @tasks.length </p>
@@ -100,8 +88,7 @@
 			<th> Name </th>
 			<th> Price </th>
 			<th> Item description </th>
-			<th> Date Purchased </th>
-			<th> Date Added </th>
+			<th> Vendor </th>
 		</tr>
 		@for(idx <- 0 until tasks.length) {	
 			<tr> 

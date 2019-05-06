@@ -27,17 +27,17 @@ object ReceiptDataModel {
     }
   }
   
-  def getReceiptsForUser(userID: String, db: Database)(implicit ec: ExecutionContext):Future[Seq[ReceiptRow]] = {
+  // overloaded function that queries with user's name
+  def getReceiptsForUser(username: String, db: Database)(implicit ec: ExecutionContext):Future[Seq[ReceiptRow]] = {
     db.run {
       val receipts = for {
-        (r, u) <- Receipt join User on (_.userid === _.id)
-        if u.username === userID
+        (r, u) <- Receipt join UserTemporary on (_.userid === _.id)
+        if u.username === username
       }
       yield {r}
       receipts.result
     }
   }
-  
   
   def getReceiptForVendor(vendorID: Int, db:Database)(implicit ec: ExecutionContext): Future[Seq[ReceiptRow]] = {
     db.run {
@@ -49,6 +49,7 @@ object ReceiptDataModel {
       receipts.result
     }
   }
+  
 }
    
   

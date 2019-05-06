@@ -51,4 +51,14 @@ object UserModel {
     ids.result.headOption
     }
   }
+  
+  def clientList(db: Database): Future[Seq[String]] = {
+    db.run {
+      val usernames = for {
+        u <- UserTemporary
+      }
+      yield {u.username}
+      usernames.result
+    }
+  }
 }

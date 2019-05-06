@@ -23,6 +23,31 @@ class ReceiptController @Inject()(protected val dbConfigProvider: DatabaseConfig
     cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc)
     with HasDatabaseConfigProvider[JdbcProfile]{
 
-    
+    // admin adds an item to a user's receipt.
+    def addItem(clientName: String, itemName: String, price:String, desc:String, vendor: String) = Action.async { implicit request =>
+      val cid = Await.result(models.UserModel.checkName(clientName, db), Duration.Inf)
+      if(cid.isEmpty) {
+        // adding receipt failed.
+        println("ReceiptController.addItem: customer does not exist.")
+        Future.successful(Redirect(routes.Application.index).withNewSession)
+      }
+      else {
+        val vid = Await.result(models.VendorDataModel.checkVendor(vendor, db), Duration.Inf)
+        if(vid.isEmpty) {
+          // if the vendor doesn't exist, create a new thing with just the name.
+          models.VendorDataModel.addVendor(db, vendor)
+          val newVid = Await.result(models.VendorDataModel.checkVendor(vendor, db), Duration.Inf)
+          models.ReceiptDataModel.addReceipt(db, cid.get, newVid.get, price.toFloat, itemName, desc)
+          Future{Redirect(routes.SiteController.receipt).
+            withSession("username" -> request.session.get("username").get)}
+        }
+        else {
+          models.ReceiptDataModel.addReceipt(db, cid.get, vid.get, price.toFloat, itemName, desc)
+          Future{Redirect(routes.SiteController.receipt).
+            withSession("username" -> request.session.get("username").get)}
+        }
+        
+      }
+    }
   
 }
