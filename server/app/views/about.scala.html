@@ -1,5 +1,5 @@
 @* about Template File *@
-@(param: Any)
+@(name: String)
 
 @main("About Katie") {
   <head>
@@ -20,7 +20,10 @@
 	  <a href="contact" id="contact">Contact</a>
 	  <a class="active" href="about" id="about">About</a>
 	  <a href="gallery" id="gallery">Gallery</a>
-	  <a href="receipt" id="receipt">Receipt</a>
+	  @if(name != "") {
+	  	<a href="receipt" id="receipt">Receipt</a>
+	  	<a href="logout" id="logout">Logout</a>
+	  }
 	</div>
 	
 	</br>

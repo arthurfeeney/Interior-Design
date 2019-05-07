@@ -1,5 +1,5 @@
 @* news Template File *@
-@(param: Any)
+@(name: String)
 
 @main("Interior Design Updates") {
 	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
@@ -16,6 +16,9 @@
 	  <a href="contact" id="contact">Contact</a>
 	  <a href="about" id="about">About</a>
 	  <a href="gallery" id="gallery">Gallery</a>
-	  <a href="receipt" id="receipt">Receipt</a>
+	  @if(name != "") {
+	  	<a href="receipt" id="receipt">Receipt</a>
+	  	<a href="logout" id="logout">Logout</a>
+	  }
 	</div>
 }

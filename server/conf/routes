@@ -4,7 +4,7 @@
 
 # Home page
 GET         /                             edu.trinity.webapps.controllers.Application.index
-GET			/home						  edu.trinity.webapps.controllers.Application.index
+GET			/home						  edu.trinity.webapps.controllers.SiteController.home
 #GET        /contact                      edu.trinity.webapps.controllers.ContactController.contact
 
 

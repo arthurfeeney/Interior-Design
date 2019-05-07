@@ -7,7 +7,7 @@
 	<center>
 		<h2 class="section-title">Interior Design by Katie</h2>
 	</center>
-	
+
 	
 	<div class="navbar-default">
 	  <a href="home" id="home">Home</a>
@@ -16,6 +16,7 @@
 	  <a href="about" id="about">About</a>
 	  <a href="gallery" id="gallery">Gallery</a>
 	  <a class="active" href="receipt" id="receipt">Receipt</a>
+	  <a href="logout" id="logout">Logout</a>
 	</div>
 	
 	</br>
@@ -24,33 +25,35 @@
 	@if(name.getOrElse("") == "katie") {
 		<div  style="float:left; padding-left:30px" class="right-border-div">
 			
-			<h2> Admin View: </h2>
+			<h2 class="section-title"> Admin View: </h2>
 		
 
 			<form action="addItem" method="GET">
 				<table>
 					<tr>
-						<th> <span> Client Name: </span> </th>
-						<th> <input type="text" name="clientName" value='@clientName.getOrElse("")'></input> </th>
+						<td> <span> Client Name: </span> </td>
+						<td> <input type="text" name="clientName" value='@clientName.getOrElse("")'></input> </td>
 					</tr>
 					<tr>
-						<th> <span> Item: </span> </th>
-						<th> <input type="text" name="itemName"></input></th>
+						<td> <span> Item: </span> </td>
+						<td> <input type="text" name="itemName"></input></td>
 					</tr>
 					<tr>
-						<th> <span> Price: </span></th>
-						<th> <input type="text" name="price"></input></th>
+						<td> <span> Price: </span></td>
+						<td> <input type="text" name="price"></input></td>
 					</tr>
 					<tr>
-						<th> <span> Description: </span></th>
-						<th> <input type="text" name="desc"></input></th>
+						<td> <span> Description: </span></td>
+						<td> <input type="text" name="desc"></input></td>
 					</tr>
 					<tr>
-						<th> <span> Vendor: </span></th>
-						<th> <input type="text" name="vendor"></input></th>
+						<td> <span> Vendor: </span></td>
+						<td> <input type="text" name="vendor"></input></td>
 					</tr>
 				</table>
-				<input type="submit" value="Add Item" name="addButton"></input>
+				<center>
+					<input type="submit" class="btn-xl" value="Add Item" name="addButton"></input>
+				</center>
 			</form>
 		
 			</br>
@@ -61,7 +64,7 @@
 		
 			<form action="viewReceipt" method="GET" class="client-box">
 				@for(client <- clientList) {
-					<input type="submit" value="@client" name="clientToView"></input> </br>
+					<input type="submit" class="btn" value="@client" name="clientToView"></input> </br>
 				}
 			</form>
 		</div>
@@ -82,22 +85,26 @@
 			}
 		</p>
 		
-		<table border="solid">
-		<tr> 
-			<th> Id </th>
-			<th> Name </th>
-			<th> Price </th>
-			<th> Item description </th>
-			<th> Vendor </th>
-		</tr>
-		@for(idx <- 0 until tasks.length) {	
-			<tr> 
-				<th> @(idx+1). </th>
-				@for(piece <- tasks(idx)) {
-					<th> @piece </th>
-				} 
-			</tr>
-		}
+		<table class="table-fill">
+			<thead>
+				<tr> 
+					<th> Id </th>
+					<th> Name </th>
+					<th> Price </th>
+					<th> Description </th>
+					<th> Vendor </th>
+				</tr>
+			</thead>
+			<tbody class="table-hover">
+			@for(idx <- 0 until tasks.length) {	
+				<tr> 
+					<td> @(idx+1). </td>
+					@for(piece <- tasks(idx)) {
+						<td> @piece </td>
+					} 
+				</tr>
+			}
+			</tbody>
 		</table>
 	</div>
 	

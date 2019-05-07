@@ -26,8 +26,8 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
     with HasDatabaseConfigProvider[JdbcProfile]{
 
   // go to the login (home/index) page.
-  def login = Action { implicit request =>
-    Ok(views.html.index(""))
+  def home = Action { implicit request =>
+    Ok(views.html.index("", request.session.get("username").getOrElse("")))
   }  
   
 
@@ -37,7 +37,7 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
     println(id)
     if(!id.isEmpty) {
       println("Current user: " + name)
-      Future{Redirect(routes.Application.index).
+      Future{Redirect(routes.SiteController.home).
         withSession("username" -> name)}
     }
     else {
@@ -80,13 +80,13 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
 
   // go to news page
   def news = Action { implicit request =>
-    Ok(views.html.news())
+    Ok(views.html.news(request.session.get("username").getOrElse("")))
   }
 
   
   // go to the "about" page
   def about = Action { implicit request =>
-    Ok(views.html.about())
+    Ok(views.html.about(request.session.get("username").getOrElse("")))
   }
   
   // go to the logged-in user's receipt page.
