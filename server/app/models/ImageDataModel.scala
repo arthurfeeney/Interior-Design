@@ -12,8 +12,17 @@ object ImageDataModel {
       (for (i <- Image) yield i).result
     }
   }
+  def getByDesc(desc: String, db:Database): Future[Seq[ImageRow]] = {
+    db.run {
+      (for (
+          i <- Image
+          if i.description === desc
+          ) yield i).result
+    }
+  }
+  
   def addImage(link: String, desc: String, col: Int, row: Int, db: Database): Unit = {
-    Await.result(db.run(Image+=ImageRow(0, link, Some(desc), col, row)), Duration.Inf)
+    Await.result(db.run(Image+=ImageRow(0, link, desc, col, row)), Duration.Inf)
   }
   
   def removeImage(id: Int, db: Database): Unit = {

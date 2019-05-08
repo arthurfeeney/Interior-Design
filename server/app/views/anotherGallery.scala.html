@@ -7,6 +7,23 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
+
+#overLay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -18,7 +35,8 @@ body {
 
 .header {
   text-align: center;
-  padding: 32px;
+  padding: 70px;
+  top: 500px;
 }
 
 .row {
@@ -61,11 +79,11 @@ body {
 }
 
 .overlay {
-  position: absolute; 
-  bottom: 0; 
+  position: absolute;
+  bottom: 0;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
-  color: #f1f1f1; 
+  color: #f1f1f1;
   width: 33%;
   transition: .5s ease;
   opacity:0;
@@ -76,7 +94,6 @@ body {
   margin-top: 8px;
   vertical-align: middle;
 }
-
 .column img:hover {
   opacity: 0.7;
   transition: opacity 0.5s ease-out;
@@ -92,22 +109,29 @@ body {
 /* The expanding image container */
 .container {
   display:none;
-  position:fixed;
-  left: 25%;
-  top: 25%;
-  //margin-left: auto;
-  //margin-right: auto;
+  //position:absolute;
+  //left: 25%;
+  //right:25%;
+  //margin:auto;
+    position:fixed;
+    top:60px;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    height:auto;
+    width:50%;
+                z-index:9999;
 }
 
 /* Expanding image text */
 #imgtext {
   position: absolute;
-  bottom: 15px;
-  left: 15px;
+  bottom: 25px;
+  left: 0;
   color: white;
   font-size: 20px;
 }
-
 /* Closable button inside the expanded image */
 .closebtn {
   position: absolute;
@@ -117,9 +141,106 @@ body {
   font-size: 35px;
   cursor: pointer;
 }
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+  width: 100%;
+}
+
+/* Links inside the navbar */
+.navbar h2 {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown h2 */
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar h2:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+
+/* Links inside the dropdown */
+.dropdown-content h2 {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content h2:hover {
+  background-color: #ddd;
+  
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  
+}
+
+
+
+
 </style>
 </head>
 <body>
+
+<div class="navbar sticky">
+	<h2>Swap</h2>
+	<h2>Delete</h2>
+	<h2>Add</h2>
+	<h2>Modify</h2>
+	<div class="dropdown">
+		<button class="dropbtn">Filter
+			<i class="fa fa-caret-down"></i>
+		</button>
+		<div class = "dropdown-content sticky">
+			<h2 class="filter">by ID</h2>
+			<h2 class="filter">by Tag</h2>
+			<h2 class="filter">by Date</h2>
+		</div>
+	</div>
+</div>
+
+
 
 <!-- Header -->
 <div class="header" id="myHeader">
@@ -127,53 +248,102 @@ body {
    <br>
 </div>
 
+
 <!-- Image Grid -->
-<div class="row"> 
-  <div class="column">
-    <img src="https://freshome.com/wp-content/uploads/2018/01/decorator-living.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://www.collegeforcreativestudies.edu/files/assets/images/large/1504212008_header_IN.jpg" style="width:100%"alt="example" onclick="expand(this);">
-    <img src="http://www.dawsondesignassociates.com/images/home/DDA-Hospitality-Interior-Design-2a.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://nyocommercialobserver.files.wordpress.com/2018/08/0009_determinedbydesign_01_11_18_large.jpg?w=640&h=427" style="width:100%"alt="example" onclick="expand(this);">
-    <img src="https://timedotcom.files.wordpress.com/2018/08/the-curated-home-grant-gibson-2.jpeg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://www.pagodared.com/blog/wp-content/uploads/2018/05/4-Mark_D_Sikes_Beverly_Hills_1.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://content.thriveglobal.com/wp-content/uploads/2019/03/GettyImages-999732712.jpg" style="width:100%" alt="example" onclick="expand(this);">
+<div class="row">
+  <div class="column" id="c1">
+    <img src="https://freshome.com/wp-content/uploads/2018/01/decorator-living.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="https://www.collegeforcreativestudies.edu/files/assets/images/large/1504212008_header_IN.jpg" style="width:100%"alt="example" onclick="expand(this);on();">
+    <img src="http://www.dawsondesignassociates.com/images/home/DDA-Hospitality-Interior-Design-2a.jpg" style="width:100%" alt="example" onclick="expand(this);on();">
+    <img src="https://nyocommercialobserver.files.wordpress.com/2018/08/0009_determinedbydesign_01_11_18_large.jpg?w=640&h=427" style="width:100%"alt="example" onclick="expand(this);on();">
+    <img src="https://timedotcom.files.wordpress.com/2018/08/the-curated-home-grant-gibson-2.jpeg" style="width:100%" alt="example" onclick="expand(this);on();">
+    <img src="https://www.pagodared.com/blog/wp-content/uploads/2018/05/4-Mark_D_Sikes_Beverly_Hills_1.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="https://content.thriveglobal.com/wp-content/uploads/2019/03/GettyImages-999732712.jpg" style="width:100%" alt="example" onclick="expand(this);on();">
   </div>
-  <div class="column">
-    <img src="https://www.chitkara.edu.in/wp-content/uploads/2019/02/INTERIOR-DESIGN1.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://static1.squarespace.com/static/54eb4c37e4b07c3f6564f207/54eb4f16e4b07c01c5c411b1/54ef5ecbe4b025105a4f6948/1424973516099/Livingroom+2.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://www.hometown.in/design-build/static/slider-1b.4ec10847.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://industryreports24.com/wp-content/uploads/2019/04/Interior-Design.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://lifetimeluxury.com/wp-content/uploads/2017/12/Interior-Design-Room.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://cdn.styleblueprint.com/wp-content/uploads/2019/02/MurphyMaude-Watson-SelaviePhoto-31.jpg" style="width:100%" alt="example" onclick="expand(this);"> 
- <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2012/2/1/0/CI-Thibaut_Barrowgate-living-room-wallpaper-settee_s3x4.jpg.rend.hgtvcom.616.822.suffix/1400965159581.jpeg" style="width:100%" alt="example" onclick="expand(this);">
- </div>  
-  <div class="column">
-    <img src="https://www.sbid.org/wp-content/uploads/2018/02/img7-e1517585569791.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="http://www.sb-id.com/uploads/highlights/8_swissvilla.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="http://www.contemporist.com/wp-content/uploads/2019/03/modern-cafe-restaurant-interior-design-020319-726-01-800x420.jpg" style="width:100%"  alt="example" onclick="expand(this);">
-    <img src="http://www.imgnyc.com/wp-content/uploads/2018/06/poster-mspt-time-lapse-v3.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://i.pinimg.com/736x/89/dc/1d/89dc1d70c121e8ab81b81f601b581a04.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://super.homelane.com/ogimage-2.jpg" style="width:100%" alt="example" onclick="expand(this);">
-    <img src="https://media.architecturaldigest.com/photos/5744d37dff9db5a43d5cf9c6/master/w_2626,h_1905,c_limit/contemporary-interior-design-004.jpg" style="width:100%" alt="example" onclick="expand(this);">
+  <div class="column" id="c2">
+    <img src="https://www.chitkara.edu.in/wp-content/uploads/2019/02/INTERIOR-DESIGN1.jpg" style="width:100%" alt="example" onclick="expand(this);on();">
+    <img src="https://static1.squarespace.com/static/54eb4c37e4b07c3f6564f207/54eb4f16e4b07c01c5c411b1/54ef5ecbe4b025105a4f6948/1424973516099/Livingroom+2.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="https://www.hometown.in/design-build/static/slider-1b.4ec10847.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="https://industryreports24.com/wp-content/uploads/2019/04/Interior-Design.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="https://lifetimeluxury.com/wp-content/uploads/2017/12/Interior-Design-Room.jpg" style="width:100%" alt="example" onclick="expand(this);on();">
+    <img src="https://cdn.styleblueprint.com/wp-content/uploads/2019/02/MurphyMaude-Watson-SelaviePhoto-31.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+ <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2012/2/1/0/CI-Thibaut_Barrowgate-living-room-wallpaper-settee_s3x4.jpg.rend.hgtvcom.616.822.suffix/1400965159581.jpeg" style="width:100%" alt="example" onclick="expand(this); on();">
+</div>
+  <div class="column" id = "c3">
+    <img src="https://www.sbid.org/wp-content/uploads/2018/02/img7-e1517585569791.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="http://www.sb-id.com/uploads/highlights/8_swissvilla.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="http://www.contemporist.com/wp-content/uploads/2019/03/modern-cafe-restaurant-interior-design-020319-726-01-800x420.jpg" style="width:100%"  alt="example" onclick="expand(this); on();">
+    <img src="http://www.imgnyc.com/wp-content/uploads/2018/06/poster-mspt-time-lapse-v3.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="https://i.pinimg.com/736x/89/dc/1d/89dc1d70c121e8ab81b81f601b581a04.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="https://super.homelane.com/ogimage-2.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    <img src="https://media.architecturaldigest.com/photos/5744d37dff9db5a43d5cf9c6/master/w_2626,h_1905,c_limit/contemporary-interior-design-004.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
   </div>
 </div>
+
+
+<div id="overLay"></div>
+
+
+
 <div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <span onclick="this.parentElement.style.display='none'; off()" class="closebtn">&times;</span>
   <img id="expandedImg" style="width:100%">
   <div id="imgtext"></div>
 </div>
 
+
 <script>
+function addImages() {
+	  //var table = document.getElementById("myTable");
+	  //var row = table.insertRow(0);
+	  //var cell1 = row.insertCell(0);
+	  //var cell2 = row.insertCell(1);
+	  //cell1.innerHTML = "NEW CELL1";
+	  //cell2.innerHTML = "NEW CELL2";
+	  let table = document.getElementsByClassName("row")
+	  let imageArr = ["https://freshome.com/wp-content/uploads/2018/01/decorator-living.jpg", "https://www.collegeforcreativestudies.edu/files/assets/images/large/1504212008_header_IN.jpg", 
+		  "http://www.dawsondesignassociates.com/images/home/DDA-Hospitality-Interior-Design-2a.jpg","https://nyocommercialobserver.files.wordpress.com/2018/08/0009_determinedbydesign_01_11_18_large.jpg?w=640&h=427",
+		  "https://timedotcom.files.wordpress.com/2018/08/the-curated-home-grant-gibson-2.jpeg", "https://www.pagodared.com/blog/wp-content/uploads/2018/05/4-Mark_D_Sikes_Beverly_Hills_1.jpg", 
+		  "https://content.thriveglobal.com/wp-content/uploads/2019/03/GettyImages-999732712.jpg", "https://www.chitkara.edu.in/wp-content/uploads/2019/02/INTERIOR-DESIGN1.jpg",
+		  "https://static1.squarespace.com/static/54eb4c37e4b07c3f6564f207/54eb4f16e4b07c01c5c411b1/54ef5ecbe4b025105a4f6948/1424973516099/Livingroom+2.jpg", 
+		  "https://www.hometown.in/design-build/static/slider-1b.4ec10847.jpg", "https://industryreports24.com/wp-content/uploads/2019/04/Interior-Design.jpg", 
+		  "https://lifetimeluxury.com/wp-content/uploads/2017/12/Interior-Design-Room.jpg", "https://cdn.styleblueprint.com/wp-content/uploads/2019/02/MurphyMaude-Watson-SelaviePhoto-31.jpg", 
+		  "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2012/2/1/0/CI-Thibaut_Barrowgate-living-room-wallpaper-settee_s3x4.jpg.rend.hgtvcom.616.822.suffix/1400965159581.jpeg",
+		  "https://www.sbid.org/wp-content/uploads/2018/02/img7-e1517585569791.jpg", "http://www.sb-id.com/uploads/highlights/8_swissvilla.jpg",
+		  "http://www.contemporist.com/wp-content/uploads/2019/03/modern-cafe-restaurant-interior-design-020319-726-01-800x420.jpg", "http://www.imgnyc.com/wp-content/uploads/2018/06/poster-mspt-time-lapse-v3.jpg"
+	 ]
+	let imageGrid = document.getElementsByClassName("row");
+	let currImage = document.createElement("IMG");
+	currImage.setAttribute("src", imageArr[0]);
+	 
+	 
+}
+
+
+
 function expand(imgs) {
   var expandImg = document.getElementById("expandedImg");
+
+
   var imgText = document.getElementById("imgtext");
   expandImg.src = imgs.src;
   imgText.innerHTML = imgs.alt;
   expandImg.parentElement.style.display = "block";
 }
+
+function on() {
+  document.getElementById("overLay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overLay").style.display = "none";
+}
+
+
+
 </script>
 
 </body>
 </html>
-}
 
+}

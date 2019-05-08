@@ -14,15 +14,15 @@ object AddImageData extends App {
   Await.result(db.run(sqlu"ALTER TABLE image AUTO_INCREMENT = 1;"), Duration.Inf)
   Await.result(db.run(
     Image ++=Seq(     
-      ImageRow(0,"/versionedAssets/images/325Library.jpg", None, 0, 0),
-      ImageRow(0, "/versionedAssets/images/325living.jpg", None, 0, 1),
-      ImageRow(0,"/versionedAssets/images/325livingWindow.jpg", None, 0, 2),
-      ImageRow(0, "/versionedAssets/images/325Master.jpg", None, 0,3),
-      ImageRow(0, "/versionedAssets/images/325sitting.jpg", None, 1, 0),
-      ImageRow(0, "/versionedAssets/images/3living.jpg", None, 1, 1),
-      ImageRow(0, "/versionedAssets/images/441living.jpg", None, 1, 2),
-      ImageRow(0, "/versionedAssets/images/441master.jpg", None, 1, 3),
-      ImageRow(0, "/versionedAssets/images/441study.jpg", None, 2, 0)
+      ImageRow(0,"/versionedAssets/images/325Library.jpg", "Thing", 0, 0),
+      ImageRow(0, "/versionedAssets/images/325living.jpg", "Before", 0, 1),
+      ImageRow(0,"/versionedAssets/images/325livingWindow.jpg", "After", 0, 2),
+      ImageRow(0, "/versionedAssets/images/325Master.jpg", "Indoor", 0,3),
+      ImageRow(0, "/versionedAssets/images/325sitting.jpg", "Before", 1, 0),
+      ImageRow(0, "/versionedAssets/images/3living.jpg", "After", 1, 1),
+      ImageRow(0, "/versionedAssets/images/441living.jpg", "Outdoor", 1, 2),
+      ImageRow(0, "/versionedAssets/images/441master.jpg", "After", 1, 3),
+      ImageRow(0, "/versionedAssets/images/441study.jpg", "Before", 2, 0)
   )), Duration.Inf)
   db.close()
 }
