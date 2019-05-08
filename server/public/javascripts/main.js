@@ -1,6 +1,5 @@
 /**
- * 
- */
+
 const field = document.getElementById("av-year")
 //const text = document.getElementById("text-for-av-temp")
 
@@ -19,4 +18,4 @@ field.onkeydown = (event) => {
 $("#contact").onClick => {
 	$("#PageContent").load("views.html.contact")
 	
-}
+}*/
