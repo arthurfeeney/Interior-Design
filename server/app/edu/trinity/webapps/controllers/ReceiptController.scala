@@ -38,12 +38,12 @@ class ReceiptController @Inject()(protected val dbConfigProvider: DatabaseConfig
           models.VendorDataModel.addVendor(db, vendor)
           val newVid = Await.result(models.VendorDataModel.checkVendor(vendor, db), Duration.Inf)
           models.ReceiptDataModel.addReceipt(db, cid.get, newVid.get, price.toFloat, itemName, desc)
-          Future{Redirect(routes.SiteController.receipt).
+          Future{Redirect(routes.SiteController.viewReceipt(clientName)).
             withSession("username" -> request.session.get("username").get)}
         }
         else {
           models.ReceiptDataModel.addReceipt(db, cid.get, vid.get, price.toFloat, itemName, desc)
-          Future{Redirect(routes.SiteController.receipt).
+          Future{Redirect(routes.SiteController.viewReceipt(clientName)).
             withSession("username" -> request.session.get("username").get)}
         }
         

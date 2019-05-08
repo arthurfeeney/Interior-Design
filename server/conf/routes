@@ -8,6 +8,8 @@ GET			/home						  edu.trinity.webapps.controllers.SiteController.home
 #GET        /contact                      edu.trinity.webapps.controllers.ContactController.contact
 
 
+GET			/loginPage					edu.trinity.webapps.controllers.SiteController.loginPage
+
 GET			/loginUser					edu.trinity.webapps.controllers.SiteController.loginUser(name, pw)
 GET 		/logout						edu.trinity.webapps.controllers.SiteController.logout
 GET 		/addUser 					edu.trinity.webapps.controllers.SiteController.addUser(name, pw)

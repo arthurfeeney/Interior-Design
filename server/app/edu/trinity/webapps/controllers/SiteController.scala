@@ -30,6 +30,9 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
     Ok(views.html.index("", request.session.get("username").getOrElse("")))
   }  
   
+  def loginPage = Action { implicit request =>
+    Ok(views.html.loginPage("", request.session.get("username").getOrElse("")))
+  }
 
    // login with an existing account.
   def loginUser(name:String, pw:String) = Action async { implicit request =>

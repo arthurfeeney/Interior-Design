@@ -10,13 +10,18 @@
 
 	
 	<div class="navbar-default">
-	  <a href="home" id="home">Home</a>
-	  <a href="news" id="news">News</a>
-	  <a href="contact" id="contact">Contact</a>
-	  <a href="about" id="about">About</a>
-	  <a href="gallery" id="gallery">Gallery</a>
-	  <a class="active" href="receipt" id="receipt">Receipt</a>
-	  <a href="logout" id="logout">Logout</a>
+		<a class="active" href="home" id="home">Home</a>
+		<a href="news" id="news">News</a>
+		<a href="contact" id="contact">Contact</a>
+		<a href="about" id="about">About</a>
+		<a href="gallery" id="gallery">Gallery</a>
+		@if(name == "") {
+			<a href="loginPage" id="loginPage">Login</a>
+		}
+	  	@if(name != "") {
+	  		<a href="receipt" id="receipt">Receipt</a>
+	  		<a href="logout" id="logout">Logout</a>
+	  	}
 	</div>
 	
 	</br>
@@ -71,7 +76,6 @@
 	}
 	
 		
-
 	<div align="center">
 		
 		<h2> Purchases for @clientName.getOrElse("Not Logged In") </h2>
