@@ -27,7 +27,8 @@ lazy val client = (project in file("client")).settings(commonSettings).settings(
 	name := "InteriorDesign-Client",
   scalaJSUseMainModuleInitializer := true,
   libraryDependencies ++= Seq(
-    "org.scala-js" %%% "scalajs-dom" % "0.9.5"
+    "org.scala-js" %%% "scalajs-dom" % "0.9.5",
+    "org.querki" %%% "jquery-facade" % "1.2",
   )
 ).enablePlugins(ScalaJSPlugin, ScalaJSWeb).
   dependsOn(sharedJs)
