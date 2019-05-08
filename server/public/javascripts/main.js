@@ -8,6 +8,7 @@ import org.querki.jquery._
 $("#indoor").click(function() {
 	$.post("/image/:indoor");
 	
+
 });
 
 //const field = document.getElementById("av-year")
