@@ -72,7 +72,7 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
   
   
   def gallery = Action {
-    Ok(views.html.gallery())
+    Ok(views.html.anotherGallery())
   }
 
 
