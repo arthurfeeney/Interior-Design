@@ -99,7 +99,7 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
     val clientList = Await.result(models.UserModel.clientList(db), Duration.Inf)
     models.ReceiptDataModel
       .getReceiptsForUser(name.getOrElse(""), db)
-      .map(x => x.map(y => Seq(y.item.toString, y.price.toString, y.description.toString, y.vendorid.toString)))
+      .map(x => x.map(y => Seq(y.item.toString, y.price.toString, y.description.getOrElse(""), y.vendorid.toString)))
       .map(s => Ok(views.html.receipt(name, name, s, clientList)))
   }
   
@@ -108,7 +108,7 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
     val clientList = Await.result(models.UserModel.clientList(db), Duration.Inf)
     models.ReceiptDataModel
       .getReceiptsForUser(clientToView, db)
-      .map(x => x.map(y => Seq(y.item.toString, y.price.toString, y.description.toString, y.vendorid.toString)))
+      .map(x => x.map(y => Seq(y.item.toString, y.price.toString, y.description.getOrElse(""), y.vendorid.toString)))
       .map(s => Ok(views.html.receipt(name, Some(clientToView), s, clientList)))
   }
   
