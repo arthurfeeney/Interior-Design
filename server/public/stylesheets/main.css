@@ -46,6 +46,15 @@ p {
 	color: #252525;
 }
 
+textarea {
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	font-weight: 350;
+	line-height: 28px;
+	letter-spacing: 0.2px;
+	color: #252525;	
+}
+
 a:hover, a:focus, a:active, a.active {
     color: #729fcf;
 }
@@ -219,7 +228,7 @@ section {
 }
 
 .mz-about-light {
-	background-color: #FBFBFB;
+	background-color: #F9F9F9;
 }
 
 .mz-module-about h3 {
