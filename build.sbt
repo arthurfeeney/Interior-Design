@@ -17,6 +17,7 @@ lazy val server = (project in file("server")).settings(commonSettings).settings(
     "mysql" % "mysql-connector-java" % "6.0.6",
     "com.typesafe.play" %% "play-mailer" % "6.0.1",
     "com.typesafe.play" %% "play-mailer-guice" % "6.0.1",
+    //"be.doeraene" %%% "scalajs-jquery" % "0.8.0",
     "com.github.jurajburian" %% "mailer" % "1.2.3" withSources
   ),
   // Compile the project before generating Eclipse files, so that generated .scala or .class files for views and routes are present

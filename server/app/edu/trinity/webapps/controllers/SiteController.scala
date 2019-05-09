@@ -19,6 +19,8 @@ import slick.jdbc.MySQLProfile.api._
 import scala.concurrent.Await
 import scala.util.{Failure, Success}
 
+import collection.mutable
+
 
 @Singleton
 class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigProvider,
@@ -71,8 +73,10 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
   }
   
   
-  def gallery = Action {
-    Ok(views.html.anotherGallery())
+  def gallery = Action.async {
+    val dataFut = models.ImageDataModel.images(db)
+    dataFut.map(tsk => Ok(views.html.anotherGallery(mutable.ArrayBuffer(tsk : _*))))
+    
   }
 
 

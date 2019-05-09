@@ -286,7 +286,7 @@ body {
 
 <div class="navbar sticky">
 	<h2>Swap</h2>
-	<h2>Delete</h2>
+	<h2 id="delete">Delete</h2>
 	<h2>Add</h2>
 	<h2>Modify</h2>
 	<div class="dropdown">
@@ -317,7 +317,7 @@ body {
 
 <!-- Header -->
 <div class="header" id="myHeader">
-  <h1>Interior Design Gallery</h1>
+  <h1 id="head">Interior Design Gallery</h1>
    <br>
 </div>
 
@@ -344,7 +344,7 @@ body {
 </div>
   <div class="column" id = "c3">
     <img src="https://www.sbid.org/wp-content/uploads/2018/02/img7-e1517585569791.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
-    <img src="http://www.sb-id.com/uploads/highlights/8_swissvilla.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    
     <img src="http://www.contemporist.com/wp-content/uploads/2019/03/modern-cafe-restaurant-interior-design-020319-726-01-800x420.jpg" style="width:100%"  alt="example" onclick="expand(this); on();">
     <img src="http://www.imgnyc.com/wp-content/uploads/2018/06/poster-mspt-time-lapse-v3.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
     <img src="https://i.pinimg.com/736x/89/dc/1d/89dc1d70c121e8ab81b81f601b581a04.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
@@ -415,6 +415,9 @@ function off() {
 
 
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script type="text/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
 
 </body>
 </html>
