@@ -294,8 +294,8 @@ body {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  height: 50%;
-  width: 80%; /* Could be more or less, depending on screen size */
+  height: 60%;
+  width: 30%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -313,6 +313,12 @@ body {
   cursor: pointer;
 }
 
+.input {
+	
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 
@@ -371,12 +377,18 @@ body {
   <div class="modal-content">
     <span class="close">&times;</span>
     <div class="section">
-	<div class="login-section">
-    <form action="loginUser" method="GET">
+	<div class="input">
+    <form action="loginUser" class ="input"method="GET">
 	    <p> Modify Image Info </p>
-			<span>username: </span><input type="text" name="name"></input>
+			<span>description: </span><textarea  id="ImgDesc" class = "input" cols="40" rows="8"></textarea>
+			</br>
+			</br>
+			<span>column #: </span><input id="ImgCols" type="text" name="colnum"></input>
+			</br>
+			</br>
+			<span>Row #: </span><input id="ImgRow" type="text" name="rownum"></input>
 		<div class="login-btn">
-			<input type="submit" class="btn" value="login" name="loginUser"></input>
+			<input type="submit" class="btn" value="Save" name="loginUser"></input>
 		</div>	
 	</form>	
 	</div>

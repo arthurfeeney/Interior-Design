@@ -67,6 +67,8 @@ $("#modify").click(function() {
 function modifyWindow() {
 	if(mod === true){
 		modal.style.display = "block";
+		console.log($(this).attr("value"))
+		$(this).css("color", "red");
 	}
 }
 
@@ -97,14 +99,14 @@ function loadGallery() {
 		$.each(data, function(i, item) {
 			if(i%3 === 1){
 				console.log("Div 1 "+item.imglink)
-				$("<img>").attr({"src": item.imglink, "class": "column", "style": "width: 100%", "onclick": "expand(this); on(); modifyWindow()"}).appendTo("#c1");
+				$("<img>").attr({"src": item.imglink,"value":"6", "class": "column", "style": "width: 100%", "onclick": "expand(this); on(); modifyWindow()"}).appendTo("#c1");
 			} else if(i%3 === 2){
 				console.log("Div 2 "+item.imglink)
-				$("<img>").attr({"src": item.imglink, "class": "column", "style": "width: 100%", "onclick": "expand(this); on(); modifyWindow()"}).appendTo("#c2");
+				$("<img>").attr({"src": item.imglink, "value":item.colnum+":"+item.rownum+":"+item.id+":"+item.description ,"class": "column", "style": "width: 100%", "onclick": "expand(this); on(); modifyWindow()"}).appendTo("#c2");
 				//$("<img>").attr("src", item.imglink).appendTo("#c2");
 			} else if(i%3 === 0){
 				console.log("Div 3 "+item.imglink)
-				$("<img>").attr({"src": item.imglink, "class": "column", "style": "width: 100%", "onclick": "expand(this); on(); modifyWindow();"}).appendTo("#c3");
+				$("<img>").attr({"src": item.imglink, "value":item.colnum+":"+item.rownum+":"+item.id+":"+item.description ,"class": "column", "style": "width: 100%", "onclick": "expand(this); on(); modifyWindow();"}).appendTo("#c3");
 				//$("<img>").attr("src", item.imglink).appendTo("#c3");
 			}
 		});
