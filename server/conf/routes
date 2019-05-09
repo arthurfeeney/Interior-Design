@@ -37,6 +37,6 @@ POST       /query                      edu.trinity.webapps.controllers.ContactCo
 #Gallery Controller
 #+ nocsrf
 GET       /images/:desc                      edu.trinity.webapps.controllers.GalleryController.filterByDesc(desc:String)
-
+GET 	/loadGallery					edu.trinity.webapps.controllers.GalleryController.loadGallery()
 GET        	/assets/*file               controllers.Assets.at(file)
 GET        	/versionedAssets/*file      controllers.Assets.versioned(path="/public", file: Asset)
