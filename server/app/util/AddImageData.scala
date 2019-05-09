@@ -13,7 +13,7 @@ object AddImageData extends App {
       
   val absPath   = "/versionedAssets/images/"
   //println(System.getProperty("user.dir"))
-  val addiFolder = "pic for website/"
+  val addiFolder = "pic"
   
   val addiImages = Array("325Library.jpg", "325living.jpg", "325livingWindow.jpg", "325Master.jpg", "325sitting.jpg", 
                          "3living.jpg", "441living.jpg", "441master.jpg", "441study.jpg")
