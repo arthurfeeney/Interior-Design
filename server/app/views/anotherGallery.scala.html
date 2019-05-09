@@ -1,5 +1,7 @@
 @* Gallery Page File *@
 
+@(data: collection.mutable.ArrayBuffer[Tables.ImageRow])
+
 @main("AnotherGallery") {
 
 <!DOCTYPE html>
@@ -216,6 +218,65 @@ body {
   
 }
 
+.dropdown2 {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown h2 */
+.dropdown2 .dropbtn2 {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar h2:hover, .dropdown:hover .dropbtn .dropdown2:hover .dropbtn2{
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  
+}
+
+/* Links inside the dropdown */
+.dropdown-content2 h2 {
+  float: none;
+  color: black;
+  padding: 20px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  z-index: 10;
+  
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content2 h2:hover {
+  background-color: #ddd;
+  
+}
+
+/* Show the dropdown menu on hover */
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+  
+}
+
+
+
+
 
 
 
@@ -225,7 +286,7 @@ body {
 
 <div class="navbar sticky">
 	<h2>Swap</h2>
-	<h2>Delete</h2>
+	<h2 id="delete">Delete</h2>
 	<h2>Add</h2>
 	<h2>Modify</h2>
 	<div class="dropdown">
@@ -233,9 +294,21 @@ body {
 			<i class="fa fa-caret-down"></i>
 		</button>
 		<div class = "dropdown-content sticky">
-			<h2 class="filter">by ID</h2>
-			<h2 class="filter">by Tag</h2>
-			<h2 class="filter">by Date</h2>
+			<h2 class="filter" id ="id">by ID</h2>
+			<h2 class="filter" date="date">by Date</h2>
+			<div class="dropdown2">
+				<button class="dropbtn2">by Tag
+					<i class="fa fa-caret-down"></i>
+				</button>
+			<div class = "dropdown-content2 sticky">
+				<h2 class="filter" id="indoor"> Indoor</h2>
+				<h2 class="filter" id="outdoor"> Outdoor</h2>
+				<h2 class="filter" id="before"> Before</h2>
+				<h2 class="filter" id="after"> After</h2>
+			</div>
+			</div>	
+			
+			
 		</div>
 	</div>
 </div>
@@ -244,7 +317,7 @@ body {
 
 <!-- Header -->
 <div class="header" id="myHeader">
-  <h1>Interior Design Gallery</h1>
+  <h1 id="head">Interior Design Gallery</h1>
    <br>
 </div>
 
@@ -271,7 +344,7 @@ body {
 </div>
   <div class="column" id = "c3">
     <img src="https://www.sbid.org/wp-content/uploads/2018/02/img7-e1517585569791.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
-    <img src="http://www.sb-id.com/uploads/highlights/8_swissvilla.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
+    
     <img src="http://www.contemporist.com/wp-content/uploads/2019/03/modern-cafe-restaurant-interior-design-020319-726-01-800x420.jpg" style="width:100%"  alt="example" onclick="expand(this); on();">
     <img src="http://www.imgnyc.com/wp-content/uploads/2018/06/poster-mspt-time-lapse-v3.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
     <img src="https://i.pinimg.com/736x/89/dc/1d/89dc1d70c121e8ab81b81f601b581a04.jpg" style="width:100%" alt="example" onclick="expand(this); on();">
@@ -346,6 +419,9 @@ function off() {
 
 
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script type="text/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
 
 </body>
 </html>

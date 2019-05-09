@@ -3,11 +3,11 @@ import javax.inject._
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
-import java.util.Properties
-import java.util.Date
+
 import javax.mail.internet._
-import javax.mail._
-case class UserQuery(address: String, query: String)
+
+import com.github.jurajburian.mailer._
+case class UserQuery(query: String)
 
 @Singleton
 class ContactController @Inject()(cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
@@ -15,7 +15,6 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
 
   val queryForm = Form(
     mapping(
-      "address" -> email,
       "query" -> text
     )(UserQuery.apply)(UserQuery.unapply)
   )
@@ -33,31 +32,26 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
 
   def postQuery = Action {implicit request =>
    println("Sending email from user "+request.session("username"))
-   //val session = (SessionFactory() + (SmtpAddress("smtp.gmail.com", 587))).session(Some("user@gmail.com"-> "password"))
+   val session = (SessionFactory() + (SmtpAddress("smtp.gmail.com", 587)) + Property("mail.smtp.starttls.enable", "true")).session(Some("interiordesign3345@gmail.com"-> "WebApps3345"))
    //val prop1 = Property("mail.smtp.starttls.enable", "true")
    val postBody = request.body.asFormUrlEncoded
-   //val mailer = Mailer(session)
+   val mailer = Mailer(session)
    postBody.map {args =>
-     var props = new Properties()
-    
-     val sender = args("address").head
      val q = args("query").head
-     props.put("mail.smtp.host", "smtp.gmail.com")
-     props.put("mail.smtp.port", "587")
-     props.put("mail.from", sender)
-     props.put("mail.smtp.starttls.enable", "true")
-     val session = javax.mail.Session.getInstance(props, null)
+     val content = new Content().text(q)
+     val sender = new InternetAddress("interiordesign3345@gmail.com")
+     val receiver = new InternetAddress("npatel5@trinity.edu")
+     val msg = Message(
+         from = sender,
+         subject = "Customer Inquiry from"+request.session("username"),
+         content = content,
+         to = Seq(receiver))
+         
      try {
-       val msg = new MimeMessage(session)
-       msg.setFrom()
-       msg.setRecipients(Message.RecipientType.TO, "npatel5@trinity.edu")
-       msg.setSubject("Customer Inquiry")
-       msg.setSentDate(new Date())
-       msg.setText(q)
-       Transport.send(msg)
+       mailer.send(msg)
        println("Message sent!")
        
-       Redirect(routes.ContactController.contactHome).withNewSession
+       Redirect(routes.ContactController.contactHome)
           
 
      }
