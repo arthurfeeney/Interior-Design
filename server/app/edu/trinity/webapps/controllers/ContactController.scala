@@ -21,7 +21,7 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
   
  def contactHome(name: Option[String]) = Action { implicit request =>
    name match {
-     case None => Ok(views.html.loginPage("", ""))
+     case None => Ok(views.html.loginPage("You must be logged in to visit the contact form!", ""))
      
      case _ => Ok(views.html.contact(queryForm, name))
    }
