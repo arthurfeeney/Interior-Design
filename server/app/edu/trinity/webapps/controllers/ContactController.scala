@@ -57,7 +57,7 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
        Transport.send(msg)
        println("Message sent!")
        
-       Redirect(routes.ContactController.contactHome).withNewSession
+       Redirect(routes.ContactController.contactHome)
           
 
      }
