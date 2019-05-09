@@ -13,7 +13,7 @@ object AddImageData extends App {
       
   val absPath   = "/versionedAssets/images/"
   //println(System.getProperty("user.dir"))
-  val addiFolder = "pic"
+  //val addiFolder = "pic"
   
   val addiImages = Array("325Library.jpg", "325living.jpg", "325livingWindow.jpg", "325Master.jpg", "325sitting.jpg", 
                          "3living.jpg", "441living.jpg", "441master.jpg", "441study.jpg")
@@ -25,8 +25,9 @@ object AddImageData extends App {
       "IMG_5800.jpg", "IMG_5809.jpg", "IMG_5810.jpg", "IMG_5817.jpg", "IMG_5824.jpg", "IMG_5825.jpg", "IMG_5827.jpg", "IMG_5839.jpg", "IMG_5840.jpg", 
       "IMG_5841.jpg", "IMG_9738.jpeg", "IMG_9744.jpeg", "IMG_9753.jpeg", "IMG_9762.jpeg")  
   
-  val imageArr = otherImages.map(a=> addiFolder+a)++ addiImages
-      
+  //val imageArr = otherImages.map(a=> addiFolder+a)++ addiImages
+  val imageArr = otherImages++addiImages  
+   
   var colNum = 0
   var rowNum = 0
   var idx = 0
