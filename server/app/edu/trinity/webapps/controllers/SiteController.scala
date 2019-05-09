@@ -81,7 +81,8 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
 
 
   def contact = Action {implicit request =>
-    Redirect(routes.ContactController.contactHome).withSession("username" -> request.session("username"))
+    Redirect(routes.ContactController.contactHome(request.session.get("username")))
+    //Redirect(routes.ContactController.contactHome).withSession("username" -> request.session("username"))
   }
   
 

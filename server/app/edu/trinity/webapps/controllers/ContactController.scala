@@ -19,12 +19,18 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
     )(UserQuery.apply)(UserQuery.unapply)
   )
   
- def contactHome = Action { implicit request =>
-    request.session("username").nonEmpty match {
-      case true => Ok(views.html.contact(queryForm, None))
-      case false => Ok(views.html.contact(queryForm, Some(request.session("username"))))
-    }
-
+ def contactHome(name: Option[String]) = Action { implicit request =>
+   name match {
+     case None => Ok(views.html.loginPage("", ""))
+     
+     case _ => Ok(views.html.contact(queryForm, name))
+   }
+   
+   //Ok(views.html.contact(queryForm, name)) 
+   //request.session("username").nonEmpty match {
+      //case true => Ok(views.html.contact(queryForm, Some(request.session("username")) /*None*/))
+      //case false => Ok(views.html.contact(queryForm, None /*Some(request.session("username"))*/))
+    //}
   }
   
   
@@ -51,7 +57,7 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
        mailer.send(msg)
        println("Message sent!")
        
-       Redirect(routes.ContactController.contactHome)
+       Redirect(routes.ContactController.contactHome(request.session.get("username")))
           
 
      }
@@ -60,9 +66,9 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
          println(ex.toString())
          ex.printStackTrace()
          println("Sending failed")
-         Redirect(routes.ContactController.contactHome)
+         Redirect(routes.ContactController.contactHome(request.session.get("username")))
        }
      }
-   }.getOrElse(Redirect(routes.ContactController.contactHome))
+   }.getOrElse(Redirect(routes.ContactController.contactHome(request.session.get("username"))))
   }
 }
