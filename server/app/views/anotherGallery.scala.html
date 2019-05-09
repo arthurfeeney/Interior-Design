@@ -387,8 +387,12 @@ function addImages() {
 	 ]
 	let imageGrid = document.getElementsByClassName("row");
 	let currImage = document.createElement("IMG");
-	currImage.setAttribute("src", imageArr[0]);
-	 
+
+	for(image in imageArr) {
+		currImage.setAttribute("src", imageArr[0]);
+		//add to database
+		
+	}
 	 
 }
 
