@@ -47,7 +47,8 @@ class SiteController @Inject()(protected val dbConfigProvider: DatabaseConfigPro
     }
     else {
       println("login " + name + " failed.")
-      Future.successful(Redirect(routes.Application.index).withNewSession)
+      Future.successful(Ok(views.html.loginPage("Invalid Username or Password", "")))
+      //Future.successful(Redirect(routes.Application.index).withNewSession)
     }
   }
   
