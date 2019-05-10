@@ -231,8 +231,8 @@ section {
 }
 
 .mz-about-light-rect-span {
-	background: rgb(221,221,227);
-	background: radial-gradient(circle, rgba(221,221,227,1) 50%, rgba(241,241,243,1) 100%);
+	background: rgb(221,221,229);
+	background: radial-gradient(circle, rgba(221,221,229,1) 40%, rgba(241,241,241,1) 94%);
 }
 
 .mz-about-light {
