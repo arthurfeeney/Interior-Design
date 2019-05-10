@@ -84,7 +84,9 @@
 		<p> 
 			Total Price: 
 			@if(tasks.length > 0) {
-				@(tasks.map(item => if (item(1) == "") 0 else item(1).toDouble).sum)
+				@((tasks.map(item => if (item(1) == "") 0 else item(1).toDouble).sum) -   
+					(tasks.map(item => if (item(1) == "") 0 else item(1).toDouble).sum % .01)
+				)
 			}
 		</p>
 		
