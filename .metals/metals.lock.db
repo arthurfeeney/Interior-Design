@@ -1,6 +1,6 @@
 #FileLock
-#Sun May 05 11:13:02 CDT 2019
-hostName=thebe.cs.trinity.edu
-id=16a88c523786a698c606a80946d34344258939979b8
+#Thu May 09 20:56:21 CDT 2019
+server=131.194.173.118\:56204
+hostName=131.194.173.118
 method=file
-server=131.194.71.58\:39389
+id=16a9f749d841a5f4dafee599ce94264d56eaa4aa438

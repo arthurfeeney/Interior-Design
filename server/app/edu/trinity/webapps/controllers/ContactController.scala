@@ -18,22 +18,22 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
       "query" -> text
     )(UserQuery.apply)(UserQuery.unapply)
   )
-  
+
  def contactHome(name: Option[String]) = Action { implicit request =>
    name match {
      case None => Ok(views.html.loginPage("You must be logged in to visit the contact form!", ""))
-     
+
      case _ => Ok(views.html.contact(queryForm, name))
    }
-   
-   //Ok(views.html.contact(queryForm, name)) 
+
+   //Ok(views.html.contact(queryForm, name))
    //request.session("username").nonEmpty match {
       //case true => Ok(views.html.contact(queryForm, Some(request.session("username")) /*None*/))
       //case false => Ok(views.html.contact(queryForm, None /*Some(request.session("username"))*/))
     //}
   }
-  
-  
+
+
 
 
   def postQuery = Action {implicit request =>
@@ -46,19 +46,19 @@ class ContactController @Inject()(cc: MessagesControllerComponents) extends Mess
      val q = args("query").head
      val content = new Content().text(q)
      val sender = new InternetAddress("interiordesign3345@gmail.com")
-     val receiver = new InternetAddress("npatel5@trinity.edu")
+     val receiver = new InternetAddress("testcustomer3345@gmail.com")
      val msg = Message(
          from = sender,
          subject = "Customer Inquiry from"+request.session("username"),
          content = content,
          to = Seq(receiver))
-         
+
      try {
        mailer.send(msg)
        println("Message sent!")
-       
+
        Redirect(routes.ContactController.contactHome(request.session.get("username")))
-          
+
 
      }
      catch {
