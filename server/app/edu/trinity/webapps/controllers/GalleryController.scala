@@ -69,6 +69,8 @@ class GalleryController @Inject()(protected val dbConfigProvider: DatabaseConfig
      dataFut.map(data => Ok(Json.toJson(data)))
    }
   
-  
+  def goHomePage() = Action.async { implicit request =>
+    Future.successful(Redirect(routes.SiteController.home))
+  }
   
 }
