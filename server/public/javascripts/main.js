@@ -6,9 +6,10 @@
 //document.getElementById("head").style.color = "red";
 
 let mod = false;
+let del = false;
 
 function expand(imgs) {
-	if(mod === false){
+	if(mod === false && del === false){
 	  var expandImg = document.getElementById("expandedImg");
 	  var imgText = document.getElementById("imgtext");
 	  expandImg.src = imgs.src;
@@ -18,7 +19,7 @@ function expand(imgs) {
 }
 
 function on() {
-	if(mod === false){
+	if(mod === false && del === false){
 		document.getElementById("overLay").style.display = "block";
 	}
 }
@@ -29,10 +30,6 @@ function off() {
 
 document.getElementById("myBtn").style.display = "none"
 
-
-$("#delete").click(function() {
-	alert( "Handler for .click() called." );
-});
 
 var modal = document.getElementById('myModal');
 
@@ -47,7 +44,9 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
 	modal.style.display = "none";
 	mod = false;
+	del = false;
 	$("#modify").css("color", "#fff");
+	$("#delete").css("color", "#fff");
 
 }
 
@@ -55,16 +54,36 @@ span.onclick = function() {
 window.onclick = function(event) {
 	if (event.target == modal) {
 		mod = false;
+		del = false;
 		$("#modify").css("color", "#fff");
+		$("#delete").css("color", "#fff");
 		
 		modal.style.display = "none";
 	}
 }
 
+$("#all").click(function() {
+	loadGallery();
+})
 $("#modify").click(function() {
 	$(this).css("color", "red");
 	mod = true;
-})
+});
+
+$("#delete").click(function() {
+	$(this).css("color", "red");
+	del = true;
+	
+});
+
+function myDelete(event) {
+	if(del === true){
+		$(this).remove();
+		del = false;
+		$("#delete").css("color", "#fff");
+	}
+}
+
 function modifyWindow(event) {
 	if(mod === true){
 		modal.style.display = "block";
@@ -86,11 +105,11 @@ function filterByDesc(desc) {
 		$("#c3").empty();
 		$.each(data, function(i, item) {
 			if(i%3 === 1){
-				$("<img>").attr({"src": item, "class": "column", "style": "width: 100%", "onclick": "expand(this); on()"}).appendTo("#c1");
+				$("<img>").attr({"src": item, "class": "column", "style": "width: 100%", "onclick": "expand(this); on(); myDelete(this)"}).appendTo("#c1");
 			} else if(i%3 === 2){
-				$("<img>").attr({"src": item, "class": "column", "style": "width: 100%", "onclick": "expand(this); on()"}).appendTo("#c2");
+				$("<img>").attr({"src": item, "class": "column", "style": "width: 100%", "onclick": "expand(this); on(); myDelete(this)"}).appendTo("#c2");
 			} else if(i%3 === 0){
-				$("<img>").attr({"src": item, "class": "column", "style": "width: 100%", "onclick": "expand(this); on()"}).appendTo("#c3");
+				$("<img>").attr({"src": item, "class": "column", "style": "width: 100%", "onclick": "expand(this); on(); myDelete(this)"}).appendTo("#c3");
 			}
 		});
 	});	
@@ -109,7 +128,14 @@ function loadGallery() {
 				e.data("foo", 52);
 				console.log(e.data("foo"));
 				e.attr({"src": item.imglink, "class": "column", "style": "width: 100%", "onclick": "expand(this); on()"});
-				e.click({colnum: item.colnum, rownum: item.rownum, id: item.id, desc: item.description }, modifyWindow)
+				e.click({colnum: item.colnum, rownum: item.rownum, id: item.id, desc: item.description }, modifyWindow);
+				e.click(function() {
+					if(del){
+						$(this).remove();
+						del = false;
+						$("#delete").css("color", "#fff");
+					}
+				});
 				e.appendTo("#c1");
 			} else if(i%3 === 2){
 				console.log("Div 2 "+item.imglink)
@@ -117,14 +143,29 @@ function loadGallery() {
 				e.data("foo", 52);
 				console.log(e.data("foo"));
 				e.attr({"src": item.imglink, "class": "column", "style": "width: 100%", "onclick": "expand(this); on()"});
-				e.click({colnum: item.colnum, rownum: item.rownum, id: item.id, desc: item.description }, modifyWindow)
+				e.click({colnum: item.colnum, rownum: item.rownum, id: item.id, desc: item.description }, modifyWindow);
+				e.click(function() {
+					if(del){
+						console.log("Remove");
+						$(this).remove();
+						del = false;
+						$("#delete").css("color", "#fff");
+					}
+				});
 				e.appendTo("#c2");
 			} else if(i%3 === 0){
 				let e = $("<img>");
 				e.data("foo", 52);
 				console.log(e.data("foo"));
 				e.attr({"src": item.imglink, "class": "column", "style": "width: 100%", "onclick": "expand(this); on()"});
-				e.click({colnum: item.colnum, rownum: item.rownum, id: item.id, desc: item.description }, modifyWindow)
+				e.click({colnum: item.colnum, rownum: item.rownum, id: item.id, desc: item.description }, modifyWindow);
+				e.click(function() {
+					if(del){
+						$(this).remove();
+						del = false;
+						$("#delete").css("color", "#fff");
+					}
+				});
 				e.appendTo("#c3");
 			}
 		});
