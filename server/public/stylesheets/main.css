@@ -55,7 +55,11 @@ textarea {
 	color: #252525;	
 }
 
-a:hover, a:focus, a:active, a.active {
+a:hover, a:focus {
+    color: #729fff;
+}
+
+a:active, a.active {
     color: #729fcf;
 }
 a, a:hover, a:focus, a:active, a.active {
@@ -215,7 +219,6 @@ section {
 }
 
 .mz-module-about {
-
 	padding: 0 300px;
 }
 
@@ -227,15 +230,23 @@ section {
     background-color: #2B2B2B;
 }
 
+.mz-about-light-rect-span {
+	background: rgb(221,221,227);
+	background: radial-gradient(circle, rgba(221,221,227,1) 50%, rgba(241,241,243,1) 100%);
+}
+
 .mz-about-light {
-	background-color: #F9F9F9;
+	/*background-color: #F9F9F9;*/
+	background-color: FFFFFF;
 }
 
 .mz-module-about h3 {
 	font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     text-transform: uppercase;
-    color: #9B9B9B;
+    /*color: #9B9B9B;*/
+    /*#729fff*/
+    color: #666666;
     letter-spacing: 2px;
     margin-bottom: 30px;
 }
@@ -244,14 +255,25 @@ section {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 27px;
-	color: #9B9B9B;
+	color: #666681;
 }
 
 .ot-circle {
 	padding-top:10px;
 	padding-bottom:10px;
 	text-align: center;
-	color: #E8E8E8;
+	background-color: #F2F2F2;
+	margin: 60spx 0;
+	font-size: 37px;
+	border-radius:100px; 
+	border: 2px hidden black;
+}
+
+.ot-circle-rect {
+	padding-top:10px;
+	padding-bottom:295px;
+	text-align: center;
+	/*color: #F9F9F9;*/
 	margin: 40px 0;
 	font-size: 37px;
 }
@@ -879,7 +901,19 @@ td.text-right {
 }
 
 
+/*
+ Headshot
+*/
 
+.headshot-contact-wrapper {
+	width: 55%;
+	margin: 0 auto;
+}
+
+.headshot {
+	float: left;
+	border-radius:50%;
+}
 
 
 
