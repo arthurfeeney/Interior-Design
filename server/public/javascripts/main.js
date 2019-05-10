@@ -56,6 +56,7 @@ window.onclick = function(event) {
 	if (event.target == modal) {
 		mod = false;
 		$("#modify").css("color", "#fff");
+		
 		modal.style.display = "none";
 	}
 }
@@ -64,11 +65,16 @@ $("#modify").click(function() {
 	$(this).css("color", "red");
 	mod = true;
 })
-function modifyWindow() {
+function modifyWindow(event) {
 	if(mod === true){
 		modal.style.display = "block";
-		console.log($(this).attr("value"))
-		$(this).css("color", "red");
+		//alert(event.data.desc);
+		document.getElementById("ImgDesc").value = event.data.desc;
+		document.getElementById("ImgRow").value = event.data.rownum;
+		document.getElementById("ImgCol").value = event.data.colnum;
+		//$("#ImgDesc").value = "EHEHEHEHEHEH";
+		//console.log(img)
+		//img.css("color", "red");
 	}
 }
 
@@ -98,16 +104,28 @@ function loadGallery() {
 		$("#c3").empty();
 		$.each(data, function(i, item) {
 			if(i%3 === 1){
-				console.log("Div 1 "+item.imglink)
-				$("<img>").attr({"src": item.imglink,"value":"6", "class": "column", "style": "width: 100%", "onclick": "expand(this); on(); modifyWindow()"}).appendTo("#c1");
+				//console.log("Div 1 "+item.imglink);
+				let e = $("<img>");
+				e.data("foo", 52);
+				console.log(e.data("foo"));
+				e.attr({"src": item.imglink, "class": "column", "style": "width: 100%", "onclick": "expand(this); on()"});
+				e.click({colnum: item.colnum, rownum: item.rownum, id: item.id, desc: item.description }, modifyWindow)
+				e.appendTo("#c1");
 			} else if(i%3 === 2){
 				console.log("Div 2 "+item.imglink)
-				$("<img>").attr({"src": item.imglink, "value":item.colnum+":"+item.rownum+":"+item.id+":"+item.description ,"class": "column", "style": "width: 100%", "onclick": "expand(this); on(); modifyWindow()"}).appendTo("#c2");
-				//$("<img>").attr("src", item.imglink).appendTo("#c2");
+				let e = $("<img>");
+				e.data("foo", 52);
+				console.log(e.data("foo"));
+				e.attr({"src": item.imglink, "class": "column", "style": "width: 100%", "onclick": "expand(this); on()"});
+				e.click({colnum: item.colnum, rownum: item.rownum, id: item.id, desc: item.description }, modifyWindow)
+				e.appendTo("#c2");
 			} else if(i%3 === 0){
-				console.log("Div 3 "+item.imglink)
-				$("<img>").attr({"src": item.imglink, "value":item.colnum+":"+item.rownum+":"+item.id+":"+item.description ,"class": "column", "style": "width: 100%", "onclick": "expand(this); on(); modifyWindow();"}).appendTo("#c3");
-				//$("<img>").attr("src", item.imglink).appendTo("#c3");
+				let e = $("<img>");
+				e.data("foo", 52);
+				console.log(e.data("foo"));
+				e.attr({"src": item.imglink, "class": "column", "style": "width: 100%", "onclick": "expand(this); on()"});
+				e.click({colnum: item.colnum, rownum: item.rownum, id: item.id, desc: item.description }, modifyWindow)
+				e.appendTo("#c3");
 			}
 		});
 	});	
