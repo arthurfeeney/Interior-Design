@@ -18,12 +18,13 @@ object AddImageData extends App {
   val addiImages = Array("325Library.jpg", "325living.jpg", "325livingWindow.jpg", "325Master.jpg", "325sitting.jpg", 
                          "3living.jpg", "441living.jpg", "441master.jpg", "441study.jpg")
   
-  val otherImages = Array("IMG_0239.jpeg", "IMG_0429.jpeg", "IMG_0430.jpg", "IMG_0443.jpeg", "IMG_0651.jpeg", "IMG_0790.jpeg", "IMG_0792.jpeg", 
+  val otherImages = Array( "IMG_5825.jpg", "IMG_5827.jpg", "IMG_5839.jpg", "IMG_5840.jpg", 
+      "IMG_5841.jpg", "IMG_9738.jpeg", "IMG_9744.jpeg", "IMG_9753.jpeg", "IMG_9762.jpeg", 
+      "IMG_0239.jpeg", "IMG_0429.jpeg", "IMG_0430.jpg", "IMG_0443.jpeg", "IMG_0651.jpeg", "IMG_0790.jpeg", "IMG_0792.jpeg", 
       "IMG_0793 2.jpeg", "IMG_0794 2.jpeg", "IMG_0807.jpeg", "IMG_0821.jpeg", "IMG_0830.jpeg", "IMG_0838.jpeg", "IMG_0893.jpeg", "IMG_0896.jpeg", 
       "IMG_1565.jpg", "IMG_1660.jpg", "IMG_1672.jpg", "IMG_1972.jpg", "IMG_2125.jpg", "IMG_2386.jpeg", "IMG_2779.jpg", "IMG_5074.jpg", "IMG_5744.jpg", 
       "IMG_5786.jpg", "IMG_5788.jpg", "IMG_5792.jpg", "IMG_5793.jpg", "IMG_5794.jpg", "IMG_5796.jpg", "IMG_5797.jpg", "IMG_5798.jpg", "IMG_5799.jpg", 
-      "IMG_5800.jpg", "IMG_5809.jpg", "IMG_5810.jpg", "IMG_5817.jpg", "IMG_5824.jpg", "IMG_5825.jpg", "IMG_5827.jpg", "IMG_5839.jpg", "IMG_5840.jpg", 
-      "IMG_5841.jpg", "IMG_9738.jpeg", "IMG_9744.jpeg", "IMG_9753.jpeg", "IMG_9762.jpeg")  
+      "IMG_5800.jpg", "IMG_5809.jpg", "IMG_5810.jpg", "IMG_5817.jpg", "IMG_5824.jpg")  
   
   //val imageArr = otherImages.map(a=> addiFolder+a)++ addiImages
   val imageArr = otherImages++addiImages  
@@ -33,7 +34,7 @@ object AddImageData extends App {
   var idx = 0
   var numImages = imageArr.length
   
-  val typeArr = Array.fill(14)("Before")++Array.fill(14)("After")++Array.fill(14)("Indoor")++Array.fill(14)("Outdoor")
+  val typeArr = Array.fill(14)("Outdoor")++Array.fill(14)("After")++Array.fill(14)("Indoor")++Array.fill(14)("Before")
   
   Await.result(db.run(Image.delete), Duration.Inf)
   Await.result(db.run(sqlu"ALTER TABLE image AUTO_INCREMENT = 1;"), Duration.Inf)
